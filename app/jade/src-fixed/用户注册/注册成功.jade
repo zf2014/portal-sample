@@ -1,0 +1,23 @@
+extends ../../layout/regist.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/regist.css')
+
+
+block site-content
+	.regist-main
+		.regist-flowbar.flowbar-step3
+		.regist-content
+			.regist-final
+				.final-middle-content
+					i.final-doll
+					p.final-congratulation
+						i.ico-right
+						strong.username(title="我的名字有点长") 我的名字有点长
+						span.txt 恭喜您注册成功！
+					p.final-tip 您可以使用用户名称和注册邮箱登录网站办理各项业务。
+
+					a.final-loginbtn(href="#") 立即登录

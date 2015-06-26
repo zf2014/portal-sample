@@ -1,0 +1,96 @@
+- var idx = 0
+
+.result
+	.result-operations
+		a#J-addDialogTest.btn.btn-result.J-btn
+			i.ico-font.btn-result-ico &#xe601;
+			span 新 增
+		a#J-updateDialogTest.btn.btn-result.J-btn
+			i.ico-font.btn-result-ico &#xe600;
+			span 修 改
+		a#J-confirmDialogBtn.btn.btn-result.J-btn
+			i.ico-font.btn-result-ico &#xe607;
+			span 提 交
+		a#J-invalidDialogBtn.btn.btn-result.J-btn
+			i.ico-font.btn-result-ico &#xe608;
+			span 作 废
+
+		a.btn.btn-result.J-btn(href="新增-redirect.html")
+			i.ico-font.btn-result-ico &#xe601;
+			span 新 增(跳转)
+
+		a#J-deleteDialogTest.btn.btn-result.J-btn
+			i.ico-font.btn-result-ico &#xe603;
+			span 删 除
+	.space.space-t5
+	.result-title
+		span 综试区简介
+
+	.result-list
+		table.result-table
+			colgroup
+				col.col-checkbox
+				col
+				col
+				col
+				col
+				col
+				col
+				col
+				col
+				col
+
+			thead
+				tr
+					th
+						input.inp-checkbox.J-checkbox-all(type="checkbox")
+
+					th.cel-left
+						span 发车日期
+					th.cel-right
+						span 发车网点 
+					th
+						span 到货网点
+					th
+						span 车牌号
+					th
+						span 装车单号
+					th
+						span 司机
+					th
+						span 司机电话
+					th
+						span 车费付款方式
+					th
+						span 操作
+					
+
+			tbody.J-resultContainer
+				while idx++ < 10
+					tr
+						td.cel-center
+							input.inp-checkbox.J-checkbox-one(type="checkbox" disabled)
+						td.cel-left
+							span 左对齐
+						td.cel-right
+							span 右对齐
+						td.cel-center
+							span 杭州
+						td.cel-center
+							span 浙A 04572
+						td.cel-center
+							span 2817320001
+						td.cel-center
+							span 张三
+						td.cel-center
+							span 13554385058
+						td.cel-center
+							span 到付
+						td.cel-center.cel-oper
+							a(href="互动交流-回复-redirect.html") 回复
+							a(href="互动交流-审核-redirect.html") 审核1
+							a(href="互动交流-审核未通过-redirect.html") 审核2
+				
+				tr.tr__is-page
+					td.cel-page(colspan="10")
+						mixin mx_page('page_flat page_right')

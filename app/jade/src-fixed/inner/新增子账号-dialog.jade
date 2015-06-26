@@ -1,0 +1,39 @@
+extends ../../layout/inner-dialog.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/vld.css')
+	link(rel = 'stylesheet' href = '#{cssRoot}/subaccount.css')
+
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/sub-account-dialog")
+
+block others
+	.dialog-content.dialog-subaccount
+		.dialog-title
+			span 新增子账号
+		.dialog-result
+			.vld-form
+				form#J-mainForm(method="POST" action="XXX.jspa")
+					.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 用户名
+						.controller-inp.J-controllerInp
+							input.inp.inp-vld(type="text" data-required="true")
+					.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-vld#J-vldNewPassword(type="password" data-required="true" data-maxlength="20")
+					.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 确认密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-vld(type="password" data-required="true" data-equalto="#J-vldNewPassword")
+					.vld-form-submit
+						a.btn.btn-dialog.J-btn#J-validationFormSubmitBtn
+							span 确 认
+						a.btn.btn-dialog.J-btn.J-dialogCancel
+							span 取 消

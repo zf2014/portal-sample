@@ -1,0 +1,94 @@
+extends ../../layout/inner-dialog.jade
+
+block others
+	.dialog-content
+		
+		.dialog-title
+			span 服务注册新增
+
+		table.dialog-table
+			colgroup
+				col.dialog-col-th
+				col.dialog-col-td
+				col.dialog-col-th
+				col.dialog-col-td
+			tbody
+				tr
+					th
+						span.cell-title 名称
+					td
+						.cell-inp-wrap
+							input.inp.inp-dialog(type="text")
+					th
+						span.cell-title 代码
+					td
+						.cell-inp-wrap
+							input.inp.inp-dialog(type="text")
+				tr
+					th
+						span.cell-title 业务类型
+					td
+						.cell-inp-wrap
+							input.inp.inp-dialog(type="text")
+					th
+						span.cell-title 描述
+					td
+						.cell-inp-wrap
+							input.inp.inp-dialog(type="text")
+				tr
+					th
+						span.cell-title 描述
+					td(colspan="3")
+						.cell-inp-wrap
+							textarea.inp.inp-dialog.inp-textarea
+
+				tr
+					th
+						span.cell-title 服务类型
+					td(colspan="3")
+						.cell-inp-wrap
+							select.inp.inp-select
+								option(value="0") 全部
+								option(value="1") 类型1
+								option(value="2") 类型2
+				
+		.dialog-other
+			.other-content
+				.select-related-content
+					.select-related-item(style="display:block;")
+						.related-fieldset
+							.field-controller.field-block
+								label.field-label
+									span MQ地址
+								.field-group
+									input.field-item.inp.inp-dialog(type="text")
+							.field-controller.field-block
+								label.field-label
+									span MQ端口
+								.field-group
+									input.field-item.inp.inp-dialog(type="text")
+							.field-controller.field-block
+								label.field-label
+									span MQ通道
+								.field-group
+									input.field-item.inp.inp-dialog(type="text")
+							.field-controller.field-block
+								label.field-label
+									span MQ队列
+								.field-group
+									input.field-item.inp.inp-dialog(type="text")
+							.field-controller.field-block
+								label.field-label
+									span MQ队列管理器
+								.field-group
+									input.field-item.inp.inp-dialog(type="text")
+					.select-related-item
+					.select-related-item
+
+
+
+		.dialog-operation
+			a.btn.btn-dialog.J-btn.J-dialogConfirm
+				span 确 认
+			a.btn.btn-dialog.J-btn.J-dialogCancel
+				span 取 消

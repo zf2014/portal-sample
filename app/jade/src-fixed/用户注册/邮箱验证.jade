@@ -1,0 +1,45 @@
+extends ../../layout/regist.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/regist.css')
+
+block site-content
+	.regist-main
+		.regist-flowbar.flowbar-step1
+		.regist-content
+			.regist-email-verify
+				.regist-had-account
+					p.account-txt
+						| 若您已有跨境一步账号，可直接登录。
+						a.account-login(href="#") 马上登录
+				.regist-form
+					form(method="POST" action="xxx.jspa")
+						.clearfix.regist-form-controller
+							label.controller-label
+								span.required *
+								| 电子邮箱
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="email" placeholder="请输入你的电子邮箱" data-required="true")
+
+						.clearfix.regist-form-controller
+							label.controller-label
+								span.required *
+								| 验证码
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist.inp-email-vcode(type="text")
+
+						.clearfix.regist-form-controller#regist-protocol
+							label.controller-label
+							.controller-inp.J-controllerInp
+								.protocol-wrap
+									input.protocol-checkbox(type="checkbox" name="protocol" data-required="true")
+									span.protocol-cont
+										span.txt 我已阅读并同意
+										a(href="#" target="_blank") 《浙江电子口岸服务协议》
+
+						.regist-form-submit
+							input.regist-submit-btn.J-registFormSubmitBtn(type='submit' value="下一步")
+

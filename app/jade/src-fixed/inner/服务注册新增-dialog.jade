@@ -1,0 +1,155 @@
+extends ../../layout/inner-dialog.jade
+
+block others
+	.dialog-content
+		form#J-testForm(action="XXX.jspa" method="post")
+			.dialog-title.dialog-title__small
+				strong 基础信息
+			table.dialog-table
+				colgroup
+					col.dialog-col-th
+					col.dialog-col-td
+					col.dialog-col-th
+					col.dialog-col-td
+				tbody
+					tr
+						th
+							span.cell-title 名称
+						td
+							.cell-inp-wrap
+								input.inp.inp-dialog(type="text" data-required="true" data-minlength="5")
+						th
+							span.cell-title 代码
+						td
+							.cell-inp-wrap
+								input.inp.inp-dialog(type="text" data-type="digits")
+					tr
+						th
+							span.cell-title 业务类型
+						td
+							.cell-inp-wrap
+								input.inp.inp-dialog(type="text")
+						th
+							span.cell-title 类型
+						td
+							.cell-inp-wrap
+								input.inp.inp-dialog(type="text")
+					tr
+						th
+							span.cell-title 描述
+						td(colspan="3")
+							.cell-inp-wrap
+								textarea.inp.inp-dialog.inp-textarea(style="height: 80px;")
+			.space.space-t5
+			.dialog-title.dialog-title__small
+				strong 接入信息
+			.dialog-other(style="z-index: 9990;")
+				.other-content
+					table.busi-service-table.uniq-top-border
+						colgroup
+							col(width="16%")
+							col
+							col
+							col(width="16%")
+							col
+							col
+						thead
+							tr
+								td(colspan="3").cell__busi-title
+									| 接入服务
+								td(colspan="3").cell__busi-title
+									| 接入服务
+							tr
+								th 代码
+								th 名称
+								th 类型
+								
+								th 代码
+								th 名称
+								th 类型
+								
+						tbody
+							tr
+								td.cell__center
+									input.inp.inp-dialog.J-busiCodeInput(type="text")
+								td
+									span.J-busiName
+								td
+									span.J-busiType
+								td.cell__center
+									input.inp.inp-dialog.J-busiCodeInput(type="text")
+								td
+									span.J-busiName
+
+								td
+									span.J-busiType
+			.space.space-t5
+			.dialog-title.dialog-title__small
+				strong 接出信息
+				.busi-service-operation
+					a(href="javascript:;" title="新增行")
+						i.ico-font.btn-dialog-ico &#xe605;
+
+					a(href="javascript:;" title="删除行")
+						i.ico-font.btn-dialog-ico &#xe606;
+			.dialog-other(style="z-index: 9991;")
+				.other-content
+					table.busi-service-table.uniq-top-border.table__operable
+						colgroup
+							col(width="16%")
+							col
+							col
+							col(width="16%")
+							col
+							col
+						thead
+							tr
+								td(colspan="3").cell__busi-title
+									| 接入服务
+								td(colspan="3").cell__busi-title
+									| 接入服务
+							tr
+								th 代码
+								th 名称
+								th 类型
+								th 代码
+								th 名称
+								th 类型
+						tbody.J-resultContainer
+							tr
+								td.cell__center
+									input.inp-checkbox.J-checkbox-one(type="checkbox" style="display:none;")
+									input.inp.inp-dialog.J-busiCodeInput(type="text")
+								td
+									span.J-busiName
+
+								td
+									span.J-busiType
+								td.cell__center
+									input.inp.inp-dialog.J-busiCodeInput(type="text")
+								td
+									span.J-busiName
+
+								td
+									span.J-busiType
+							tr
+								td.cell__center
+									input.inp-checkbox.J-checkbox-one(type="checkbox" style="display:none;")
+									input.inp.inp-dialog.J-busiCodeInput(type="text")
+								td
+									span.J-busiName
+
+								td
+									span.J-busiType
+								td.cell__center
+									input.inp.inp-dialog.J-busiCodeInput(type="text")
+								td
+									span.J-busiName
+
+								td
+									span.J-busiType
+			.dialog-operation
+				a.btn.btn-dialog.J-btn.J-dialogConfirm
+					span 确 认
+				a.btn.btn-dialog.J-btn.J-dialogCancel
+					span 取 消

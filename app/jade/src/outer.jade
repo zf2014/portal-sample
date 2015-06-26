@@ -1,0 +1,8 @@
+extends ../layout/outer.jade
+
+//- append head-script
+//- 	script(src = '#{jsRoot}/app/outer/help.js')
+
+block site-content
+	.manage-frame
+		iframe#J-manageFrame(src="#{htmlRoot}/inner/list.html", frameborder="0", width="100%" name="manage-inner")

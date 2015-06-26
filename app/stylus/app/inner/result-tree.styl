@@ -1,0 +1,55 @@
+$treeWidth     = 200px
+$treeMinheight = 450px
+
+.result-tree
+	border: 1px solid #e7e7e7
+	/.tree-left
+		float: left
+		width: $treeWidth
+		min-height: $treeMinheight
+	/.tree-right
+		margin-left: $treeWidth
+		min-height: $treeMinheight
+		border-left: 1px solid #e7e7e7
+		/.tree-right-content
+			height: 100%
+			overflow: hidden
+		/.tree-operations
+			border-width: 0 0 1px 0
+		
+		/.tree-caption
+			border-bottom: 1px solid #e7e7e7
+			margin-left: 12px
+			margin-right: 12px
+			font-size: 1.2em
+			line-height: 2.4
+			padding-left: 8px
+			color #363636
+		/.tree-form
+			width: 600px
+			margin: 50px 0 50px 10px
+		
+		/.tree-desc-field
+			height: 160px
+			.inp-tree
+				height: 150px
+		
+		/.tree-btns-field
+			height: auto
+			padding-top: 15px
+			padding-bottom: 15px
+			line-height 0
+			/.tree-form-btns
+				margin-left: 25%
+				.btn-tree-form
+					// margin-left: 5px
+					margin-right: 10px
+			
+
+
+.tree-right-list
+	padding 0 10px
+
+.tree-modal__modify
+	.modal-body
+		padding-top: 20px

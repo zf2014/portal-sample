@@ -1,0 +1,30 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/error.css')
+block head-script
+block head-requirejs-script
+block crumbs
+block search
+block result
+	.error.error500
+		.error-container
+			.error-result
+				.error-result-content
+					.error-result-txt
+						| 对不起，服务器繁忙！
+					.error-result-txt
+						| 本网站暂时无法处理您的请求！
+			.error-divider
+			.error-reason
+				dl.error-reason-list
+					dt 您可以：
+					dd
+						| 稍后访问该页面。
+					dd
+						a.reason-linker(href="#") 返回首页
+						| 继续访问本网站。
+					dd
+						| 联系客服
+						span.reason-hotline 0571-967209
+						| 寻求帮助
+

@@ -1,0 +1,123 @@
+extends ../../layout/inner-dialog.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/vld.css')
+	link(rel = 'stylesheet' href = '#{cssRoot}/subaccount.css')
+
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/sub-account-dialog")
+
+block others
+	.dialog-content.dialog-subaccount
+		.dialog-title
+			span 授权子账号
+		.dialog-result.uniq-top-border
+			.vld-form
+				form#J-mainForm(method="POST" action="XXX.jspa")
+
+					table.subaccount-roles
+						colgroup
+							col(width="25%")
+							col(width="25%")
+							col(width="25%")
+							col(width="25%")
+						tbody
+							tr
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+							tr
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+								td
+									.subaccount-role
+										label
+											input.inp-checkbox(type="checkbox")
+											span 管理员
+									
+					//- ul.subaccount-roles
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+					//- 	li.subaccount-role
+					//- 		label
+					//- 			input.inp-checkbox(type="checkbox")
+					//- 			span 管理员
+
+
+					.vld-form-submit
+						a.btn.btn-dialog.J-btn#J-subaccountRoleConfirm
+							span 确 认
+						a.btn.btn-dialog.J-btn.J-dialogCancel
+							span 取 消

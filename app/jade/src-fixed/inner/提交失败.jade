@@ -1,0 +1,26 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/fail.css')
+block head-requirejs-script
+	//- script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-edit")
+block search
+block result
+	.fail
+		.fail-container
+			.fail-result
+				.fail-result-content
+					.fail-result-maintxt
+						span.fail-txt 提交失败，请修改失败原因！
+							i
+					//- .fail-result-tip
+					//- 	p 审核通过后，我们将电话联系您，协助您完成后续的系统开通流程。
+					
+					.fail-reason
+						dl.fail-reason-list
+							dt 失败的原因：
+							dd 某某原因1
+							dd 某某原因2
+							dd 某某原因3
+					//- .fail-result-oper
+					//- 	span 返回
+					//- 	a(href="#") 企业信息登记

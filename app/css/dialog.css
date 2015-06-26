@@ -1,0 +1,165 @@
+/**
+ * 文件: .css 
+ * 公司: 浙江电子口岸
+ * 作者: qzzf1987@gmail.com
+ * 时间: 2015-04-17 13:54:50
+ */
+html {
+  overflow-y: auto;
+}
+.manage-content {
+  padding-top: 0;
+}
+.inp-dialog {
+  height: 22px;
+  line-height: 22px;
+  width: 75%;
+}
+.inp-select {
+  height: 24px;
+}
+.inp-textarea {
+  height: 3em;
+}
+.field-controller {
+  line-height: 36px;
+}
+.dialog-content {
+  padding: 10px 8px;
+}
+.dialog-title {
+  position: relative;
+  background-color: #e9f5ff;
+  line-height: 36px;
+  border: 1px solid #c7e1f6;
+  color: #0a2f4d;
+  font-size: 1.2em;
+  zoom: 1;
+}
+.dialog-title span,
+.dialog-title strong {
+  margin-left: 8px;
+}
+.dialog-title__small {
+  line-height: 28.8px;
+}
+.dialog-table {
+  width: 100%;
+  font-size: 1.2em;
+  margin-top: -1px;
+}
+.dialog-col-th {
+  width: 15%;
+}
+.dialog-col-td {
+  width: 35%;
+}
+.dialog-table th {
+  padding-top: 7px;
+  border: 1px solid #e1e1e1;
+  vertical-align: top;
+  text-align: right;
+  background-color: #e9f5ff;
+  color: #535353;
+}
+.dialog-table td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  vertical-align: middle;
+  border: 1px solid #e1e1e1;
+}
+.cell-title {
+  display: block;
+  padding-right: 5px;
+}
+.cell-inp-wrap {
+  padding-left: 5px;
+}
+.dialog-operation {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #e1e1e1;
+  margin-top: -1px;
+}
+.dialog-operation .btn {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.dialog-other {
+  position: relative;
+  z-index: 999;
+}
+.btn-dialog {
+  border: 0;
+  background: #0b87e9;
+  filter: none;
+  color: #fff;
+}
+.btn-dialog:hover {
+  color: #fff;
+  background: #1a94f4;
+}
+.select-related-item {
+  display: none;
+  padding: 15px 0;
+  border: 1px solid #e1e1e1;
+}
+.related-fieldset {
+  width: 70%;
+  margin: 0 auto;
+}
+.busi-service-table {
+  font-size: 1.2em;
+  table-layout: fixed;
+}
+.busi-service-table th {
+  background-color: #f4f4f4;
+  font-weight: 100;
+  color: #535353;
+  font-weight: 700;
+}
+.busi-service-table th,
+.busi-service-table td {
+  height: 26px;
+  border: 1px solid #e1e1e1;
+}
+.busi-service-table .cell__center {
+  text-align: center;
+}
+.busi-service-table .cell__busi-title {
+  padding-left: 8px;
+  background-color: #e9f5ff;
+}
+.busi-service-table .tr__is-active,
+.busi-service-table .tr__is-hover {
+  background-color: #e9f5ff;
+}
+.busi-service-table .autocomplete-menu {
+  width: 98px;
+  top: auto !important;
+  bottom: 100% !important;
+  left: 50% !important;
+  margin-left: -49px;
+  z-index: 99999;
+}
+.btn-busi {
+  height: 20px;
+  line-height: 20px;
+  padding: 0 8px;
+}
+.busi-service-operation {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 10px;
+}
+.busi-service-operation a {
+  margin-left: 5px;
+  margin-top: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 1.6em;
+  vertical-align: top;
+  text-decoration: none;
+}

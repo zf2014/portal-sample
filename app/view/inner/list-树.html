@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="../../css/inner.css">
+    <script src="../../scripts/lib/requirejs-config/inner.js"></script>
+    <script>
+      var zNodes =
+      	[
+      		{ name:"全部", open:true, cusData:null,
+      			children: [
+      				{ name:"基础资料", open:true, cusData:{name:'基础资料', mid: '01', code: '010', status: '状态', type: '1', desc: '很长很长的描述'},
+      					children: [
+      						{ name:"数据字典", cusData:{name:'基础资料', mid: '001', code: '0011', status: '状态', type: '1', desc: '很长很长的描述'}},
+      						{ name:"标准规范", cusData:{name:'基础资料', mid: '002', code: '0012', status: '状态', type: '1', desc: '很长很长的描述'}},
+      						{ name:"数据字典", cusData:{name:'基础资料', mid: '003', code: '0013', status: '状态', type: '1', desc: '很长很长的描述'}},
+      						{ name:"标题规范", cusData:{name:'基础资料', mid: '004', code: '0014', status: '状态', type: '1', desc: '很长很长的描述'}},
+      						{ name:"数据字典", cusData:{name:'基础资料', mid: '005', code: '0015', status: '状态', type: '1', desc: '很长很长的描述'}},
+      						{ name:"标题规范", cusData:{name:'基础资料', mid: '006', code: '0016', status: '状态', type: '1', desc: '很长很长的描述'}}
+      					]},
+      				{ name:"服务注册",
+      					children: [
+      						{ name:"叶子节点121"},
+      						{ name:"叶子节点122"},
+      						{ name:"叶子节点123"},
+      						{ name:"叶子节点124"}
+      					]},
+      				{ name:"服务注册", children: [
+      						{ name:"叶子节点121"},
+      						{ name:"叶子节点122"},
+      						{ name:"叶子节点123"},
+      						{ name:"叶子节点124"}
+      					]},
+      				{name: 'zfff', isParent: true}
+      			]
+      		}
+      	]
+      ;
+    </script>
+    <script src="../../scripts/lib/requirejs/require.js" data-main="app/inner/main-tree"></script>
+  </head>
+  <body>
+    <div id="main-page">
+      <div class="manage-content">
+        <div class="crumbs">
+          <div class="crumbs-content">
+            <div class="crumbs-title"><span>当前位置：</span></div>
+            <div class="crumbs-list"><a href="#" class="crumbs-item">资讯管理</a><span class="crumbs-item crumbs-item__is-divider">&gt;</span><a class="crumbs-item crumbs-item__is-last">资讯发布</a></div>
+          </div>
+        </div>
+        <div class="space space-t10"></div>
+        <div class="result">
+          <div class="result-title"><span>综试区简介</span></div>
+          <div class="result-content">
+            <div class="result-tree">
+              <div class="tree-left">
+                <div class="tree-left-content">
+                  <div class="tree-container">
+                    <ul id="J-treeMainContent" class="ztree"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tree-right">
+                <div class="tree-right-content">
+                  <div class="result-operations tree-operations"><a id="J-addTreeBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe601;</i><span>新 增</span></a><a id="J-updateTreeBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe600;</i><span>修 改</span></a><a id="J-deleteTreeBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe603;</i><span>删 除</span></a></div>
+                  <div class="space space-t5"></div>
+                  <div class="tree-caption"><span id="J-tree-captionText">标准规范</span></div>
+                  <div class="tree-form">
+                    <form id="J-treeEditForm" method="post">
+                      <div class="tree-fieldset">
+                        <div class="field-controller field-block">
+                          <label class="field-label"><span>名称</span></label>
+                          <div class="field-group">
+                            <input type="text" readonly unselectable="on" data-tree-name class="J-treeField field-item inp inp-tree">
+                          </div>
+                        </div>
+                        <div class="field-controller field-block">
+                          <label class="field-label"><span>代码</span></label>
+                          <div class="field-group">
+                            <input type="text" readonly unselectable="on" data-tree-code class="J-treeField field-item inp inp-tree">
+                          </div>
+                        </div>
+                        <div class="field-controller field-block">
+                          <label class="field-label"><span>状态</span></label>
+                          <div class="field-group">
+                            <input type="text" readonly unselectable="on" data-tree-status class="J-treeField field-item inp inp-tree">
+                          </div>
+                        </div>
+                        <div class="field-controller field-block tree-desc-field">
+                          <label class="field-label"><span>描述</span></label>
+                          <div class="field-group">
+                            <textarea readonly unselectable="on" data-tree-desc class="J-treeField field-item inp inp-textarea inp-tree"></textarea>
+                          </div>
+                        </div>
+                        <div class="field-controller field-block tree-btns-field">
+                          <div class="tree-form-btns"><a id="J-treeFormSubmitBtn" class="btn btn-tree-form J-btn"><span>保 存</span></a><a id="J-resetBtn" class="btn btn-tree-form J-btn"><span>取 消</span></a></div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../scripts/lib/autoheight/main.js"></script>
+</html>

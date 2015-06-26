@@ -1,0 +1,42 @@
+extends ../../layout/forget.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/fp.css')
+
+block site-content
+	.fp-main
+		.chunk.fp-content
+			.chunk--hd
+				.chunk-title
+					a.chunk-title--item.chunk-title--txt.chunk-title--item__is-active(href="javascript:;")
+						| 重置密码
+						span.title-hover-bottom-line
+			.chunk--bd
+				.chunk-content
+					.fp-fillin-password
+						.fp-middle-content
+							.fp-form
+								form(method="" action="")
+									.clearfix.fp-form-controller
+										label.controller-label
+											span.required *
+											| 邮箱
+										.controller-inp.J-controllerInp
+											input.inp.inp-fp(type="text" placeholder="请输入您的电子邮箱")
+										.controller-tip.J-controllerTip
+											p.error 
+												i.ico-cuo
+												span.tip-txt 密码输入不一致
+									.clearfix.fp-form-controller
+										label.controller-label
+											span.required *
+											| 验证码
+										.controller-inp.J-controllerInp
+											input.inp.inp-fp(type="text" placeholder="请输入验证码" style="width: 120px;")
+											img.atuocode-img(src="" alt="验证码" height="32" width="64" style="vertical-align: middle; margin-left: 10px;")
+
+									.fp-form-submit
+										input.fp-submit-btn.J-forgetFormSubmitBtn(type='submit' value="提　交")

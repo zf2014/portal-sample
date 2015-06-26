@@ -1,0 +1,190 @@
+
+.role-manage
+	font-size: 1.2em
+	.role-manage-title
+		padding-left: 10px
+		border: 1px solid #cee5fc
+		background-color: #f2f9ff
+		line-height: 32px
+	.role-manage-controllerForm
+		// background-color: #f7f7f7
+		border-color: #dde1e4
+		border-width: 0 1px 1px 1px
+		border-style: solid
+		form
+			.role-manage-info
+				height: 38px
+				padding-left 10px
+				label
+					float: left
+					margin-top: 5px
+					margin-right: 60px
+			.role-manage-selectContainer
+				border-top: 1px solid #dde1e4
+				.select-wrap
+					// height: 410px
+					overflow: hidden
+					padding 20px 5%
+					.left
+					.right
+						width: 35%
+						/.select-area
+							padding 10px 20px 20px
+							// padding-bottom 20px
+							// padding-left 20px
+							// padding-right: 20px
+							border: 1px solid #dde1e4
+							zoom: 1
+							background-color: #e9f5ff
+							.area-hd
+								padding-top: 8px
+								padding-bottom 8px
+								.role-title
+									margin-right: 8px
+									font-weight: 700
+									color #264863
+								.inp-role
+									width: 140px
+									height: 22px
+									line-height @height
+							.area-bd
+								padding-top: 10px
+								padding-bottom 10px
+								border: 1px solid #dde1e4
+								background-color: #fff
+								overflow-y: auto
+					.left
+						float: left
+						// .select-area
+						// 	// height: @height
+						// 	border-right: 1px solid #dde1e4
+						// 	// background-color #fff
+					.right
+						float: right
+						// .select-area
+						// 	// height: @height
+						// 	border-left: 1px solid #dde1e4
+						// 	// background-color #fff
+					.middle
+						float: left
+						width: 30%
+						height: 100%
+						.select-moveRole
+							padding-top 150px
+							a
+								display: block
+								width: 151px
+								height: 27px
+								margin 28px auto
+								background: url(../images/inner/role-arrow.png) no-repeat 0 0
+								text-decoration: none
+								cursor: pointer
+								&.checkedAll
+									background-position: 0 0
+								&.checkedAny
+									background-position: 0 -27px
+								&.deletedAny
+									background-position: 0 -54px
+								&.deletedAll
+									background-position: 0 -81px
+				
+						
+			
+			.role-manage-operation
+				padding-top: 5px
+				padding-bottom: 5px
+				border-top: 1px solid #dde1e4
+				text-align: center
+
+
+
+
+.role-left-menu
+	box-sizing: border-box
+	height: 500px
+	// background-color: #fff
+	// overflow-y: auto
+
+.role-right-menu
+	box-sizing: border-box
+	height: 266px
+	// background-color: #fff
+	// overflow-y: auto
+.role-selectArea-list
+	// padding-top: 10px
+	dl.role-selectArea-category
+		margin: 0
+		height: 30px
+		overflow: hidden
+		dt
+		dd
+			height: 30px
+			line-height @height
+			padding-left 30px
+			cursor: pointer
+		dt
+			font-size: 1.17em
+			// color #666	
+			i
+			span
+				float: left
+			i
+				width: 11px
+				height: 11px
+				margin-left: 5px
+				margin-top: 10px
+				background: url(../images/inner/role-fold.png) no-repeat 0 0
+		dd
+			margin-left: 0
+			padding-left 30px + 10px
+			// color #000
+			i
+			span
+				float: left
+			i
+				display inline-block
+				width: 4px
+				height: 4px
+				background-color: #b7b7b7
+				border-radius: 50%
+				margin-right: 6px
+				margin-top: 14px
+			
+			&.selected
+				background-color: #e9f5ff
+				color #2b2b2b
+				// i
+				// 	background-color: #2b2b2b
+			
+		
+		&.opened
+			height: auto
+			dt
+				// margin-bottom: 5px
+				i
+					background-position: 0 100%	
+
+	&.opposite
+		li
+			display: none
+		dl.role-selectArea-category
+			dd
+				display none
+
+
+// .role-right-user
+// 	padding-top: 10px
+// 	padding-bottom 10px
+.role-user-list
+	height: 180px
+	// overflow-y: auto
+.role-user-item
+	height: 30px
+	line-height @height
+	cursor: pointer
+	/.user-name
+		display: block
+		padding-left 15px
+	/&.selected
+		background-color: #e9f5ff
+		cursor: default

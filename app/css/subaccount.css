@@ -1,0 +1,40 @@
+/**
+ * 文件: .css 
+ * 公司: 浙江电子口岸
+ * 作者: qzzf1987@gmail.com
+ * 时间: 2015-05-25 16:54:36
+ */
+.dialog-subaccount .controller-label {
+  width: 100px;
+}
+.dialog-subaccount .controller-tip {
+  left: 310px;
+}
+.dialog-subaccount .inp-vld {
+  width: 180px;
+}
+.subaccount-roles {
+  font-size: 1.2em;
+}
+.subaccount-roles td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #e0e0e0;
+}
+.subaccount-role {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.subaccount-role label {
+  position: relative;
+  display: block;
+  line-height: 1.6;
+  padding-left: 16px;
+}
+.subaccount-role label input {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  *left: -4px;
+  *top: -4px;
+}

@@ -1,0 +1,84 @@
+extends ../../layout/regist.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/regist.css')
+
+
+block site-content
+	.regist-main
+		.regist-flowbar.flowbar-step2
+		.regist-content
+			.regist-userinfo-fillin
+				.regist-form
+					form(method="" action="")
+						.clearfix.regist-form-controller
+							label.controller-label
+								| 注册邮箱
+							.controller-txt
+								span.txt-email xuyj@zjport.gov.cn
+
+						.clearfix.regist-form-controller
+							label.controller-label
+								span.required *
+								| 用户名
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="text" placeholder="请输入登录用户名" data-required="true" data-rangelength="[2,20]" data-regexp="^[a-zA-Z][a-zA-Z0-9_]*$")
+
+							.controller-tip.J-controllerTip
+								p.hint
+									span.tip-txt 请输入6位以上数字、字母或标点符号
+
+						.clearfix.regist-form-controller
+							label.controller-label
+								span.required *
+								| 密码
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="password" placeholder="请输入登录密码")
+
+							.controller-tip.J-controllerTip
+								p.error 
+									i.ico-cuo
+									span.tip-txt 密码输入不一致
+
+						.clearfix.regist-form-controller
+							label.controller-label
+								span.required *
+								| 确认密码
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="password" placeholder="请输入登录密码")
+
+							.controller-tip.J-controllerTip
+								p.success
+									i.ico-dui
+						
+						.clearfix.regist-form-controller
+							label.controller-label
+								span.required *
+								| 企业名称
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="text" placeholder="请输入企业营业执照上的公司名称")
+						
+						.clearfix.regist-form-controller
+							label.controller-label
+								| 企业地址
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="text" placeholder="请输入企业办公所在地址")
+						
+						.clearfix.regist-form-controller
+							label.controller-label
+								| 联系人
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="text" placeholder="请输入企业联系人")
+
+						.clearfix.regist-form-controller
+							label.controller-label
+								| 联系方式
+							.controller-inp.J-controllerInp
+								input.inp.inp-regist(type="text" placeholder="请输入企业联系方式（电话、手机）")
+
+						.regist-form-submit
+							input.regist-submit-btn.J-registFormSubmitBtn(type='submit' value="注　册")
+

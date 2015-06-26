@@ -1,0 +1,93 @@
+
+extends ../../layout/inner-redirect.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/interaction.css')
+
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-interaction")
+
+block others
+	.space.space-t10
+	.redirect-content
+		.interaction-main
+			.interaction-wrap
+				.interaction-chunk
+					.chunk-hd
+						span.interaction-title 问题
+					.chunk-bd
+						.interaction-content
+							p
+								| 通过大家建立的共同平台实现申报数据的收集和反馈，企业仅需要填制一张电子表格吗？
+					.chunk-ft
+						.interaction-ft-info
+							span.name 路人甲
+							span.type 分类：国税-出口退税
+							span.time 2014-11-1
+
+				.interaction-chunk.chunk-audit
+					.chunk-hd
+						span.interaction-title 回答
+					.chunk-bd
+						.interaction-content
+							p
+								| 通过大家建立的共同平台实现申报数据的收集和反馈，企业仅需要填制一张电子表格吗？
+					.chunk-ft
+						.interaction-ft-info
+							span.name 路人甲
+							span.type
+							span.time 2014-11-1
+				.interaction-chunk.chunk-audit.chunk-audit-fail
+					.chunk-hd
+						span.interaction-title 回答
+					.chunk-bd
+						.interaction-content
+							p
+								| 审核不通过
+					.chunk-ft
+						.interaction-ft-info
+							span.name 路人甲
+							span.type
+							span.time 2014-11-1
+				.interaction-chunk.chunk-audit
+					.chunk-hd
+						span.interaction-title 回答
+					.chunk-bd
+						.interaction-content
+							p
+								| 通过大家建立的共同平台实现申报数据的收集和反馈，企业仅需要填制一张电子表格吗？
+					.chunk-ft
+						.interaction-ft-info
+							span.name 路人甲
+							span.type
+							span.time 2014-11-1	
+				.interaction-chunk.chunk-audit
+					.chunk-hd
+						span.interaction-title 审核
+					.chunk-bd
+						.interaction-audit
+							.audit-status-select
+								select.inp-select#J-auditSelect
+									option(data-target="#J-auditPassContent") 审核通过
+									option(data-target="#J-auditFailContent") 审核不通过
+							.audit-relative
+								.audit-relative-content.audit-pass#J-auditPassContent
+									label
+										input.inp-radio(type="radio" name="sn1")
+										| 首页显示
+									label
+										input.inp-radio(type="radio" name="sn1")
+										| 不显示
+
+								.audit-relative-content.audit-fail#J-auditFailContent
+									input.inp(type="text" placeholder="请输入审核不通过的意见")
+
+
+
+				.interaction-chunk.chunk-oper
+					.chunk-bd
+						.redirect-operation.interaction-operation
+							a.btn.btn-interation.J-btn
+								span 保 存
+							a.btn.btn-interation.J-btn#J-resetBtn
+								span 取 消

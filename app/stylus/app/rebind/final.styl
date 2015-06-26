@@ -1,0 +1,55 @@
+.rebind-final
+	margin-top: 110px
+	.rebind-middle-content
+		position: relative
+		width: 270px
+		margin: 0 auto
+		// text-align: center
+.error-doll
+	position: absolute
+	left -($ico_sprite_doll[4])
+	top -15px
+	sprite($ico_sprite_doll);
+	margin-left: -30px
+	z-index: 2
+.error-txt
+	margin-bottom: 22px
+	font-size: 1.6em
+	line-height 2.2		
+
+.success-doll
+	position: absolute
+	left -($ico_sprite_doll_ok[4])
+	top -15px
+	sprite($ico_sprite_doll_ok);
+	margin-left: -30px
+	z-index: 2
+.success-txt
+	margin-bottom: 22px
+	font-size: 1.6em
+	line-height 2.2
+	.ico-right	
+		display: inline-block
+		sprite($ico_sprite_right);
+
+
+
+
+
+.final-loginbtn
+	display: inline-block
+	width: 170px
+	height: 38px
+	background: $gportalSiteColor
+	color #fff
+	line-height: @height - 1
+	font-size: 1.4em
+	font-weight: 700
+	text-align: center
+	&:hover
+		color @color
+		text-decoration: none
+		background: @background + 5%
+	
+	
+

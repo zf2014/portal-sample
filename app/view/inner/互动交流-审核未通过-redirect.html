@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="../../css/inner.css">
+    <link rel="stylesheet" href="../../css/redirect.css">
+    <link rel="stylesheet" href="../../css/interaction.css">
+    <script src="../../scripts/lib/requirejs-config/inner.js"></script>
+    <script src="../../scripts/lib/requirejs/require.js" data-main="app/inner/main-interaction"></script>
+  </head>
+  <body>
+    <div id="main-page">
+      <div class="manage-content">
+        <div class="crumbs">
+          <div class="crumbs-content">
+            <div class="crumbs-title"><span>当前位置：</span></div>
+            <div class="crumbs-list"><a href="#" class="crumbs-item">资讯管理</a><span class="crumbs-item crumbs-item__is-divider">&gt;</span><a class="crumbs-item crumbs-item__is-last">资讯发布</a></div>
+          </div>
+        </div>
+        <div class="space space-t10"></div>
+        <div class="redirect-content">
+          <div class="interaction-main">
+            <div class="interaction-wrap">
+              <div class="interaction-chunk">
+                <div class="chunk-hd"><span class="interaction-title">问题</span></div>
+                <div class="chunk-bd">
+                  <div class="interaction-content">
+                    <p>通过大家建立的共同平台实现申报数据的收集和反馈，企业仅需要填制一张电子表格吗？</p>
+                  </div>
+                </div>
+                <div class="chunk-ft">
+                  <div class="interaction-ft-info"><span class="name">路人甲</span><span class="type">分类：国税-出口退税</span><span class="time">2014-11-1</span></div>
+                </div>
+              </div>
+              <div class="interaction-chunk chunk-audit">
+                <div class="chunk-hd"><span class="interaction-title">回答</span></div>
+                <div class="chunk-bd">
+                  <div class="interaction-content">
+                    <p>通过大家建立的共同平台实现申报数据的收集和反馈，企业仅需要填制一张电子表格吗？</p>
+                  </div>
+                </div>
+                <div class="chunk-ft">
+                  <div class="interaction-ft-info"><span class="name">路人甲</span><span class="type"></span><span class="time">2014-11-1</span></div>
+                </div>
+              </div>
+              <div class="interaction-chunk chunk-audit chunk-audit-fail">
+                <div class="chunk-hd"><span class="interaction-title">回答</span></div>
+                <div class="chunk-bd">
+                  <div class="interaction-content">
+                    <p>审核不通过</p>
+                  </div>
+                </div>
+                <div class="chunk-ft">
+                  <div class="interaction-ft-info"><span class="name">路人甲</span><span class="type"></span><span class="time">2014-11-1</span></div>
+                </div>
+              </div>
+              <div class="interaction-chunk chunk-audit">
+                <div class="chunk-hd"><span class="interaction-title">回答</span></div>
+                <div class="chunk-bd">
+                  <div class="interaction-content">
+                    <p>通过大家建立的共同平台实现申报数据的收集和反馈，企业仅需要填制一张电子表格吗？</p>
+                  </div>
+                </div>
+                <div class="chunk-ft">
+                  <div class="interaction-ft-info"><span class="name">路人甲</span><span class="type"></span><span class="time">2014-11-1	</span></div>
+                </div>
+              </div>
+              <div class="interaction-chunk chunk-audit">
+                <div class="chunk-hd"><span class="interaction-title">审核</span></div>
+                <div class="chunk-bd">
+                  <div class="interaction-audit">
+                    <div class="audit-status-select">
+                      <select id="J-auditSelect" class="inp-select">
+                        <option data-target="#J-auditPassContent">审核通过</option>
+                        <option data-target="#J-auditFailContent">审核不通过</option>
+                      </select>
+                    </div>
+                    <div class="audit-relative">
+                      <div id="J-auditPassContent" class="audit-relative-content audit-pass">
+                        <label>
+                          <input type="radio" name="sn1" class="inp-radio">首页显示
+                        </label>
+                        <label>
+                          <input type="radio" name="sn1" class="inp-radio">不显示
+                        </label>
+                      </div>
+                      <div id="J-auditFailContent" class="audit-relative-content audit-fail">
+                        <input type="text" placeholder="请输入审核不通过的意见" class="inp">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="interaction-chunk chunk-oper">
+                <div class="chunk-bd">
+                  <div class="redirect-operation interaction-operation"><a class="btn btn-interation J-btn"><span>保 存</span></a><a id="J-resetBtn" class="btn btn-interation J-btn"><span>取 消</span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../scripts/lib/autoheight/main.js"></script>
+</html>

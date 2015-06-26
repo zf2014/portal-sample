@@ -1,0 +1,166 @@
+/**
+ * 文件: .css 
+ * 公司: 浙江电子口岸
+ * 作者: qzzf1987@gmail.com
+ * 时间: 2015-04-20 15:49:58
+ */
+.interaction-main {
+  padding: 25px 35px;
+  border: 1px solid #dedede;
+}
+.interaction-wrap {
+  min-height: 500px;
+}
+.interaction-chunk {
+  width: 460px;
+}
+.chunk-editor {
+  margin-top: 20px;
+}
+.chunk-audit {
+  margin-top: 20px;
+}
+.chunk-oper {
+  margin-top: 30px;
+}
+.interaction-chunk .chunk-hd {
+  position: relative;
+}
+.interaction-title {
+  font-size: 1.4em;
+  color: #0567b4;
+  font-weight: 700;
+}
+.chunk-audit-fail .interaction-title {
+  color: #f14703;
+}
+.interaction-hd-time {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2em;
+  color: #9a9a9a;
+}
+.interaction-hd-time .time {
+  margin-left: 18px;
+}
+.interaction-chunk .chunk-bd {
+  margin-top: 8px;
+}
+.interaction-content {
+  padding: 10px 12px;
+  border: 1px solid #cce4f7;
+  background-color: #e9f5ff;
+  line-height: 1.5;
+  color: #1b1b1b;
+}
+.interaction-content p {
+  font-size: 1.2em;
+}
+.interaction-content h2 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+  color: #555;
+}
+.chunk-audit-fail .interaction-content {
+  background-color: #f7f7f7;
+  border-color: #e2e1e1;
+}
+.interaction-type {
+  font-size: 1.2em;
+  margin-right: 50px;
+}
+.interaction-textarea {
+  font-size: 1.2em;
+}
+.interaction-audit {
+  font-size: 1.2em;
+  overflow: hidden;
+}
+.audit-status-select {
+  float: left;
+}
+.audit-relative {
+  float: left;
+  margin-left: 15px;
+}
+.audit-relative-content {
+  display: none;
+}
+.audit-pass {
+  padding-top: 6px;
+}
+.audit-pass label {
+  margin-right: 12px;
+}
+.audit-fail input {
+  border-color: #e5e4e4;
+  width: 250px;
+}
+.interaction-chunk .chunk-ft {
+  margin-top: 8px;
+}
+.interaction-ft-info {
+  overflow: hidden;
+  font-size: 1.2em;
+  color: #9a9a9a;
+}
+.interaction-ft-info span {
+  float: left;
+  width: 30%;
+  min-height: 1px;
+}
+.interaction-ft-info span.time {
+  width: 40%;
+  text-align: right;
+}
+.interaction-operation {
+  border: 0;
+}
+.btn-interation {
+  padding-right: 25px;
+  padding-left: 25px;
+  height: 28px;
+  line-height: 28px;
+}
+.modal-delete-interaction {
+  margin-left: -230px;
+  margin-top: -81px;
+}
+.interaction-delete-layer {
+  width: 460px;
+  height: 162px;
+  background: #f7f7f7;
+}
+.interaction-delete-layer .layer-wrap {
+  padding: 16px 15px 0;
+}
+.interaction-delete-layer .delete-title {
+  font-size: 1.4em;
+  color: #0567b4;
+  font-weight: 700;
+}
+.interaction-delete-layer .delete-reason {
+  padding: 4px 4px 0;
+  border: 1px solid #dadada;
+  margin-top: 8px;
+  background: #fff;
+  font-size: 1.2em;
+}
+.interaction-delete-layer .delete-reason textarea {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  line-height: 1.5;
+  height: 4.5em;
+}
+.interaction-delete-layer .delete-btns {
+  margin-top: 14px;
+  text-align: center;
+}
+.interaction-delete-layer .delete-btns a {
+  margin: 0 3px;
+}

@@ -1,0 +1,274 @@
+.result
+    .result-title
+        span 菜单权限
+    .result-content
+        .role-manage
+            .role-manage-controllerForm
+                form
+                    //- .role-manage-info
+                        label 角色名称：
+                            input.inp_text
+                        label 所属关区：
+                            select.inp_select
+                                option 请选择关区
+                                option 杭州海关
+                                option 温州海关
+
+                    .role-manage-selectContainer
+                        .select-wrap
+                            .left
+                                .select-area
+                                    .area-box
+                                        .area-hd
+                                            span.role-title 全部菜单
+                                            input.inp.inp-role
+                                        .area-bd
+                                            .role-left-menu
+                                                ul.role-selectArea-list#J-roleManage-backup
+                                                    li#J-backup-1
+                                                        dl.role-selectArea-category(data-cid="1")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警A
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                    li#J-backup-2
+                                                        dl.role-selectArea-category(data-cid="2")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警B
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                            dd.J-roleManage-item(data-iid="f")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                    li#J-backup-3
+                                                        dl.role-selectArea-category(data-cid="3")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警C
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                    li#J-backup-4
+                                                        dl.role-selectArea-category(data-cid="4")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警D
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                    li#J-backup-5
+                                                        dl.role-selectArea-category(data-cid="5")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警E
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                    
+                            .middle
+                                .select-moveRole
+                                    a.checkedAll(href="javascript:;")#J-checkedAllBtn
+                                    a.checkedAny.disable(href="javascript:;")#J-checkedAnyBtn
+                                    a.deletedAny.disable(href="javascript:;")#J-deletedAnyBtn
+                                    a.deletedAll(href="javascript:;")#J-deletedAllBtn
+                            .right
+                                .select-area
+                                    .area-box
+                                        .area-hd
+                                            span.role-title 选择用户
+                                            input.inp.inp-role
+                                        .area-bd
+                                            .role-right-user
+                                                ul.role-user-list
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称1
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称2
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称3
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称2
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称3
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称2
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称3
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称2
+                                                    li.role-user-item.J-roleUser-item
+                                                        span.user-name 用户名称3
+
+                                    .select-box
+                                        .area-hd
+                                            span.role-title 所选用户已拥有的功能
+                                        .area-bd
+                                            .role-right-menu
+                                                ul.role-selectArea-list.opposite#J-roleManage-decided
+                                                    li#J-decided-1
+                                                        dl.role-selectArea-category.opened(data-cid="1")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警A
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                    li#J-decided-2
+                                                        dl.role-selectArea-category.opened(data-cid="2")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警B
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                            dd.J-roleManage-item(data-iid="f")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                    li#J-decided-3
+                                                        dl.role-selectArea-category.opened(data-cid="3")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警C
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                    li#J-decided-4
+                                                        dl.role-selectArea-category.opened(data-cid="4")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警D
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询
+                                                    li#J-decided-5
+                                                        dl.role-selectArea-category.opened(data-cid="5")
+                                                            dt.J-roleManage-category
+                                                                span 风险预警E
+                                                                i
+                                                            dd.J-roleManage-item(data-iid="a")
+                                                                i
+                                                                span 短信通知
+                                                            dd.J-roleManage-item(data-iid="b")
+                                                                i
+                                                                span 国际中转箱风险预警
+                                                            dd.J-roleManage-item(data-iid="c")
+                                                                i
+                                                                span 风险预警处置查询
+                                                            dd.J-roleManage-item(data-iid="d")
+                                                                i
+                                                                span 转关运输工具备案预警
+                                                            dd.J-roleManage-item(data-iid="e")
+                                                                i
+                                                                span 风险预警查询

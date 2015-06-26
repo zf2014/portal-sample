@@ -1,0 +1,25 @@
+extends ../../layout/rebind.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/rebind.css')
+
+block site-content
+	.rebind-main
+		.chunk.rebind-content
+			.chunk--hd
+				.chunk-title
+					a.chunk-title--item.chunk-title--txt.chunk-title--item__is-active(href="javascript:;")
+						| 改绑邮箱
+						span.title-hover-bottom-line
+			.chunk--bd
+				.chunk-content
+					.rebind-final
+						.rebind-middle-content
+							i.success-doll
+							p.success-txt
+								i.ico-right
+								span.txt 改绑邮箱成功！
+							a.final-loginbtn(href="#") 返回首页

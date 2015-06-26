@@ -1,0 +1,57 @@
+include ../variable/global.jade
+- var rootDir = '..'
+- var cssRoot  = rootDir + '/css'
+- var jsRoot   = rootDir + '/scripts'
+- var imgRoot  = rootDir + '/images'
+- var htmlRoot = rootDir + '/view'
+
+//- - var navIndex = 0
+
+doctype html
+html
+	head
+		meta(charset = 'utf-8')
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		block head-title
+			title 网站标题
+		link(rel = 'shortcut icon', type = 'image/x-icon', href = '#{rootDir}/favicon.ico')
+		block head-theme
+			link(rel = 'stylesheet' href = '#{cssRoot}/outer.css')
+			//- // build:css css/base.css
+			//- link(rel = 'stylesheet' href = '#{bowerComponentsDir}/normalize.css/normalize.css')
+			//- link(rel = 'stylesheet' href = '#{cssRoot}/reset.css')
+			//- link(rel = 'stylesheet' href = '#{cssRoot}/common.css')
+			//- // endbuild
+		block head-script
+			script.
+				var global = {
+					asideId: -1
+				}
+			script(src = '#{jsRoot}/lib/requirejs-config/outer.js')
+		block head-requirejs-script
+			//- script.
+				//- require.baseUrl = '..' + require.baseUrl;
+				//- require.paths.outer = '../app/outer/module';
+			script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/outer/main")
+	body
+		#main-page
+			#site-header
+				.site-header-container
+					block site-header
+						include ../app/outer/site-logo.jade
+						include ../app/outer/site-userinfo.jade
+			#site-content
+				.main-content-container
+					block site-main
+						block site-left
+							.content-left
+								include ../app/outer/site-nav.jade
+						block site-right
+							.content-right
+								block site-content
+
+			#site-footer
+				block site-footer
+					include ../app/outer/site-footer.jade
+					
+	block floor-script

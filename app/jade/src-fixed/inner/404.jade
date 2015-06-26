@@ -1,0 +1,26 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/error.css')
+block head-script
+block head-requirejs-script
+block crumbs
+block search
+block result
+	.error.error404
+		.error-container
+			.error-result
+				.error-result-content
+					.error-result-txt
+						| 抱歉，找不到您要的页面！
+			.error-divider
+			.error-reason
+				dl.error-reason-list
+					dt 您可以：
+					dd
+						a.reason-linker(href="#") 返回首页
+						| 继续访问本网站。
+					dd
+						| 联系客服
+						span.reason-hotline 0571-967209
+						| 寻求帮助
+

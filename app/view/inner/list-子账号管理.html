@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="../../css/inner.css">
+    <script src="../../scripts/lib/requirejs-config/inner.js"></script>
+    <script src="../../scripts/lib/calendar/WdatePicker.js"></script>
+    <script src="../../scripts/lib/requirejs/require.js" data-main="app/inner/sub-account"></script>
+  </head>
+  <body>
+    <div id="main-page">
+      <div class="manage-content">
+        <div class="crumbs">
+          <div class="crumbs-content">
+            <div class="crumbs-title"><span>当前位置：</span></div>
+            <div class="crumbs-list"><a href="#" class="crumbs-item">资讯管理</a><span class="crumbs-item crumbs-item__is-divider">&gt;</span><a class="crumbs-item crumbs-item__is-last">资讯发布</a></div>
+          </div>
+        </div>
+        <div class="space space-t10"></div>
+        <div id="J-searchContainer" class="search search__is-simple">
+          <div class="search-container">
+            <div class="search-more"><a id="J-moreSearch" class="btn J-btn btn-search-more"><i></i><span>更 多</span></a></div>
+            <from method="post">
+              <div class="search-fieldset">
+                <div class="field-controller">
+                  <label class="field-label"><span>车牌号</span></label>
+                  <div class="field-group">
+                    <input type="text" class="field-item inp inp-search">
+                  </div>
+                </div>
+                <div class="field-controller">
+                  <label class="field-label"><span>车牌号</span></label>
+                  <div class="field-group">
+                    <input type="text" class="field-item inp inp-search">
+                  </div>
+                </div>
+                <div class="field-controller">
+                  <label class="field-label"><span>发车日期</span></label>
+                  <div class="field-group field-group-timerange">
+                    <input type="text" onclick="WdatePicker()" class="field-item inp inp-search inp-time Wdate"><span class="field-item timerange-to">至</span>
+                    <input type="text" onclick="WdatePicker()" class="field-item inp inp-search inp-time Wdate">
+                  </div>
+                </div>
+                <div class="field-controller">
+                  <label class="field-label"><span>车牌号</span></label>
+                  <div class="field-group">
+                    <input type="text" class="field-item inp inp-search">
+                  </div>
+                </div>
+                <div class="field-controller">
+                  <label class="field-label"><span>车牌号</span></label>
+                  <div class="field-group">
+                    <input type="text" class="field-item inp inp-search">
+                  </div>
+                </div>
+                <div class="field-controller">
+                  <label class="field-label"><span>发车日期</span></label>
+                  <div class="field-group field-group-timerange">
+                    <input type="text" onclick="WdatePicker()" class="field-item inp inp-search inp-time Wdate"><span class="field-item timerange-to">至</span>
+                    <input type="text" onclick="WdatePicker()" class="field-item inp inp-search inp-time Wdate">
+                  </div>
+                </div>
+                <div class="field-controller">
+                  <label class="field-label"><span>车牌号</span></label>
+                  <div class="field-group">
+                    <input type="text" class="field-item inp inp-search">
+                  </div>
+                </div>
+              </div>
+              <div class="search-operation"><a class="btn J-btn btn-search"><span>查 询</span></a><a class="btn J-btn btn-search"><span>重 置</span></a></div>
+            </from>
+          </div>
+        </div>
+        <div class="space space-t10"></div>
+        <div class="result">
+          <div class="result-operations"><a id="J-addDialogBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe601;</i><span>新 增</span></a><a id="J-updateDialogBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe600;</i><span>修 改</span></a><a id="J-roleDialogBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe609;</i><span>授 权</span></a>
+          </div>
+          <div class="space space-t5"></div>
+          <div class="result-title"><span>综试区简介</span></div>
+          <div class="result-list">
+            <table class="result-table">
+              <colgroup>
+                <col class="col-checkbox">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" class="inp-checkbox J-checkbox-all">
+                  </th>
+                  <th class="cel-left"><span>发车日期</span></th>
+                  <th class="cel-right"><span>发车网点 </span></th>
+                  <th><span>到货网点</span></th>
+                  <th><span>车牌号</span></th>
+                  <th><span>装车单号</span></th>
+                  <th><span>司机</span></th>
+                  <th><span>司机电话</span></th>
+                  <th><span>车费付款方式</span></th>
+                  <th><span>备注</span></th>
+                </tr>
+              </thead>
+              <tbody class="J-resultContainer">
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" disabled class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr>
+                  <td class="cel-center">
+                    <input type="checkbox" class="inp-checkbox J-checkbox-one">
+                  </td>
+                  <td class="cel-left"><span>左对齐</span></td>
+                  <td class="cel-right"><span>右对齐</span></td>
+                  <td class="cel-center"><span>杭州</span></td>
+                  <td class="cel-center"><span>浙A 04572</span></td>
+                  <td class="cel-center"><span>2817320001</span></td>
+                  <td class="cel-center"><span>张三</span></td>
+                  <td class="cel-center"><span>13554385058</span></td>
+                  <td class="cel-center"><span>到付</span></td>
+                  <td class="cel-center"><span> </span></td>
+                </tr>
+                <tr class="tr__is-page">
+                  <td colspan="10" class="cel-page">
+                    <div class="result-page">
+                      <div class="page page_flat page_right">
+                        <form><span class="pagination"><a class="pagination-mark pagination-mark_link pagination-mark_prev">上一页</a><a class="pagination-mark pagination-mark_link">1</a><span class="pagination-mark pagination-mark_current">2</span><a class="pagination-mark pagination-mark_link">3</a><span class="pagination-mark pagination-mark_elipses">...</span><a class="pagination-mark pagination-mark_link">100</a><span class="pagination-mark pagination-mark_link pagination-mark_next">下一页</span></span><span class="pageinfo"><span class="page-text">共10页</span></span><span class="pageskip"><span class="page-text">到第</span>
+                            <input value="0" class="pageskip-input"/><span class="page-text">页</span><a href="javascript:;" class="pageskip-btn">确认</a></span></form>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../scripts/lib/autoheight/main.js"></script>
+</html>

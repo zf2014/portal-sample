@@ -1,0 +1,17 @@
+extends ../../layout/inner.jade
+block head-requirejs-script
+	script.
+		var zNodes =
+			[
+				{ name:"基础资料1", isParent: true, id:1},
+				{ name:"基础资料2", isParent: true, id:2},
+				{ name:"基础资料3", isParent: true, id:3},
+				{ name:"基础资料4", isParent: true, id:4},
+				{ name:"基础资料5", isParent: true, id:103}
+			]
+		;
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-tree2")
+block search
+block result
+	.space.space-t10
+	include ../../app/inner/result-tree2.jade

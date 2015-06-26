@@ -1,0 +1,51 @@
+$affixHeight = 35px
+
+.affix
+	overflow: hidden
+	
+	/.affix-placeholder
+		height $affixHeight
+		width 1px
+		/.controller-inp &
+			height: 20px
+
+	/.affix-file-btn
+		float: left
+		// position: absolute
+		// left 100%
+		// top -1px
+		width: 92px
+		height: $affixHeight
+		border: 1px solid #0b87e9
+		border-radius: 3px
+		// margin-left: 10px
+		// background-color: #e5e5e5
+		overflow: hidden
+		cursor: pointer
+		color #0b63a9
+		&:hover
+			background-color: #0b87e9
+			color #fff
+		/.affix-file-txt
+			position: relative
+			display: block
+			text-align: center
+			line-height: @height
+			z-index: 1
+		
+		input
+			position: absolute
+			height: 100%
+			width: 100%
+			top 0
+			left 0
+			z-index: 2
+			$mx_opacity(0)
+
+	/.affix-file-support
+		float: left
+		margin-left: 8px
+		height $affixHeight
+		color #757272
+		font-size: 12px
+		line-height @height

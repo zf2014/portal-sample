@@ -1,0 +1,58 @@
+.search.search__is-simple#J-searchContainer
+	.search-container
+		.search-more
+			a.btn.J-btn.btn-search-more#J-moreSearch
+				i
+				span 更 多
+		from(method="post")
+			.search-fieldset
+				.field-controller
+					label.field-label
+						span 车牌号
+					.field-group
+						input.field-item.inp.inp-search(type="text")
+				.field-controller
+					label.field-label
+						span 车牌号
+					.field-group
+						input.field-item.inp.inp-search(type="text")
+
+				.field-controller
+					label.field-label
+						span 发车日期
+					.field-group.field-group-timerange
+						input.field-item.inp.inp-search.inp-time.Wdate(type="text" onclick="WdatePicker()")
+						span.field-item.timerange-to 至
+						input.field-item.inp.inp-search.inp-time.Wdate(type="text" onclick="WdatePicker()")
+
+				.field-controller
+					label.field-label
+						span 车牌号
+					.field-group
+						input.field-item.inp.inp-search(type="text")
+
+				.field-controller
+					label.field-label
+						span 车牌号
+					.field-group
+						input.field-item.inp.inp-search(type="text")
+
+				.field-controller
+					label.field-label
+						span 发车日期
+					.field-group.field-group-timerange
+						input.field-item.inp.inp-search.inp-time.Wdate(type="text" onclick="WdatePicker()")
+						span.field-item.timerange-to 至
+						input.field-item.inp.inp-search.inp-time.Wdate(type="text" onclick="WdatePicker()")
+
+				.field-controller
+					label.field-label
+						span 车牌号
+					.field-group
+						input.field-item.inp.inp-search(type="text")
+
+			.search-operation
+				a.btn.J-btn.btn-search
+					span 查 询
+				a.btn.J-btn.btn-search
+					span 重 置

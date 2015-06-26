@@ -1,0 +1,84 @@
+.result
+
+	//- .result-operations
+	//- 	a#J-addDialogTest.btn.btn-result.J-btn
+	//- 		i.ico-font.btn-result-ico &#xe601;
+	//- 		span 新 增
+	//- 	a#J-updateDialogTest.btn.btn-result.J-btn
+	//- 		i.ico-font.btn-result-ico &#xe600;
+	//- 		span 修 改
+	//- 	a#J-deleteDialogTest.btn.btn-result.J-btn
+	//- 		i.ico-font.btn-result-ico &#xe603;
+	//- 		span 删 除
+	//- .space.space-t5
+	.result-title
+		span 综试区简介
+
+	.result-content
+		.result-tree
+			.tree-left
+				.tree-left-content
+					.tree-container
+						ul#J-treeMainContent.ztree
+
+
+			.tree-right
+				.tree-right-content
+					.result-operations.tree-operations
+						a#J-addTreeBtn.btn.btn-result.J-btn
+							i.ico-font.btn-result-ico &#xe601;
+							span 新 增
+						a#J-updateTreeBtn.btn.btn-result.J-btn
+							i.ico-font.btn-result-ico &#xe600;
+							span 修 改
+						a#J-deleteTreeBtn.btn.btn-result.J-btn
+							i.ico-font.btn-result-ico &#xe603;
+							span 删 除
+
+					.space.space-t5
+					.tree-caption
+						span#J-tree-captionText 标准规范
+					.tree-form
+						form#J-treeEditForm(method="post")
+							.tree-fieldset
+								.field-controller.field-block
+									label.field-label
+										span 名称
+									.field-group
+										input.J-treeField.field-item.inp.inp-tree(type="text" readonly unselectable="on" data-tree-name)
+
+								.field-controller.field-block
+									label.field-label
+										span 代码
+									.field-group
+										input.J-treeField.field-item.inp.inp-tree(type="text" readonly unselectable="on" data-tree-code)
+
+								.field-controller.field-block
+									label.field-label
+										span 状态
+									.field-group
+										input.J-treeField.field-item.inp.inp-tree(type="text" readonly unselectable="on" data-tree-status)
+
+								//- .field-controller.field-block
+								//- 	label.field-label
+								//- 		span 类型
+								//- 	.field-group
+								//- 		select.J-treeField.field-item.inp.inp-select(readonly unselectable="on" data-tree-type)
+								//- 			option(value="0") 全部
+								//- 			option(value="1") 类型1
+								//- 			option(value="2") 类型2
+								.field-controller.field-block.tree-desc-field
+									label.field-label
+										span 描述
+									.field-group
+										textarea.J-treeField.field-item.inp.inp-textarea.inp-tree(readonly unselectable="on" data-tree-desc)
+
+
+								.field-controller.field-block.tree-btns-field
+										.tree-form-btns
+											a.btn.btn-tree-form.J-btn#J-treeFormSubmitBtn
+												span 保 存
+											a.btn.btn-tree-form.J-btn#J-resetBtn
+												span 取 消
+										
+

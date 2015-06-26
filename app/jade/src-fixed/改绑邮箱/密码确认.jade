@@ -1,0 +1,37 @@
+extends ../../layout/rebind.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/rebind.css')
+
+block site-content
+	.rebind-main
+		.chunk.rebind-content
+			.chunk--hd
+				.chunk-title
+					a.chunk-title--item.chunk-title--txt.chunk-title--item__is-active(href="javascript:;")
+						| 改绑邮箱
+						span.title-hover-bottom-line
+			.chunk--bd
+				.chunk-content
+					.rebind-email
+						.rebind-middle-content
+							p.email-send
+								| 您的新邮箱是 
+								strong 704337589@qq.com
+							p.email-period
+								| 为了您的账号安全，请确认您的密码，只差一步，改绑邮箱就成功了！
+
+							.verify-password
+								form(method="" action="")
+									.clearfix.rebind-form-controller
+										label.controller-label
+											//- span.required *
+											| 密码
+										.controller-inp.J-controllerInp
+											input.inp.inp-fp(type="password" placeholder="请输入您的密码" data-required="true")
+
+									.rebind-form-submit
+										input.rebind-submit-btn.J-rebindFormSubmitBtn(type='submit' value="确 认")

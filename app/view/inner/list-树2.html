@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="../../css/inner.css">
+    <script src="../../scripts/lib/requirejs-config/inner.js"></script>
+    <script>
+      var zNodes =
+      	[
+      		{ name:"基础资料1", isParent: true, id:1},
+      		{ name:"基础资料2", isParent: true, id:2},
+      		{ name:"基础资料3", isParent: true, id:3},
+      		{ name:"基础资料4", isParent: true, id:4},
+      		{ name:"基础资料5", isParent: true, id:103}
+      	]
+      ;
+    </script>
+    <script src="../../scripts/lib/requirejs/require.js" data-main="app/inner/main-tree2"></script>
+  </head>
+  <body>
+    <div id="main-page">
+      <div class="manage-content">
+        <div class="crumbs">
+          <div class="crumbs-content">
+            <div class="crumbs-title"><span>当前位置：</span></div>
+            <div class="crumbs-list"><a href="#" class="crumbs-item">资讯管理</a><span class="crumbs-item crumbs-item__is-divider">&gt;</span><a class="crumbs-item crumbs-item__is-last">资讯发布</a></div>
+          </div>
+        </div>
+        <div class="space space-t10"></div>
+        <div class="result">
+          <div class="result-title"><span>综试区简介</span></div>
+          <div class="result-content">
+            <div class="result-tree">
+              <div class="tree-left">
+                <div class="tree-left-content">
+                  <div class="tree-container">
+                    <ul id="J-treeMainContent" class="ztree"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tree-right">
+                <div class="tree-right-content">
+                  <div class="result-operations tree-operations"><a id="J-addTreeBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe601;</i><span>新 增</span></a><a id="J-updateTreeBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe600;</i><span>修 改</span></a><a id="J-deleteTreeBtn" class="btn btn-result J-btn"><i class="ico-font btn-result-ico">&#xe603;</i><span>删 除</span></a></div>
+                  <div class="space space-t5"></div>
+                  <div class="tree-caption"><span id="J-tree-captionText">标准规范</span></div>
+                  <div class="tree-form">
+                    <form id="J-treeEditForm" method="post" action="/admin/channel/index!create.jspa">
+                      <input type="hidden" name="channelVo.id" class="J-treeField">
+                      <input type="hidden" name="channelVo.parentId" class="J-treeField">
+                      <div class="tree-fieldset">
+                        <div class="field-controller field-block">
+                          <label class="field-label"><span>名称</span></label>
+                          <div class="field-group">
+                            <input type="text" readonly name="channelVo.name" class="J-treeField field-item inp inp-tree">
+                          </div>
+                        </div>
+                        <div class="field-controller field-block">
+                          <label class="field-label"><span>代码</span></label>
+                          <div class="field-group">
+                            <input type="text" readonly name="channelVo.code" class="J-treeField field-item inp inp-tree">
+                          </div>
+                          <div class="field-hint"><span>说明文字</span></div>
+                        </div>
+                        <div class="field-controller field-block">
+                          <label class="field-label"><span>类型</span></label>
+                          <div class="field-group">
+                            <input type="text" readonly name="channelVo.type" class="J-treeField field-item inp inp-tree">
+                          </div>
+                        </div>
+                        <div class="field-controller field-block tree-desc-field">
+                          <label class="field-label"><span>描述</span></label>
+                          <div class="field-group">
+                            <textarea readonly name="channelVo.description" class="J-treeField field-item inp inp-textarea inp-tree"></textarea>
+                          </div>
+                        </div>
+                        <div class="field-controller field-block tree-btns-field">
+                          <div class="tree-form-btns"><a id="J-treeFormSubmitBtn" class="btn btn-tree-form J-btn"><span>保 存</span></a><a id="J-resetBtn" class="btn btn-tree-form J-btn"><span>重 置</span></a></div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../scripts/lib/autoheight/main.js"></script>
+</html>

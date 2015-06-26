@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="../../css/inner.css">
+    <link rel="stylesheet" href="../../css/vld.css">
+    <script src="../../scripts/lib/requirejs-config/inner.js"></script>
+    <script src="../../scripts/lib/requirejs/require.js" data-main="app/inner/main-edit"></script>
+  </head>
+  <body>
+    <div id="main-page">
+      <div class="manage-content">
+        <div class="crumbs">
+          <div class="crumbs-content">
+            <div class="crumbs-title"><span>当前位置：</span></div>
+            <div class="crumbs-list"><a href="#" class="crumbs-item">资讯管理</a><span class="crumbs-item crumbs-item__is-divider">&gt;</span><a class="crumbs-item crumbs-item__is-last">资讯发布</a></div>
+          </div>
+        </div>
+        <div class="space space-t10"></div>
+        <div class="result">
+          <div class="result-title"><span>修改密码</span></div>
+          <div class="result-content">
+            <div class="vld-form">
+              <form method="" action="">
+                <div class="clearfix vld-form-controller">
+                  <label class="controller-label"><span>密码</span>
+                  </label>
+                  <div class="controller-inp J-controllerInp">
+                    <input type="password" data-required="true" data-maxlength="20" class="inp inp-vld">
+                  </div>
+                </div>
+                <div class="clearfix vld-form-controller">
+                  <label class="controller-label"><span>新密码</span>
+                  </label>
+                  <div class="controller-inp J-controllerInp">
+                    <input id="J-vldNewPassword" type="password" data-required="true" data-maxlength="20" class="inp inp-vld">
+                  </div>
+                </div>
+                <div class="clearfix vld-form-controller">
+                  <label class="controller-label"><span>确认新密码</span>
+                  </label>
+                  <div class="controller-inp J-controllerInp">
+                    <input type="password" data-required="true" data-equalto="#J-vldNewPassword" class="inp inp-vld">
+                  </div>
+                </div>
+                <div class="clearfix vld-form-controller">
+                  <label class="controller-label"><span style="line-height: 55px;">企业类型</span>
+                  </label>
+                  <div class="controller-inp J-controllerInp">
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label><br>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label><br>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" class="inp-checkbox"><span>海关</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix vld-form-controller">
+                  <div class="vld-cueword"><span class="cueword-txt">请上传以下三证原件的扫描件</span><span class="cueword-txt obvious-txt">支持jpg、jpeg、bmp、gif格式图片，大小不超过1M </span></div>
+                </div>
+                <div class="clearfix vld-form-controller">
+                  <label class="controller-label"><span>上传文件</span>
+                  </label>
+                  <div class="controller-inp J-controllerInp">
+                    <div id="J-ajaxUploadPlaceholderA" class="affix-placeholder"></div>
+                  </div>
+                </div>
+                <div class="clearfix vld-form-controller">
+                  <label class="controller-label"><span>上传文件</span>
+                  </label>
+                  <div class="controller-inp J-controllerInp">
+                    <div id="J-ajaxUploadPlaceholderB" class="affix-placeholder"></div>
+                  </div>
+                </div>
+                <div class="clearfix vld-form-controller">
+                  <label class="controller-label"><span>上传文件</span>
+                  </label>
+                  <div class="controller-inp J-controllerInp">
+                    <div id="J-ajaxUploadPlaceholderC" class="affix-placeholder"></div>
+                  </div>
+                </div>
+                <div class="vld-form-submit"><a id="J-vldFormSubmitBtn" class="btn J-btn"><span>确 认</span></a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <form style="display:none" target="uploadAjaxFrameA" data-upload-placeholder="#J-ajaxUploadPlaceholderA" class="J-ajaxUploadForm">
+          <div class="affix">
+            <div class="affix-file-btn"><span class="affix-file-txt">上传附件</span>
+              <input id="J-iwantSuggestUploadbtn" type="file" data-support="jpg gif png">
+            </div>
+          </div>
+        </form>
+        <form style="display:none" target="uploadAjaxFrameB" data-upload-placeholder="#J-ajaxUploadPlaceholderB" class="J-ajaxUploadForm">
+          <div class="affix">
+            <div class="affix-file-btn"><span class="affix-file-txt">上传附件</span>
+              <input id="J-iwantSuggestUploadbtn" type="file" data-support="jpg gif png">
+            </div>
+          </div>
+        </form>
+        <form style="display:none" target="uploadAjaxFrameC" data-upload-placeholder="#J-ajaxUploadPlaceholderC" class="J-ajaxUploadForm">
+          <div class="affix">
+            <div class="affix-file-btn"><span class="affix-file-txt">上传附件</span>
+              <input id="J-iwantSuggestUploadbtn" type="file" data-support="jpg gif png">
+            </div>
+          </div>
+        </form>
+        <iframe src="" style="display:none" name="uploadAjaxFrameA"></iframe>
+        <iframe src="" style="display:none" name="uploadAjaxFrameB"></iframe>
+        <iframe src="" style="display:none" name="uploadAjaxFrameC"></iframe>
+      </div>
+    </div>
+  </body>
+  <script src="../../scripts/lib/autoheight/main.js"></script>
+</html>

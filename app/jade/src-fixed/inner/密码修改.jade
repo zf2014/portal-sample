@@ -1,0 +1,40 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/um.css')
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/um")
+block search
+block result
+	.space.space-t10
+	//- include ../../app/inner/result-empty.jade
+	.result
+		.result-title
+			span 修改密码
+		.result-content
+			.um-form
+				form(method="" action="")
+					.clearfix.um-form-controller
+						label.controller-label
+							//- span.required *
+							span 密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-um(type="password" data-required="true" data-maxlength="20")
+					.clearfix.um-form-controller
+						label.controller-label
+							//- span.required *
+							span 新密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-um#J-umNewPassword(type="password" data-required="true" data-maxlength="20")
+
+					.clearfix.um-form-controller
+						label.controller-label
+							//- span.required *
+							span 确认新密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-um(type="password" data-required="true" data-equalto="#J-umNewPassword")
+
+					.um-form-submit
+						a.btn.J-btn#J-umFormSubmitBtn
+							span 确 认
+
+

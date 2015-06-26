@@ -1,0 +1,147 @@
+/**
+ * 文件: .css 
+ * 公司: 浙江电子口岸
+ * 作者: qzzf1987@gmail.com
+ * 时间: 2015-05-15 13:40:47
+ */
+html,
+body,
+div,
+p,
+ul,
+ol,
+dl,
+dt,
+dd,
+form,
+table,
+td,
+th,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+input,
+textarea,
+fieldset,
+legend,
+optgroup,
+button {
+  font-family: 'Microsoft Yahei' !important;
+}
+.breadCrumb {
+  padding-top: 10px;
+  background: none;
+  border-bottom: 1px solid #dedede;
+}
+.cont-wrap {
+  padding: 0;
+  margin-top: 10px;
+}
+.searchtab1 {
+  padding: 10px 8px;
+}
+.form-search-but {
+  padding-left: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+.form-search-but table {
+  margin: 0 auto;
+}
+.tab-list-but {
+  background-color: #f7f7f7;
+  height: auto;
+}
+.tab-list-but table td {
+  padding: 4px;
+}
+.but_link,
+.but_link:hover {
+  display: inline-block;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 26px;
+  line-height: 26px;
+  background-color: #fbfbfa;
+  background-image: -moz-linear-gradient(top, #fffffe, #f5f5f5);
+  background-image: -ms-linear-gradient(top, #fffffe, #f5f5f5);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fffffe), to(#f5f5f5));
+  background-image: -webkit-linear-gradient(top, #fffffe, #f5f5f5);
+  background-image: -o-linear-gradient(top, #fffffe, #f5f5f5);
+  background-image: linear-gradient(top, #fffffe, #f5f5f5);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffffe', endColorstr='#f5f5f5', GradientType=0);
+  border: 1px solid #c8c8c8;
+  text-align: center;
+  font-size: 12px;
+  color: #373737;
+  vertical-align: top;
+  width: auto;
+}
+.datetitle_01 {
+  background-color: #f2f9ff;
+}
+.datetitle_01 span {
+  color: #0a2f4d;
+  font-weight: 700;
+}
+.dateline {
+  border: #d6d6d6 1px solid;
+  margin-top: -1px;
+}
+.dateline th {
+  height: 32px;
+  padding: 0;
+  background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #fefefe, #f6f6f6);
+  background-image: -ms-linear-gradient(top, #fefefe, #f6f6f6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#f6f6f6));
+  background-image: -webkit-linear-gradient(top, #fefefe, #f6f6f6);
+  background-image: -o-linear-gradient(top, #fefefe, #f6f6f6);
+  background-image: linear-gradient(top, #fefefe, #f6f6f6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#f6f6f6', GradientType=0);
+}
+.dateline td {
+  height: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.panel {
+  margin-top: 10px;
+}
+.panel h2 {
+  font-weight: 700;
+  background-color: #f2f9ff;
+}
+.panel table {
+  margin-top: -1px;
+}
+.panel table th {
+  background-color: #f2f9ff;
+  color: #535353;
+}
+.panel table td {
+  padding-left: 5px;
+}
+.panel table th,
+.panel table td {
+  border: 1px solid #e1e1e1;
+}
+.dynatable_tHead {
+  font-weight: 700 !important;
+  background-color: #f2f9ff !important;
+}
+.dynatable_tHead_title {
+  background: #f5f5f5 !important;
+}
+.dynatable_error_msg {
+  height: 380px !important;
+  background: #fff url("../images/inner/empty.jpg") no-repeat 50% 50% !important;
+  text-indent: -9999px;
+}

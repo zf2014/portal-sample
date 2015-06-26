@@ -1,0 +1,26 @@
+extends ../../layout/rebind.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/rebind.css')
+
+block site-content
+	.rebind-main
+		.chunk.rebind-content
+			.chunk--hd
+				.chunk-title
+					a.chunk-title--item.chunk-title--txt.chunk-title--item__is-active(href="javascript:;")
+						| 改绑邮箱
+						span.title-hover-bottom-line
+			.chunk--bd
+				.chunk-content
+					.rebind-final
+						.rebind-middle-content
+							i.error-doll
+							.error-txt
+								p 链接失效
+								p 您访问的页面已失效，请重新操作
+
+							a.final-loginbtn(href="#") 重新登录

@@ -1,0 +1,135 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/vld.css')
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-edit")
+block search
+block result
+	.space.space-t10
+	//- include ../../app/inner/result-empty.jade
+	.result
+		.result-title
+			span 修改密码
+		.result-content
+			.vld-form
+				form(method="" action="")
+					.clearfix.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-vld(type="password" data-required="true" data-maxlength="20")
+					.clearfix.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 新密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-vld#J-vldNewPassword(type="password" data-required="true" data-maxlength="20")
+
+					.clearfix.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 确认新密码
+						.controller-inp.J-controllerInp
+							input.inp.inp-vld(type="password" data-required="true" data-equalto="#J-vldNewPassword")
+					.clearfix.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span(style="line-height: 55px;") 企业类型
+						.controller-inp.J-controllerInp
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							br
+
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							br
+
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+							label
+								input.inp-checkbox(type="checkbox")
+								span 海关
+					
+					.clearfix.vld-form-controller
+						.vld-cueword
+							span.cueword-txt 请上传以下三证原件的扫描件
+							span.cueword-txt.obvious-txt 支持jpg、jpeg、bmp、gif格式图片，大小不超过1M 
+
+
+
+					.clearfix.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 上传文件
+						.controller-inp.J-controllerInp
+							.affix-placeholder#J-ajaxUploadPlaceholderA
+					.clearfix.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 上传文件
+						.controller-inp.J-controllerInp
+							.affix-placeholder#J-ajaxUploadPlaceholderB
+					.clearfix.vld-form-controller
+						label.controller-label
+							//- span.required *
+							span 上传文件
+						.controller-inp.J-controllerInp
+							.affix-placeholder#J-ajaxUploadPlaceholderC
+					
+
+					.vld-form-submit
+						a.btn.J-btn#J-vldFormSubmitBtn
+							span 确 认
+
+block others
+	form.J-ajaxUploadForm(style="display:none" target="uploadAjaxFrameA" data-upload-placeholder="#J-ajaxUploadPlaceholderA")
+		.affix
+			.affix-file-btn
+				span.affix-file-txt 上传附件
+				input#J-iwantSuggestUploadbtn(type="file" data-support="jpg gif png")
+	form.J-ajaxUploadForm(style="display:none" target="uploadAjaxFrameB" data-upload-placeholder="#J-ajaxUploadPlaceholderB")
+		.affix
+			.affix-file-btn
+				span.affix-file-txt 上传附件
+				input#J-iwantSuggestUploadbtn(type="file" data-support="jpg gif png")
+	form.J-ajaxUploadForm(style="display:none" target="uploadAjaxFrameC" data-upload-placeholder="#J-ajaxUploadPlaceholderC")
+		.affix
+			.affix-file-btn
+				span.affix-file-txt 上传附件
+				input#J-iwantSuggestUploadbtn(type="file" data-support="jpg gif png")
+	
+			//- .affix-file-support
+				| 附件支持JPG、JEPG、GIF、
+				| PNG、BMP格式，大小限制20M。
+
+	iframe(src="" style="display:none" name="uploadAjaxFrameA")
+	iframe(src="" style="display:none" name="uploadAjaxFrameB")
+	iframe(src="" style="display:none" name="uploadAjaxFrameC")

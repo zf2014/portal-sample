@@ -1,0 +1,22 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/um.css')
+block head-script
+block head-requirejs-script
+	//- script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/um")
+block search
+block result
+	.space.space-t10
+	//- include ../../app/inner/result-empty.jade
+	.result
+		//- .result-title
+			span 修改密码
+		.result-content
+			.um-success
+				i.success-doll
+				p.success-congratulation
+					i.ico-right
+					span.txt 修改密码成功！
+				a.success-loginbtn(href="#") 返回首页
+
+

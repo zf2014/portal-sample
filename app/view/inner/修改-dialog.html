@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>网站标题</title>
+    <link rel="stylesheet" href="../../css/inner.css">
+    <link rel="stylesheet" href="../../css/dialog.css">
+    <script src="../../scripts/lib/requirejs-config/inner-dialog.js"></script>
+    <script src="../../scripts/lib/requirejs/require.js" data-main="app/inner/main-dialog"></script>
+  </head>
+  <body>
+    <div id="main-page">
+      <div class="manage-content">
+        <div class="dialog-content">
+          <div class="dialog-title"><span>服务注册新增</span></div>
+          <table class="dialog-table">
+            <colgroup>
+              <col class="dialog-col-th">
+              <col class="dialog-col-td">
+              <col class="dialog-col-th">
+              <col class="dialog-col-td">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th><span class="cell-title">名称</span></th>
+                <td>
+                  <div class="cell-inp-wrap">
+                    <input type="text" class="inp inp-dialog">
+                  </div>
+                </td>
+                <th><span class="cell-title">代码</span></th>
+                <td>
+                  <div class="cell-inp-wrap">
+                    <input type="text" class="inp inp-dialog">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><span class="cell-title">业务类型</span></th>
+                <td>
+                  <div class="cell-inp-wrap">
+                    <input type="text" class="inp inp-dialog">
+                  </div>
+                </td>
+                <th><span class="cell-title">描述</span></th>
+                <td>
+                  <div class="cell-inp-wrap">
+                    <input type="text" class="inp inp-dialog">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><span class="cell-title">描述</span></th>
+                <td colspan="3">
+                  <div class="cell-inp-wrap">
+                    <textarea class="inp inp-dialog inp-textarea"></textarea>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><span class="cell-title">服务类型</span></th>
+                <td colspan="3">
+                  <div class="cell-inp-wrap">
+                    <select class="inp inp-select">
+                      <option value="0">全部</option>
+                      <option value="1">类型1</option>
+                      <option value="2">类型2</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="dialog-other">
+            <div class="other-content">
+              <div class="select-related-content">
+                <div style="display:block;" class="select-related-item">
+                  <div class="related-fieldset">
+                    <div class="field-controller field-block">
+                      <label class="field-label"><span>MQ地址</span></label>
+                      <div class="field-group">
+                        <input type="text" class="field-item inp inp-dialog">
+                      </div>
+                    </div>
+                    <div class="field-controller field-block">
+                      <label class="field-label"><span>MQ端口</span></label>
+                      <div class="field-group">
+                        <input type="text" class="field-item inp inp-dialog">
+                      </div>
+                    </div>
+                    <div class="field-controller field-block">
+                      <label class="field-label"><span>MQ通道</span></label>
+                      <div class="field-group">
+                        <input type="text" class="field-item inp inp-dialog">
+                      </div>
+                    </div>
+                    <div class="field-controller field-block">
+                      <label class="field-label"><span>MQ队列</span></label>
+                      <div class="field-group">
+                        <input type="text" class="field-item inp inp-dialog">
+                      </div>
+                    </div>
+                    <div class="field-controller field-block">
+                      <label class="field-label"><span>MQ队列管理器</span></label>
+                      <div class="field-group">
+                        <input type="text" class="field-item inp inp-dialog">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="select-related-item"></div>
+                <div class="select-related-item"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dialog-operation"><a class="btn btn-dialog J-btn J-dialogConfirm"><span>确 认</span></a><a class="btn btn-dialog J-btn J-dialogCancel"><span>取 消</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

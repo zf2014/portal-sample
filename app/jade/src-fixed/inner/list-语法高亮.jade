@@ -1,0 +1,25 @@
+extends ../../layout/inner.jade
+append head-theme
+	script(src = '#{jsRoot}/lib/beautify/beautify.js')
+	script(src = '#{jsRoot}/lib/beautify/beautify-css.js')
+	script(src = '#{jsRoot}/lib/beautify/beautify-html.js')
+
+	link(rel = 'stylesheet' href = '#{jsRoot}/lib/highlight/styles/tomorrow.css')
+	script(src = '#{jsRoot}/lib/highlight/highlight.pack.js')
+	script.
+		var jsonCode = '{"name":2,"z":{"a":1,"b":[1,2,4]}}';
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-highlight")
+block search
+block result
+	.space.space-t10
+	.result
+		.result-title
+			span 语法高亮
+		.result-content(style="font-size: 14px;")
+			pre
+				code.json#J-jsonHighlight
+
+
+append floor-script
+

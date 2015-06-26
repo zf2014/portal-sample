@@ -1,0 +1,59 @@
+$mx_ly_center()
+	width: $gwidth
+	margin 0 auto
+	
+
+$mx_font_ico_src(file)
+	src url( file + '.eot')
+	src url( file + '.eot?#iefix') format('embedded-opentype'), url( file + '.woff') format('woff'), url( file + '.ttf') format('truetype'), url( file + '.svg#iconfont') format('svg')
+
+
+$mx_text_ellipsis()
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+	
+$mx_list_style()
+	display inline-block
+	width: 4px
+	height: 4px
+	background-color: #a1a1a1
+	vertical-align: middle
+
+
+$mx_clearfix()
+	&:before
+	&:after
+		content: ""
+		display: table
+	&:after
+		clear: both
+	zoom: 1
+
+// 垂直渐变
+$mx_gradient_vertical($startColor = #555, $endColor = #333)
+	background-color: mix($startColor, $endColor, 60%)
+	background-image: -moz-linear-gradient(top, $startColor, $endColor) // FF 3.6+
+	background-image: -ms-linear-gradient(top, $startColor, $endColor) // IE10
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)) // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(top, $startColor, $endColor) // Safari 5.1+, Chrome 10+
+	background-image: -o-linear-gradient(top, $startColor, $endColor) // Opera 11.10
+	background-image: linear-gradient(top, $startColor, $endColor) // The standard
+	background-repeat: repeat-x
+	filter: s("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=0)" , $startColor , $endColor ) // IE9 and down
+
+
+$mx_opacity(n, args...)
+	opacity: n args
+	if support-for-ie
+		if n == inherit or n == initial
+			-ms-filter: n args
+			filter: n args
+		else
+			val = round(n * 100)
+			if val == 100
+				-ms-filter: none args
+				filter: none args
+			else
+				-ms-filter: '"progid:DXImageTransform.Microsoft.Alpha(Opacity=%s)"' % val args
+				filter: 'alpha(opacity=%s)' % val args

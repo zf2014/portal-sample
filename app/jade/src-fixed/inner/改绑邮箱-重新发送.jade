@@ -1,0 +1,32 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/um.css')
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/um")
+block search
+block result
+	.space.space-t10
+	//- include ../../app/inner/result-empty.jade
+	.result
+		//- .result-title
+			span 改绑邮箱
+		.result-content
+			.um-email
+				.um-middle-content
+					i.email-ico
+					p.email-send
+						| 验证邮件已发送到 
+						strong 123456789@163.com
+					p.email-period
+						| 请在24小时内点击邮箱中的验证链接，完成邮箱改绑！
+
+					.email-resend
+						form(action="" method="POST")
+							span.txt 未收到邮件！
+							a.btn.btn-resend.btn-resend-wait#J-resendEmailBtn(href="javascript:;")
+								| 重新发送
+					.email-resend-tip
+						span.ok 发送成功
+						span.failure 发送失败
+
+

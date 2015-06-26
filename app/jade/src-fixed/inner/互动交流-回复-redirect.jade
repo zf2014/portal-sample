@@ -1,0 +1,73 @@
+extends ../../layout/inner-redirect.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/interaction.css')
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-interaction")
+append head-script
+	script#J-interactionDeleteDialog(type="oka/template").
+		<div class="interaction-delete-layer">
+		<div class="layer-wrap">
+		<form>
+		<div class="delete-title">回复</div>
+		<div class="delete-reason">
+		<textarea class="inp-textarea">抱歉，您提交的内容违反了规范，仅您自己可见。如果您认为判定有误，请发起申诉，帮助我们持续改进。</textarea>
+		</div>
+		<div class="delete-btns"><a class="btn J-btn J-interactionDeleteDialogConfirmBtn"><span>确 定</span></a><a class="btn J-btn J-interactionDeleteDialogCancelBtn"><span>取 消	</span></a></div>
+		</form>
+		</div>
+		</div>
+
+block others
+	.space.space-t10
+	.redirect-content
+		.interaction-main
+			.interaction-wrap
+				.interaction-chunk
+					.chunk-hd
+						span.interaction-title 问题
+						.interaction-hd-time
+							span.name 路人甲
+							span.time 2014-11-1
+					.chunk-bd
+						.interaction-content
+							h2
+								| XXX标题
+							p
+								| 通过大家建立的共同平台实现申报数据的收集和反馈，企业仅需要填制一张电子表格吗？
+					.chunk-ft
+						.interaction-type-select
+							label.interaction-type
+								| 一级分类 
+								select.inp-select
+									option 大分类1
+									option 大分类2
+									option 大分类3
+									option 大分类4
+
+							label.interaction-type
+								| 二级分类 
+								select.inp-select
+									option 小分类1
+									option 小分类2
+									option 小分类3
+									option 小分类4
+
+				.interaction-chunk.chunk-editor
+					.chunk-hd
+						span.interaction-title 回答
+
+					.chunk-bd
+						.interaction-textarea
+							textarea(style="padding: 0; width: 100%; height: 60px;")
+								| 文本编辑器(TODO)
+				.interaction-chunk.chunk-oper
+					.chunk-bd
+						.redirect-operation.interaction-operation
+							a.btn.btn-interation.J-btn
+								span 保 存
+							a.btn.btn-interation.J-btn#J-resetBtn
+								span 取 消
+							a.btn.btn-interation.J-btn#J-deleteInterationBtn
+								span 删 除
+

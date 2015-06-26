@@ -1,0 +1,38 @@
+extends ../../layout/forget.jade
+
+append variable
+	- var navIndex    = -1
+
+//- append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/fp.css')
+
+block site-content
+	.fp-main
+		.chunk.fp-content
+			.chunk--hd
+				.chunk-title
+					a.chunk-title--item.chunk-title--txt.chunk-title--item__is-active(href="javascript:;")
+						| 重置密码
+						span.title-hover-bottom-line
+			.chunk--bd
+				.chunk-content
+					.fp-fillin-password
+						.fp-middle-content
+							.fp-form
+								form(method="" action="")
+									.clearfix.fp-form-controller
+										label.controller-label
+											span.required *
+											| 新密码
+										.controller-inp.J-controllerInp
+											input.inp.inp-fp(type="text" placeholder="请输入您的密码")
+
+									.clearfix.fp-form-controller
+										label.controller-label
+											span.required *
+											| 再次输入新密码
+										.controller-inp.J-controllerInp
+											input.inp.inp-fp(type="text" placeholder="请再次输入您的密码")
+
+									.fp-form-submit
+										input.fp-submit-btn.J-forgetFormSubmitBtn(type='submit' value="注　册")

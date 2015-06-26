@@ -1,0 +1,97 @@
+.regist-form-controller
+	position: relative
+	/.regist-email-verify &
+		margin-bottom: 28px
+	
+	/.regist-userinfo-fillin &
+		margin-bottom: 18px	
+
+
+.controller-label
+	float: left
+	height 36px
+	width: 62px
+	// padding-right: 15px
+	line-height: @height
+	font-size 1.4em
+	text-align: right
+	/.required
+		color #f00
+
+.controller-inp
+	float: left
+	padding-left: 15px
+	font-size: 1.4em
+	/.inp-regist
+		width: 270px
+		height: 34px
+		padding 0 4px
+		border: 1px solid #e8e8e8
+		margin 0
+		border-radius: 3px
+		line-height: @height
+		/&:focus
+			border-color: $gportalSiteColor
+			outline: 0
+			
+
+	/.inp-email-vcode
+		width: 100px
+
+.controller-txt
+	float: left
+	padding-left: 15px
+	font-size: 1.4em
+	span
+		display: block
+		height: 34px
+		line-height @height
+	.txt-email
+		color #0567b4
+
+.validate-inp-error
+	border-color: #f00
+
+
+.controller-tip
+	position: absolute
+	top 0
+	left 370px
+	font-size: 1.2em
+	/.tip-txt
+		display: block
+		height: 22px
+		padding 0 7px
+		line-height @height
+	.hint
+		padding-top: 6px
+		padding-bottom: 6px
+		border: 1px solid #dedede
+		background: #f7f7f7
+		.tip-txt
+			color #585858
+	.error
+		position: relative
+		padding-top: 6px
+		padding-bottom: 6px
+		border: 1px solid #ffb398
+		background: #ffebe0 url(../images/regist/cuo.png) no-repeat 8px 8px
+		*zoom 1
+		/.ico-cuo
+			position: absolute
+			left 7px
+			top 7px
+			// margin-top: -($ico_sprite_cuo[5]/2)
+			sprite($ico_sprite_cuo)
+			vertical-align: middle
+		.tip-txt
+			padding-left 30px
+			color #e60012
+	.success
+		// padding-left 7px
+		padding-top: 7px
+		/.ico-dui
+			display: inline-block
+			sprite($ico_sprite_dui)
+			vertical-align: middle
+	

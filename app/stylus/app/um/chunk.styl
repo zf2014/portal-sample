@@ -1,0 +1,70 @@
+.chunk
+	/.chunk--hd
+		border-bottom: 1px solid #e2e2e2
+	/.chunk--bd
+		padding-top: 1px
+	/.chunk-title
+		position: relative
+		// font-size: 1.4em
+		height: 38px
+		/&--divider
+			margin-left: 8px
+			margin-right: 8px
+		/&--txt
+			position: relative
+			padding-left 8px
+			padding-right: 8px
+			// cursor default
+			font-size: 1.5em
+		/&--item
+			float: left
+			color #414141
+			line-height: @height
+			/.chunk-title__is-tab &
+				position: relative
+				top -1px
+				border-style: solid
+				border-color: #e2e2e2
+				border-width: 1px
+				margin-right: -1px
+				background-color: #fff
+				z-index: 1
+
+			/&__can-selectable
+				cursor pointer
+			
+			&:hover
+			&__is-active
+				text-decoration: none
+				color #e64200
+				// cursor default
+				.title-hover-bottom-line
+					display block
+				/.title-hover-bottom-line
+					position: absolute
+					display: none
+					bottom -1px
+					left -1px
+					height: 2px
+					width: 100%
+					padding-left 1px
+					padding-right: 1px
+					background-color $gsiteColor
+					/.chunk-title__is-tab &
+						bottom initial
+						top -1px
+			
+			&__is-active
+				// cursor default
+				/.chunk-title__is-tab &
+					border-bottom-color: #fff
+					z-index: 2
+		/&--more
+			position: absolute
+			right 0
+			top 50%
+			height: 20px
+			margin-top: -(@height/2)
+			line-height @height
+			font-size: 1.2em
+			color #838181			

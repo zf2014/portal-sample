@@ -1,0 +1,19 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/ok.css')
+block head-requirejs-script
+	//- script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-edit")
+block search
+block result
+	.ok
+		.ok-container
+			.ok-result
+				.ok-result-content
+					.ok-result-maintxt
+						span.ok-txt 提交成功，请等待工作人员审核！
+							i
+					.ok-result-tip
+						p 审核通过后，我们将电话联系您，协助您完成后续的系统开通流程。
+					.ok-result-oper
+						span 返回
+						a(href="#") 企业信息登记

@@ -1,0 +1,39 @@
+extends ../../layout/inner.jade
+block head-requirejs-script
+	script.
+		var zNodes =
+			[
+				{ name:"全部", open:true, cusData:null,
+					children: [
+						{ name:"基础资料", open:true, cusData:{name:'基础资料', mid: '01', code: '010', status: '状态', type: '1', desc: '很长很长的描述'},
+							children: [
+								{ name:"数据字典", cusData:{name:'基础资料', mid: '001', code: '0011', status: '状态', type: '1', desc: '很长很长的描述'}},
+								{ name:"标准规范", cusData:{name:'基础资料', mid: '002', code: '0012', status: '状态', type: '1', desc: '很长很长的描述'}},
+								{ name:"数据字典", cusData:{name:'基础资料', mid: '003', code: '0013', status: '状态', type: '1', desc: '很长很长的描述'}},
+								{ name:"标题规范", cusData:{name:'基础资料', mid: '004', code: '0014', status: '状态', type: '1', desc: '很长很长的描述'}},
+								{ name:"数据字典", cusData:{name:'基础资料', mid: '005', code: '0015', status: '状态', type: '1', desc: '很长很长的描述'}},
+								{ name:"标题规范", cusData:{name:'基础资料', mid: '006', code: '0016', status: '状态', type: '1', desc: '很长很长的描述'}}
+							]},
+						{ name:"服务注册",
+							children: [
+								{ name:"叶子节点121"},
+								{ name:"叶子节点122"},
+								{ name:"叶子节点123"},
+								{ name:"叶子节点124"}
+							]},
+						{ name:"服务注册", children: [
+								{ name:"叶子节点121"},
+								{ name:"叶子节点122"},
+								{ name:"叶子节点123"},
+								{ name:"叶子节点124"}
+							]},
+						{name: 'zfff', isParent: true}
+					]
+				}
+			]
+		;
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-tree")
+block search
+block result
+	.space.space-t10
+	include ../../app/inner/result-tree.jade

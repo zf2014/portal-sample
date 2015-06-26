@@ -1,0 +1,12 @@
+extends ../../layout/inner.jade
+
+append head-script
+	script(src = '#{jsRoot}/lib/calendar/WdatePicker.js')
+
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/sub-account")
+
+
+block result
+	.space.space-t10
+	include ../../app/inner/result-sub-account.jade

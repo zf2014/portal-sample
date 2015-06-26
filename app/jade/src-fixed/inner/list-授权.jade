@@ -1,0 +1,9 @@
+extends ../../layout/inner.jade
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/role.css')
+block head-requirejs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/inner/main-role")
+block search
+block result
+	.space.space-t10
+	include ../../app/inner/result-role.jade

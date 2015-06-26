@@ -1,0 +1,93 @@
+extends ../../layout/inner-redirect.jade
+
+block others
+	.space.space-t10
+	.redirect-content
+		form(method="POST" action="XXX.jspa")
+			.redirect-title
+				span 服务注册新增
+
+			table.redirect-table
+				colgroup
+					col.redirect-col-th
+					col.redirect-col-td
+					col.redirect-col-th
+					col.redirect-col-td
+				tbody
+					tr
+						th
+							span.cell-title 名称
+						td
+							.cell-inp-wrap
+								input.inp.inp-redirect(type="text")
+						th
+							span.cell-title 代码
+						td
+							.cell-inp-wrap
+								input.inp.inp-redirect(type="text")
+					tr
+						th
+							span.cell-title 业务类型
+						td
+							.cell-inp-wrap
+								input.inp.inp-redirect(type="text")
+						th
+							span.cell-title 描述
+						td
+							.cell-inp-wrap
+								input.inp.inp-redirect(type="text")
+					tr
+						th
+							span.cell-title 描述
+						td(colspan="3")
+							.cell-inp-wrap
+								textarea.inp.inp-redirect.inp-textarea
+
+					tr
+						th
+							span.cell-title 服务类型
+						td(colspan="3")
+							.cell-inp-wrap
+								select.inp.inp-select
+									option(value="0") 全部
+									option(value="1") 类型1
+									option(value="2") 类型2
+					
+			.redirect-other.uniq-top-border
+				.other-content
+					.select-related-content
+						.select-related-item(style="display:block;")
+							.related-fieldset
+								.field-controller.field-block
+									label.field-label
+										span MQ地址
+									.field-group
+										input.field-item.inp.inp-redirect(type="text")
+								.field-controller.field-block
+									label.field-label
+										span MQ端口
+									.field-group
+										input.field-item.inp.inp-redirect(type="text")
+								.field-controller.field-block
+									label.field-label
+										span MQ通道
+									.field-group
+										input.field-item.inp.inp-redirect(type="text")
+								.field-controller.field-block
+									label.field-label
+										span MQ队列
+									.field-group
+										input.field-item.inp.inp-redirect(type="text")
+								.field-controller.field-block
+									label.field-label
+										span MQ队列管理器
+									.field-group
+										input.field-item.inp.inp-redirect(type="text")
+						.select-related-item
+						.select-related-item
+
+			.redirect-operation
+				a.btn.btn-redirect.J-btn.J-redirectConfirm
+					span 确 认
+				a.btn.btn-redirect.J-btn.J-redirectCancel
+					span 取 消

@@ -1,0 +1,19 @@
+mixin mx_page(pageClasses)
+	.result-page
+		div(class="page #{pageClasses ? pageClasses : ''}")
+			form
+				span.pagination
+					a.pagination-mark.pagination-mark_link.pagination-mark_prev 上一页
+					a.pagination-mark.pagination-mark_link 1
+					span.pagination-mark.pagination-mark_current 2
+					a.pagination-mark.pagination-mark_link 3
+					span.pagination-mark.pagination-mark_elipses ...
+					a.pagination-mark.pagination-mark_link 100
+					span.pagination-mark.pagination-mark_link.pagination-mark_next 下一页
+				span.pageinfo
+					span.page-text 共10页
+				span.pageskip
+					span.page-text 到第
+					input.pageskip-input(value="0")
+					span.page-text 页
+					a.pageskip-btn(href="javascript:;") 确认
