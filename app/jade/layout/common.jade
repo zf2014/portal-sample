@@ -1,5 +1,5 @@
 include ../variable/global.jade
-
+- var rootDir = '../..'
 - var cssRoot  = rootDir + '/css'
 - var jsRoot   = rootDir + '/scripts'
 - var imgRoot  = rootDir + '/images'
@@ -13,30 +13,45 @@ html
 		meta(charset = 'utf-8')
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		block head-title
-			title 网站标题
+			title 微庆--weiqing
 		link(rel = 'shortcut icon', type = 'image/x-icon', href = '#{rootDir}/favicon.ico')
 		block head-theme
-			link(rel = 'stylesheet' href = '#{cssRoot}/outer.css')
+			link(rel = 'stylesheet' href = '#{cssRoot}/base.css')
+		block head-script
+			script(src = '#{jsRoot}/lib/requirejs/config.js')
+		block head-requirejs-script
+			//- script.
+				//- require.baseUrl = '..' + require.baseUrl;
+				//- require.paths.outer = '../app/outer/module';
+			script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/index/main")
 	body
-		#main-page
-			#site-header
-				.site-header-container
-					block site-header
-						include ../app/outer/site-logo.jade
-						//- include ../app/outer/site-userinfo.jade
 
-			#site-content
-				.main-content-container
-					block site-content
-					//- .content-left
-					//- 	include ../app/outer/site-nav.jade
+		#head
+			.hd-setting
+				.ly-mid
+					.hd-setting-lt
+						span 您好，欢迎来到微庆！
+					.hd-setting-rt
+						.rt-links.rt-links-accout
+							a(href="#") 登录
+							span.sep |
+							a(href="#") 注册
+						.rt-links
+							a(href="#") 加入收藏
+							span.sep |
+							a(href="#") 新手上路
 
-					//- .content-right
-					//- 	block site-content
+			.hd-nav-wrap
+				.hd-logo
+				.hd-hotline
+				.hd-nav
 
-			#site-footer
-				block site-footer
-					include ../app/outer/site-footer4portal.jade
+
+
+		#body
+			| 身体
+		#foot
+			| 脚
+
 					
 	block floor-script
-

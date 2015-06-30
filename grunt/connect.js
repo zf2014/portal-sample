@@ -7,9 +7,9 @@ function Config(c){
     ;
     this.options = {
         port: 9000,
-        open: 'http://192.168.180.54:9000/view/outer.html',
+        open: 'http://127.0.0.1:9000/view/首页/index.html',
         livereload: 30000,
-        hostname: '192.168.180.54'
+        hostname: '127.0.0.1'
     };
 
     this.livereload = {
