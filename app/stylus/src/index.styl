@@ -1,0 +1,69 @@
+
+$slideHeight = 448px
+@import "../components/slide.styl"
+
+@import "../app/homepage/sprites.styl"
+
+.hp-slide
+	position: relative
+	height $slideHeight
+	overflow: hidden
+	.slide-list
+		position: relative
+		z-index: 1
+		height $slideHeight
+		width: 100%
+		margin 0
+	.slide-indicator
+		position: absolute
+		left 50%
+		margin-left: ($gwidth/2) - 140px
+		bottom 18px
+		z-index: 2
+		li
+			margin-left: 8px
+		a
+			width: 12px
+			height: 12px
+			line-height: 12px
+			font-size: 0
+			text-indent: -9999px
+			border-radius: 50%
+			background-color: #c6c6c6
+			/&.on
+				background-color: #ff3000			
+	/.hp-slide-box
+		height $slideHeight
+
+
+
+
+.hp-functions
+	overflow: hidden
+	/.hp-func-item
+		float: left
+		width: unit(100/3, '%')
+		height 284px
+		
+		/.func-wrap
+			width 160px
+			padding-top: 40px
+			margin 0 auto
+			
+			/.func-ico
+				margin: 0 auto 30px
+
+			/.func-title
+				text-align: center
+				color $gsiteColor
+				font-size: $ifontSize
+				margin-bottom: 15px
+			
+			/.func-desc
+				line-height: 1.8
+
+sprites($spritesheet_sprites);
+
+
+
+

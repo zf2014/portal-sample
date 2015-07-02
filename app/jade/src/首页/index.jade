@@ -1,1 +1,43 @@
 extends ../../layout/common.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/index.css')
+
+block ft-rjs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/index/main")
+
+block hp-slide
+	.hp-slide
+		#J-hpslide(data-slide-options="arrow=false&fullscreen=true&speed=5500")
+			ul.slide-list
+				li.slide-item
+					.hp-slide-box(style="background: url(#{imgRoot}/homepage/s1.jpg) 50% 50% no-repeat")
+				li.slide-item
+					.hp-slide-box(style="background: url(#{imgRoot}/homepage/s1.jpg) 50% 50% no-repeat")
+				li.slide-item
+					.hp-slide-box(style="background: url(#{imgRoot}/homepage/s1.jpg) 50% 50% no-repeat")
+
+
+block bd-content
+	.hp-functions
+		.hp-func-item
+			.func-wrap
+				.func-ico.ico-sprite-invitation
+				.func-title
+					span 邀请函
+				.func-desc
+					a(href="#") 多种方式的电子邀请函，让您有更多的选择...>>
+		.hp-func-item
+			.func-wrap
+				.func-ico.ico-sprite-weixwall
+				.func-title
+					span 微信墙
+				.func-desc
+					a(href="#") 多种风格的微信墙，让您的聚会现场互动起来...>>
+		.hp-func-item
+			.func-wrap
+				.func-ico.ico-sprite-interact
+				.func-title
+					span 现场互动
+				.func-desc
+					a(href="#") 多种现场互动游戏，让您的聚会玩得更High...>>

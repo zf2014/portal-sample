@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         useminPrepare: require('./grunt/useminPrepare.js').config,
         filerev: require('./grunt/filerev.js').config,
         usemin: new (require('./grunt/usemin.js'))(productConfig),
-        sprite: new (require('./grunt/sprite.js'))(['regist']),
+        sprite: new (require('./grunt/sprite.js'))(['homepage']),
     });
 
     grunt.loadNpmTasks('grunt-spritesmith');

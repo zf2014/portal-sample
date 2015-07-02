@@ -1,0 +1,156 @@
+/**
+ * 文件: .css 
+ * 公司: 浙江电子口岸
+ * 作者: qzzf1987@gmail.com
+ * 时间: 2015-07-02 23:00:32
+ */
+.slide {
+  position: relative;
+}
+.slide-inner {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slide-list {
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.slide-item {
+  float: left;
+  width: 100%;
+}
+.slide-arrow {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -19px;
+}
+.slide-arrow a {
+  position: absolute;
+  width: 32px;
+  height: 38px;
+}
+.slide-prev-btn {
+  background-position: 0 100%;
+  left: 0;
+}
+.slide-prev-btn:hover {
+  background-position: 0 0;
+}
+.slide-next-btn {
+  background-position: 100% 100%;
+  right: 0;
+}
+.slide-next-btn:hover {
+  background-position: 100% 0;
+}
+.slide-indicator {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  list-style: none;
+}
+.slide-indicator li {
+  float: left;
+}
+.slide-indicator a {
+  display: block;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.slide-indicator a:hover {
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+}
+.slide-indicator .on {
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+}
+.hp-slide {
+  position: relative;
+  height: 448px;
+  overflow: hidden;
+}
+.hp-slide .slide-list {
+  position: relative;
+  z-index: 1;
+  height: 448px;
+  width: 100%;
+  margin: 0;
+}
+.hp-slide .slide-indicator {
+  position: absolute;
+  left: 50%;
+  margin-left: 360px;
+  bottom: 18px;
+  z-index: 2;
+}
+.hp-slide .slide-indicator li {
+  margin-left: 8px;
+}
+.hp-slide .slide-indicator a {
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  font-size: 0;
+  text-indent: -9999px;
+  border-radius: 50%;
+  background-color: #c6c6c6;
+}
+.hp-slide .slide-indicator a.on {
+  background-color: #ff3000;
+}
+.hp-slide-box {
+  height: 448px;
+}
+.hp-functions {
+  overflow: hidden;
+}
+.hp-func-item {
+  float: left;
+  width: 33.333333333333336%;
+  height: 284px;
+}
+.func-wrap {
+  width: 160px;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+.func-ico {
+  margin: 0 auto 30px;
+}
+.func-title {
+  text-align: center;
+  color: #ff3000;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.func-desc {
+  line-height: 1.8;
+}
+.ico-sprite-interact {
+  background-image: url("../images/homepage/sprite.png");
+  background-position: 0px 0px;
+  width: 77px;
+  height: 64px;
+}
+.ico-sprite-invitation {
+  background-image: url("../images/homepage/sprite.png");
+  background-position: -77px 0px;
+  width: 73px;
+  height: 64px;
+}
+.ico-sprite-weixwall {
+  background-image: url("../images/homepage/sprite.png");
+  background-position: 0px -64px;
+  width: 69px;
+  height: 64px;
+}

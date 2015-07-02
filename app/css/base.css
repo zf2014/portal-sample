@@ -2,7 +2,7 @@
  * 文件: .css 
  * 公司: 浙江电子口岸
  * 作者: qzzf1987@gmail.com
- * 时间: 2015-06-30 22:49:44
+ * 时间: 2015-07-02 23:00:32
  */
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -247,6 +247,78 @@ a:hover {
 .hd-setting-rt .rt-links-accout .sep,
 .hd-setting-rt .rt-links-accout a {
   color: #ff3000;
+}
+.hd-mainnav-bt {
+  width: 100%;
+  height: 3px;
+  background-color: #ff3000;
+}
+.hd-mainnav-wrap {
+  position: relative;
+  height: 81px;
+}
+.hd-logo {
+  position: absolute;
+  left: 26px;
+  top: 50%;
+  width: 163px;
+  height: 42px;
+  margin-top: -21px;
+  background: url("../images/common/logo.png") 0 0 no-repeat;
+}
+.hd-logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hd-tel {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  width: 182px;
+  height: 25px;
+  background: url("../images/common/tel.png") 0 0 no-repeat;
+}
+.mainnav {
+  padding-top: 36px;
+  margin-left: 340px;
+}
+.mainnav .mn-list {
+  overflow: hidden;
+}
+.mainnav .mn-list .mn-item {
+  float: left;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.mainnav .mn-list .mn-item a {
+  display: block;
+  height: 45px;
+  padding: 0 13px;
+  line-height: 45px;
+  text-decoration: none;
+  color: #1b1b1b;
+  font-size: 14px;
+}
+.mainnav .mn-list .mn-item a:hover,
+.mainnav .mn-list .mn-item a.mn-active {
+  background-color: #ff3000;
+  color: #fff;
+}
+.ft-wrap {
+  padding-top: 20px;
+  padding-bottom: 45px;
+  border-top: 1px solid #d2d2d2;
+}
+.ft-txt {
+  line-height: 2.5;
+  color: #626262;
+}
+.ft-txt a {
+  color: #626262;
+}
+.ft-txt a:hover {
+  color: #ff6567;
 }
 .ly-mid {
   width: 1000px;

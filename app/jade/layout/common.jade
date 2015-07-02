@@ -17,13 +17,6 @@ html
 		link(rel = 'shortcut icon', type = 'image/x-icon', href = '#{rootDir}/favicon.ico')
 		block head-theme
 			link(rel = 'stylesheet' href = '#{cssRoot}/base.css')
-		block head-script
-			script(src = '#{jsRoot}/lib/requirejs/config.js')
-		block head-requirejs-script
-			//- script.
-				//- require.baseUrl = '..' + require.baseUrl;
-				//- require.paths.outer = '../app/outer/module';
-			script(src = '#{jsRoot}/lib/requirejs/require.js' data-main="app/index/main")
 	body
 
 		#head
@@ -41,17 +34,62 @@ html
 							span.sep |
 							a(href="#") 新手上路
 
-			.hd-nav-wrap
-				.hd-logo
-				.hd-hotline
-				.hd-nav
+			.hd-mainnav
+				.ly-mid
+					.hd-mainnav-wrap
+						.hd-logo
+							a(href="#")
+						.hd-tel
+						.mainnav
+							ul.mn-list
+								li.mn-item
+									a.mn-active(href="#") 首页
+								li.mn-item
+									a(href="#") 产品介绍
+								li.mn-item
+									a(href="#") 帮助中心
+								li.mn-item
+									a(href="#") 关于微庆
+				.hd-mainnav-bt
+
 
 
 
 		#body
-			| 身体
+			block hp-slide
+
+			.bd-main
+				.ly-mid
+					block bd-content
+
 		#foot
-			| 脚
+			.ft-main
+				.ly-mid
+					.ft-wrap
+						.ft-txt
+							span 版权所有
+							span &nbsp;©
+							span &nbsp;2008-2014
+							span &nbsp;深圳市企源动力科技有限公司.
+							span &nbsp;&nbsp;版权归
+							span &nbsp;
+							a(href="#") 微管家
+							span &nbsp;所有,盗用必究
+							span &nbsp;&nbsp;&nbsp;
+							a(href="#") 网站地图
+							span &nbsp;&nbsp;&nbsp;备案号：粤ICP备13025925号
+
+						.ft-txt
+							span 公司地址：深圳市福田区深南路车公庙工业区（泰然）工贸园204栋东座7楼715室
+							span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+							span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							a(href="#") 代理申请
+							span &nbsp;&nbsp;
+							a(href="#") 代理登录
 
 					
-	block floor-script
+	block ft-script
+		script(src = '#{jsRoot}/lib/requirejs/config.js')
+	block ft-rjs-script
+		script(src = '#{jsRoot}/lib/requirejs/require.js')
+		
