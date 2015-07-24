@@ -8,6 +8,7 @@ module.exports = function(grunt) {
         version: '1.0.0',
         app: 'app',
         dist: 'dist',
+        bowerDir: 'bower_components/',
         // 静态资源目录
         staticRoot: ''
     };
@@ -30,6 +31,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('server', [
         'connect:livereload',
+        'connect:bower',
         'watch'
     ]);
 

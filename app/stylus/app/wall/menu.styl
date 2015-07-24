@@ -1,0 +1,28 @@
+.menu
+	position: absolute
+	left 50%
+	bottom 5%
+	height 60px
+	width: 530px
+	margin-left: -(@width/2)
+	background-color: rgba(31,31,31,.8)
+	line-height: @height
+	transform(translate3d(0,200px,0))
+	transition(transform,.5s)
+	/.menu-list
+		text-align: center
+		/.menu-item
+			display: inline-block
+			width: 42px
+			height 41px
+			margin-left: 10px
+			margin-right: 10px
+			vertical-align: middle
+			background: url($wallImageRoot + "menu-ico.png") no-repeat 0 0
+			for num in 1..7
+				&:nth-child({num})
+					background-position: unit(-((num - 1)*42), 'px') 0
+					&:hover
+						background-position: unit(-((num - 1)*42), 'px') 100%
+	&.active
+		transform(translate3d(0,0,0))

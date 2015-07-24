@@ -1,0 +1,25 @@
+include ../variable/global.jade
+- var rootDir = '../..'
+- var cssRoot  = rootDir + '/css'
+- var jsRoot   = rootDir + '/scripts'
+- var imgRoot  = rootDir + '/images'
+- var htmlRoot = rootDir + '/view'
+
+//- - var navIndex = 0
+
+doctype html
+html(ng-app="wq-wall-app")
+	head
+		meta(charset = 'utf-8')
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		block head-title
+			title 微庆--weiqing
+		link(rel = 'shortcut icon', type = 'image/x-icon', href = '#{rootDir}/favicon.ico')
+		script(src="http://127.0.0.1:9100/angular/angular.js")
+		script(src="http://127.0.0.1:9100/angular-route/angular-route.js")
+		link(rel = 'stylesheet' href = '#{cssRoot}/wall.css')
+	body
+		ng-view
+		.menu(wq-menu ng-class="{active: menuCtrl.active}")
+		script(src="#{jsRoot}/app/wall/main.js")
+		

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="wq-wall-app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>微庆--weiqing</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <script src="http://127.0.0.1:9100/angular/angular.js"></script>
+    <script src="http://127.0.0.1:9100/angular-route/angular-route.js"></script>
+    <link rel="stylesheet" href="../../css/wall.css">
+  </head>
+  <body>
+    <ng-view></ng-view>
+    <div wq-menu ng-class="{active: menuCtrl.active}" class="menu"></div>
+    <script src="../../scripts/app/wall/main.js"></script>
+  </body>
+</html>

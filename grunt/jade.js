@@ -16,7 +16,7 @@ module.exports = {
                 {
                     expand: true,
                     cwd: '<%= product.app %>/jade/src',
-                    src: ['{,*/}*.jade'],
+                    src: ['{,*/,*/*/}*.jade'],
                     dest: '<%= product.app %>/view/',
                     ext: '.html'
                 }

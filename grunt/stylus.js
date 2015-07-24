@@ -4,44 +4,32 @@ var fs = require('fs'),
 ;
 
 
-var baseRoot = '../ZJP-GRUNT-BASE/',
-    mutablePath = '/stylus/mutable',
-
-
-    stylusPaths = [
-        baseRoot + 'src/css/stylus/meta/',
-        baseRoot + 'src/css/stylus/config/',
-        baseRoot + 'src/css/stylus/nib/'
-    ],
-
-
-
-
+var mutablePath = '/stylus/mutable',
+    nibPaths,
     stylusImports = ['site_var.styl', 'site_func.styl', 'site_mix.styl']
-
-
 ;
 
 module.exports = Config;
 
-
-
-
 function Config(c){
     var isExisted,
-        self = this
+        self = this,
+        nibPaths = []
     ;
+
+    nibPaths.push(c.bowerDir + 'nib/lib/nib/')
+
     this.options = {
         compress: false,
-        paths: stylusPaths.concat(c.app + mutablePath),
+        paths: nibPaths.concat(c.app + mutablePath),
         import: [],
         define: {
             version: '<%= product.version %>'
         },
         banner: '/**\n' +
             ' * 文件: .css \n' +
-            ' * 公司: 浙江电子口岸\n' +
-            ' * 作者: qzzf1987@gmail.com\n' +
+            ' * 公司: IFELSE\n' +
+            ' * 作者: zhang150339894@qq.com\n' +
             ' * 时间: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>\n' +
             ' */\n'
     };
@@ -53,9 +41,6 @@ function Config(c){
             self.options.import.push(val)
         }
     });
-
-    // isExisted = fs.existsSync(stylusPaths[3] + path.sep + 'site_var.styl')
-
 
     this.app = {
         files: [{
