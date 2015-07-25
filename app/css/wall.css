@@ -2,7 +2,7 @@
  * 文件: .css 
  * 公司: IFELSE
  * 作者: zhang150339894@qq.com
- * 时间: 2015-07-25 02:07:42
+ * 时间: 2015-07-25 16:28:12
  */
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -255,42 +255,49 @@ body {
 .menu-item:nth-child(1) {
   background-position: 0px 0;
 }
+.menu-item:nth-child(1).active,
 .menu-item:nth-child(1):hover {
   background-position: 0px 100%;
 }
 .menu-item:nth-child(2) {
   background-position: -42px 0;
 }
+.menu-item:nth-child(2).active,
 .menu-item:nth-child(2):hover {
   background-position: -42px 100%;
 }
 .menu-item:nth-child(3) {
   background-position: -84px 0;
 }
+.menu-item:nth-child(3).active,
 .menu-item:nth-child(3):hover {
   background-position: -84px 100%;
 }
 .menu-item:nth-child(4) {
   background-position: -126px 0;
 }
+.menu-item:nth-child(4).active,
 .menu-item:nth-child(4):hover {
   background-position: -126px 100%;
 }
 .menu-item:nth-child(5) {
   background-position: -168px 0;
 }
+.menu-item:nth-child(5).active,
 .menu-item:nth-child(5):hover {
   background-position: -168px 100%;
 }
 .menu-item:nth-child(6) {
   background-position: -210px 0;
 }
+.menu-item:nth-child(6).active,
 .menu-item:nth-child(6):hover {
   background-position: -210px 100%;
 }
 .menu-item:nth-child(7) {
   background-position: -252px 0;
 }
+.menu-item:nth-child(7).active,
 .menu-item:nth-child(7):hover {
   background-position: -252px 100%;
 }

@@ -18,5 +18,5 @@
       <button ng-click="gameCtrl.launch()">开 始</button>
     </div>
   </div>
-  <div class="game-clock"><span ng-repeat="sec in gameCtrl.secs track by $index" class="clock-sec">{{sec}}</span></div>
+  <div class="game-clock"><span ng-repeat="sec in gameCtrl.secs | secondsSplit track by $index" class="clock-sec">{{sec}}</span></div>
 </div>

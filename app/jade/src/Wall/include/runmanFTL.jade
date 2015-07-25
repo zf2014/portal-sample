@@ -17,7 +17,7 @@
 			button(ng-click="gameCtrl.launch()") 开 始
 
 	.game-clock
-		span.clock-sec(ng-repeat="sec in gameCtrl.secs track by $index") {{sec}}
+		span.clock-sec(ng-repeat="sec in gameCtrl.secs | secondsSplit track by $index") {{sec}}
 			
 
 

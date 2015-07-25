@@ -1,2 +1,2 @@
 .menu-list
-	a(href="{{menuObj.link}}" ng-repeat="menuObj in menuCtrl.list track by $index" class="menu-item item{{$index}}")
+	a(href="{{menuObj.link}}" ng-repeat="menuObj in menuCtrl.list track by $index" ng-click="menuCtrl.menuClick(menuObj.link)" class="menu-item item{{$index}}" ng-class="{active: menuObj.active}")

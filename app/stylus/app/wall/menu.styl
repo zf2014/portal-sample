@@ -22,6 +22,7 @@
 			for num in 1..7
 				&:nth-child({num})
 					background-position: unit(-((num - 1)*42), 'px') 0
+					&.active
 					&:hover
 						background-position: unit(-((num - 1)*42), 'px') 100%
 	&.active

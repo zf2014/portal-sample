@@ -19,42 +19,37 @@ myapp.config(['$routeProvider', function($routeProvider){
 
 
 
-myapp.controller('gameController', ['TimeService', '$routeParams', function(TimeService, $routeParams){
-	var ts = new TimeService(+$routeParams.secs),
-		self = this
-	;
+myapp.controller('gameController', ['$routeParams', '$interval', function($routeParams, $interval){
+	var self = this;
 	this.rule_is_show = true;
-	this.secs = ts.num2Arr();
+	this.secs = +$routeParams.secs
 	this.launch = function(){
+		var intervalChanelId;
 		self.rule_is_show = false;
-		console.log('开始倒计时...')
+		intervalChanelId = $interval(function(){
+			self.secs -= 1;
+			if(self.secs === 0){
+				$interval.cancel(intervalChanelId);
+			}
+		}, 1000);
 	}
+
 }]);
 
-myapp.factory('TimeService', ['$interval', function($interval){
-	var TimeService = function(secs){
-		this.seconds = secs || 0;
-	};
 
-	TimeService.prototype = {
-		num2Arr: function(){
-			var arr = [],
-				size = 3
-			;
-			arr = String.prototype.split.call(this.seconds, '')
-			while(arr.length < size){
-				arr.unshift('0');
-			}
-			return arr;
-		},
-
-		countdown: function(){
-
+myapp.filter('secondsSplit', function(){
+	return function(input, size){
+		var size = size || 3,
+			output
+		;
+		output = String.prototype.split.call(input, '');
+		while(output.length < size){
+			output.unshift('0');
 		}
-
+		return output;
 	}
-	return TimeService;
-}])
+})
+
 
 
 myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $document){
@@ -68,28 +63,48 @@ myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $docum
 			ctrl.hide();
 			$scope.$apply();
 		});
+
+
 	}
 	return {
 		restrict: 'A', 
-		controller: ['$scope', function($scope){
+		controller: ['$scope', '$location', function($scope, $location){
+			var self = this
+			;
 			this.active = false;
+
 			this.show = function(){
 				this.active = true;
 			}
 			this.hide = function(){
 				this.active = false;
 			}
-
 			this.list = [
-				{link: '#/wall/runman/100'},
-				{link: '#/wall/runman/120'},
-				{link: '#/wall/runman/140'},
-				{link: '#/wall/runman/160'},
-				{link: '#/wall/runman/180'},
-				{link: '#/wall/runman/200'},
-				{link: '#/wall/runman/220'}
+				{link: '#/wall/runman/100', active: false},
+				{link: '#/wall/runman/120', active: false},
+				{link: '#/wall/runman/140', active: false},
+				{link: '#/wall/runman/160', active: false},
+				{link: '#/wall/runman/180', active: false},
+				{link: '#/wall/runman/200', active: false},
+				{link: '#/wall/runman/220', active: false}
 			]
 
+			this.menuClick = function(url){
+				activeTargetMenuLinkByUrl(url);
+			}
+			function activeTargetMenuLinkByUrl(url){
+				angular.forEach(self.list, function(menuItem){
+					if(menuItem.link === url){
+						menuItem.active = true;
+					}else{
+						menuItem.active = false;
+					}
+				})
+			}
+			function init(){
+				activeTargetMenuLinkByUrl('#' + $location.url())
+			}
+			init();
 		}],
 		controllerAs: 'menuCtrl',
 		templateUrl: 'include/menuFTL.html',
