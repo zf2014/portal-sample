@@ -2,7 +2,7 @@
  * 文件: .css 
  * 公司: IFELSE
  * 作者: zhang150339894@qq.com
- * 时间: 2015-07-25 16:28:12
+ * 时间: 2015-07-26 23:07:39
  */
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -402,6 +402,19 @@ body {
   color: #fff;
   font-size: 24px;
 }
+.game-countdown {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 68px;
+  height: 134px;
+  margin-left: -34px;
+  margin-top: -67px;
+}
+.game-countdown span {
+  font-size: 120px;
+  color: #ff0;
+}
 .game-clock {
   position: absolute;
   bottom: 40px;
@@ -533,4 +546,50 @@ body {
     opacity: 1;
     -webkit-transform: translateY(0);
   }
+}
+.runman-field {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding-top: 246px;
+  padding-left: 190px;
+  padding-right: 160px;
+  -webkit-transform: skewX(-28deg);
+}
+.runman-member {
+  position: relative;
+  height: 75px;
+}
+.runman-member:first-child {
+  height: 70px;
+}
+.runman-member:first-child .runman-way {
+  line-height: 70px;
+}
+.runman-way {
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+}
+.runman-name {
+  font-size: 26px;
+  color: #8a2000;
+}
+.runman-doll {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 78px;
+  height: 112px;
+  -webkit-transform: skewX(28deg) translateX(-100px);
+  -webkit-transition: left 10s;
+}
+.runman-doll.female {
+  background: url("../images/wall/runman-female.png") no-repeat 0 0;
+}
+.runman-doll.male {
+  background: url("../images/wall/runman-male.png") no-repeat 0 0;
 }

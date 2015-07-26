@@ -6,6 +6,9 @@
     <div class="game-bg-chunk"></div>
     <div class="game-bg-chunk"></div>
   </div>
+  <div class="game-kernel runman-field">
+    <div wq-runman-member="wq-runman-member" ng-if="gameCtrl.begin"></div>
+  </div>
   <div class="game-title"></div>
   <div ng-class="{opened: gameCtrl.rule_is_show, hidden: !gameCtrl.rule_is_show}" class="game-rule">
     <div class="game-rule-title"></div>
@@ -18,5 +21,6 @@
       <button ng-click="gameCtrl.launch()">开 始</button>
     </div>
   </div>
+  <div ng-show="gameCtrl.countdown.active" class="game-countdown"><span>{{gameCtrl.countdown.count}}</span></div>
   <div class="game-clock"><span ng-repeat="sec in gameCtrl.secs | secondsSplit track by $index" class="clock-sec">{{sec}}</span></div>
 </div>

@@ -1,0 +1,39 @@
+.runman-field
+	position: absolute
+	left 0
+	top 0
+	box-sizing: border-box
+	width: 100%
+	height 100%
+	padding-top: 246px
+	padding-left: 190px
+	padding-right: 160px
+	transform(skewX(-28deg))
+.runman-member
+	position: relative
+	height 75px
+	&:first-child
+		height 70px
+		.runman-way	
+			line-height: @height
+	/.runman-way
+		height @height
+		text-align: center
+		line-height: @height
+		/.runman-name
+			font-size: 26px
+			color #8a2000
+	/.runman-doll
+		position: absolute
+		left 0
+		bottom 3px
+		width: 78px
+		height 112px
+		transform(skewX(28deg) translateX(-100px))
+		transition(left ,10s)
+		
+		&.female
+			background: url($wallImageRoot + "runman-female.png") no-repeat 0 0
+		&.male
+			background: url($wallImageRoot + "runman-male.png") no-repeat 0 0
+		
