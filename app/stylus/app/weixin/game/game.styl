@@ -1,0 +1,67 @@
+.game-body
+	position: relative;
+	height: 100%
+	width: 100%
+	overflow: hidden
+
+	/.game-title
+		position: absolute;
+		left 0
+		top 60px
+		width: 100%
+		height 60px
+		background-size: auto 100%
+		background-position: 50% 0
+		background-repeat: no-repeat
+	/.game-button
+		position: absolute;
+		left 50%
+		top 50%
+		width: 250px
+		height: 250px
+		margin-left: -(@width/2)
+		margin-top: -(@height/2)
+		background-position: 0 0
+		background-repeat: no-repeat
+		background-size: 100%
+	/.game-cover
+		position: absolute;
+		left 0
+		top 0
+		width: 100%
+		height 100%
+		z-index: 2
+		background: rgba(0,0,0,.8)
+		.howto
+			position: absolute;
+			left 50%
+			top 50%
+			width: 150px
+			height 150px
+			margin-left: -(@width/2)
+			margin-top: -(@height/2)
+			background-size: auto 100%
+			background-position: 0 0
+			background-repeat: no-repeat
+			// background-image: url(../../images/weixin/runman-howto.png)
+			&.is-shake
+				background-image: url(../../images/weixin/shake-howto.png)
+			&.is-tap
+				background-image: url(../../images/weixin/tap-howto.png)
+			
+			.howto-txt
+				position: absolute;
+				left 50%
+				top 100%
+				width: 340px
+				height 165px
+				padding 35px 20px 0
+				margin-left: -(@width/2)
+				margin-top: 20px
+				line-height: 1.4
+				background-size: 100% 100%
+				background-position: 0 0
+				background-repeat: no-repeat
+				background-image: url(../../images/weixin/howto-txt.png)
+				color #ffff00
+				font-size: 20px

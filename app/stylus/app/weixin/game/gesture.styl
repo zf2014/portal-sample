@@ -1,0 +1,18 @@
+.game-body.gesture
+	.game-title
+		top 60px
+		background-image: url(../../images/weixin/gesture-title.png)
+	.game-button
+		width: 140px
+		height: 140px
+		margin-left: -(@width/2)
+		margin-top: -(@height/2)
+		&.scissor
+			transform(translate3d(-60%,-50%,0))
+			background-image: url(../../images/weixin/scissor.png)
+		&.stone
+			transform(translate3d(60%,-50%,0))
+			background-image: url(../../images/weixin/stone.png)
+		&.cloth
+			transform(translate3d(0,50%,0))
+			background-image: url(../../images/weixin/cloth.png)

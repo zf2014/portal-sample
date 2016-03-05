@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="wq-wall-app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>微庆--weiqing</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js"></script>
+    <link rel="stylesheet" href="../../css/wall_800_600.css">
+  </head>
+  <body class="view-800">
+    <ng-view></ng-view>
+    <div wq-menu ng-class="{active: menuCtrl.active}" class="menu"></div>
+    <script src="../../scripts/app/wall/main.js"></script>
+  </body>
+</html>

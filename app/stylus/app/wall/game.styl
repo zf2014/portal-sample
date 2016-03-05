@@ -7,43 +7,35 @@
 		z-index: 0
 		width: 100%
 		height 100%
-		/.game-bg-chunk
-			/.game-runman &
-				float: left
-				width 50%
-				height 50%
-				background: url($wallImageRoot + "runman.jpg") no-repeat 0 0
-				&:nth-child(1)
-					background-position: 0 0
-				&:nth-child(2)
-					background-position: 100% 0
-				&:nth-child(3)
-					background-position: 0 100%
-				&:nth-child(4)
-					background-position: 100% 100%
 	
+	/.game-logo
+		position: absolute;
+		/.view-800 &
+			left 20px
+			top 20px
+			width: 136px
+			height 50px
+			background: url($wallImageRoot + "logo.png") no-repeat 0 0
 	/.game-title
 		position: absolute
 		top 5%
 		left 50%
 		z-index: 1
-		width: 338px
-		height 77px
-		margin-left: -(@width/2)
-		background: url($wallImageRoot + "runman-title.png") no-repeat 0 0
 		animation(game-title, 0.5s)
-
-	/.game-rule
+	/.game-kernel
+		position: absolute;
+		left 0
+		top: 0
+		width: 100%
+		height 100%
+		box-sizing: border-box
+		
+	/.game-dialog
 		position: absolute
 		left 50%
 		top 50%
 		z-index: 2
 		box-sizing: border-box
-		width: 638px
-		height 386px
-		padding 90px 30px 0
-		margin-top: -(@height/2)
-		margin-left: -(@width/2)
 		background-color: rgba(255,255,255,.5)
 		border-radius: 10px
 		/&.hidden
@@ -51,31 +43,163 @@
 		/&.opened
 			animation(game-rule-opened, 0.5s forwards)
 		
-		/.game-rule-title
+		&.is-rule
+			/.view-800 &
+				width: 484px
+				height 296px
+				padding 75px 20px 0
+				margin-top: -(@height/2)
+				margin-left: -(@width/2)
+				&.has-player
+					height 340px
+					margin-top: -(@height/2)
+					table.rule-player
+						width: 100%
+						border: none
+						th
+							background: #ff3000
+							color #fff
+						td
+							background: #fab000
+							color #313131
+							text-align: center
+			/.view-1280 &
+				width: 638px
+				height 386px
+				padding 90px 30px 0
+				margin-top: -(@height/2)
+				margin-left: -(@width/2)
+		
+		&.is-prize
+			/.view-800 &
+				width: 484px
+				height 330px
+				padding 75px 20px 0
+				margin-top: -(@height/2)
+				margin-left: -(@width/2)
+			
+				/&.prize-of-top3
+					height 330px
+					margin-top: -(@height/2)
+					/.top3
+						position: relative;
+						&:after
+							content: ''
+							position: absolute;
+							height 20px
+							width: 90%
+							bottom -(@height)
+							left 5%
+							border-radius: 6px
+							background: #fab000
+						/.top3-bar-list
+							$barWidth = 120px
+							overflow: hidden
+							width $barWidth*3 + 6px
+							margin 0 auto
+							/.top3-bar
+								float: left
+								position: relative;
+								width $barWidth
+								height 170px
+								&.the-first
+									margin: 0 3px;
+								/.bar-container
+									position: absolute;
+									left 0
+									bottom 0
+									width: 100%
+									/.bar-hd
+										position: relative;
+										height 28px
+										line-height @height
+										text-align: center;
+										color #fff
+										background: #ff3000
+										border-top-right-radius: 6px
+										border-top-left-radius: 6px
+										.bar-hd-avatar
+											position: absolute;
+											left 50%
+											top -60px
+											width: 55px
+											height 55px
+											margin-left -(@width/2)
+											border-radius: 50%
+											
+									/.bar-bd
+										background: #fab000
+										text-align: center
+										color #313131
+										/.the-second &
+											height 54px
+											line-height: @height
+										/.the-first &
+											height 81px
+											line-height: @height
+										/.the-third &
+											height 27px
+											line-height: @height
+				/&.prize-of-top5
+					height 410px
+					margin-top: -(@height/2)
+					/.top5
+						/table.top5-table
+							border: 1px solid #ffb709
+							td
+								padding 10px 0
+								border: 1px solid #ffb709
+								background: #fff04b
+								/img.top5-avatar
+									width: 70px
+									height 70px
+									margin: 0 15px 0 35px
+									border-radius: 50%
+									vertical-align: middle
+								> span
+									font-size: 20px
+									
+		/.game-dialog-title
 			position: absolute
 			left 50%
 			top 25px
-			width: 222px
-			height 42px
-			margin-left: -(@width/2)
-			background: url($wallImageRoot + "rule-title.png") no-repeat 0 0
+			background: url($wallImageRoot + "dialog-title-bg.png") no-repeat 0 0
+			/.view-800 &
+				width: 202px
+				height: 38px
+				margin-left: -(@width/2)
+				line-height: @height
+				color #fff
+				text-align: center;
+				font-size: 20px
+			    font-weight: 700
+			    letter-spacing: 2px
+			/.view-1280 &
+				width: 222px
+				height 42px
+				margin-left: -(@width/2)
+				
+				
 		
-		/.game-rule-content
+		/.game-dialog-content
 			font-size: $xfontSize
 			line-height: 1.6
 			font-weight: 700
 			color rgba(49,49,49,1)
+			/.view-800 &
+				font-size $hfontSize
 			p
 				margin-top: 5px
-				margin-bottom: 5px
-		
-		/.game-rule-startbtn
+				margin-bottom: 5px		
+		/.game-dialog-button
 			position: absolute
 			bottom 18px
 			left 0
 			width: 100%
 			height 46px
 			text-align: center
+			/.view-800 &
+				height: 36px
 			button
 				width 172px
 				height 100%
@@ -87,19 +211,37 @@
 				border-radius: 3px
 				color #fff
 				font-size: 24px
-		
-
+				/.view-800 &
+					width: 130px
+					height: 36px
+					font-size: 18px
+				
 	/.game-countdown
-		position: fixed
+		position: absolute;
 		left 50%
 		top 50%
 		width: 68px
 		height 134px
 		margin-left: -(@width/2)
 		margin-top: -(@height/2)
+		/.view-800 &
+			width: 48px
+			height 96px
+			margin-left: -(@width/2)
+			margin-top: -(@height/2)
 		span
 			font-size: 120px
 			color #ff0
+			/.view-800 &
+				font-size 80px
+			
+			/.game-majiang &
+				color #ff3000
+			/.game-gua &
+				color #ff3000
+			/.game-caiquan &
+				color #ff3000
+			
 			
 
 	/.game-clock
@@ -112,6 +254,13 @@
 		padding-top 22px
 		padding-left: 23px
 		background: url($wallImageRoot + "clock.png") no-repeat 0 0
+		/.view-800 &
+			bottom 25px
+			right 60px
+			width 126px
+			height: 84px
+			padding-left: 17px
+			padding-top: 12px
 		/.clock-sec
 			float: left
 			width: 39px
@@ -123,6 +272,10 @@
 			font-size: 50px
 			&:last-child
 				margin-right: 0
+			
+			/.view-800 &
+				font-size 32px
+				width: 30px
 
 
 @keyframes game-title

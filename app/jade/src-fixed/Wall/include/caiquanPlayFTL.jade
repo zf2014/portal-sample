@@ -1,0 +1,5 @@
+.caiquan-player-item.J-caiquan-player(ng-repeat="paly in palyCtrl.players")
+	.player-name(ng-click="palyCtrl.nextRank();") {{paly.name}}
+	div(class="player-rank {{paly.rank}}")
+//- style="left: {{mebmer.score | rundistance:memberCtrl.curtimes:memberCtrl.totaltimes:memberCtrl.fulllength}}"
+

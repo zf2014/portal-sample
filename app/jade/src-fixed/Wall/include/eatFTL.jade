@@ -1,0 +1,36 @@
+.game.game-eat
+	.game-bg
+		.game-bg-chunk
+		.game-bg-chunk
+		.game-bg-chunk
+		.game-bg-chunk
+
+	.game-logo
+
+	.game-kernel.eat-field
+		div(ng-if="gameCtrl.begin && !gameCtrl.end" class="eat-bowl")
+
+
+	.game-title
+
+	.game-dialog.is-rule(ng-class="{opened: gameCtrl.rule_is_show, hidden: !gameCtrl.rule_is_show}")
+		.game-dialog-title
+			span 游戏规则
+		.game-dialog-content
+			p 在场7个人中5个人拿到相同的一个词语，剩下的2个拿到与之相关的另一个词语。
+			p 每人每轮只能说一句话描述自己拿到的词语（不能直接说出来那个词语），与不能让卧底发现，也要给同胞以暗示。
+			p 每轮描述完毕，7人投票选出怀疑是卧底的那个人，得票数最多的人出局，俩个人一样多的话，待定（就是保留）。
+		.game-dialog-button
+			button(ng-click="gameCtrl.launch()") 开 始
+
+	.game-countdown(ng-show="gameCtrl.countdown.active")
+		span {{gameCtrl.countdown.count}}
+
+	.game-clock
+		span.clock-sec(ng-repeat="sec in gameCtrl.secs | secondsSplit track by $index") {{sec}}
+	
+	div(ng-if="gameCtrl.end")
+		.game-end
+			| 游戏结束(需要设计)！
+
+

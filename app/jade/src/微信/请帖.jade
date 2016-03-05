@@ -1,0 +1,34 @@
+extends ../../layout/weixin.jade
+block wx-head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/wx/letter.css')
+
+append wx-foot-scripts
+	script(src="#{jsRoot}/app/weixin/letter.js")
+
+block wx-body
+	.letter-body
+		.letter-side
+			a.side-btn.side-pic
+			a.side-btn.side-bgm
+		.letter-arrow
+		.letter-page
+			img.img-center.letter-title(src="#{imgRoot}/weixin/letter-pic1.png" width="60%")
+			img.img-center(src="#{imgRoot}/weixin/letter-pic2.png" width="85%")
+			.letter-name
+				span 王小二
+				span &
+				span 李小六
+			.letter-time
+				span 2015.12.18
+		.letter-page
+			img.img-center(src="#{imgRoot}/weixin/letter-pic2.png" width="85%")
+
+			.letter-desc
+				p 王小二&李小六
+				p 2015-12-18 星期六 18点18分
+				p 杭州市市中心大酒店
+				p 下城区市中心路128号
+
+			a.letter-btn 祝福留言
+
+			a.letter-btn 一键导航

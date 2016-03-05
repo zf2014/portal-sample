@@ -1,0 +1,142 @@
+extends ../../layout/member.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/member.css')
+
+
+block ft-rjs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js')
+
+
+block bd-content
+	.member-main
+		.member-left
+			.member-profile-panel
+				.profile-avatar
+					.avatar-border
+						img.avatar-img(src="#{imgRoot}/temp/avatar.jpg")
+				.profile-userinfo
+					ul.userinfo-list
+						li.userinfo-item
+							span.k 姓名：
+							span.v 张三
+						li.userinfo-item
+							span.k 状态：
+							span.v 正常
+						li.userinfo-item
+							span.k 微信昵称：
+							span.v tony00123
+						li.userinfo-item
+							span.k 电话：
+							span.v 139*****042
+				.profile-times
+					P 
+						| 这是您第
+						span.times-num 2
+						| 次，感谢
+				.profile-date
+					p
+						| 最后登陆时间：
+						span.date-time 2015-05-01
+
+				.profile-settings
+					a(href="#") 设置>>
+			.member-email
+				a(href="#")
+					img(src="#{imgRoot}/member/envelop.jpg" alt="邮箱")
+		.member-right
+			.member-game
+				ul.game-list
+					li.game-item.game-item-first
+						a
+							img.game-pic(src="#{imgRoot}/member/g1.png")
+							.game-name
+								span 微信墙
+					li.game-item
+						a
+							img.game-pic(src="#{imgRoot}/member/g2.png")
+							.game-name
+								span 邀请函
+					li.game-item
+						a
+							img.game-pic(src="#{imgRoot}/member/g3.png")
+							.game-name
+								span 超级大胃王
+					li.game-item
+						a
+							img.game-pic(src="#{imgRoot}/member/g4.png")
+							.game-name
+								span 奔跑吧兄弟
+					li.game-item
+						a
+							img.game-pic(src="#{imgRoot}/member/g5.png")
+							.game-name
+								span 搓牌高手
+					li.game-item
+						a
+							img.game-pic(src="#{imgRoot}/member/g6.png")
+							.game-name
+								span 无敌大转盘
+			
+			.member-party
+				.party-setting
+					.party-setting-title
+						span 我的聚会日期
+						a.party-setting-icon
+					.party-setting-info
+						.party-setting-date
+							.date-day
+								span 16
+							.date-week
+								span 星期六
+							.date-month
+								span 2015.05
+
+						.party-setting-address
+							span 星光大酒店
+
+				.party-flow
+					.party-flow-title
+						span 微庆使用流程
+					.party-flow-content
+
+			.member-news-help
+				.news
+					.news-title
+						span 我的聚会
+					.news-content
+						ul.news-list
+							li.news-item
+								span.news-party-title ▪ 小明与小洁的婚礼
+								span.news-party-address 星光大酒店
+								span.news-party-date 2015-6-23  19：00
+							li.news-item
+								span.news-party-title ▪ 小明与小洁的婚礼
+								span.news-party-address 星光大酒店
+								span.news-party-date 2015-6-23  19：00
+							li.news-item
+								span.news-party-title ▪ 小明与小洁的婚礼
+								span.news-party-address 星光大酒店
+								span.news-party-date 2015-6-23  19：00
+							li.news-item
+								span.news-party-title ▪ 小明与小洁的婚礼
+								span.news-party-address 星光大酒店
+								span.news-party-date 2015-6-23  19：00
+				
+				.help
+					.help-title
+						span 帮助中心
+					.help-content
+						ul.help-list
+							li.help-item
+								a(href="#") 怎样玩转聚会？
+							li.help-item
+								a(href="#") 怎样玩转聚会？
+							li.help-item
+								a(href="#") 怎样玩转聚会？
+							li.help-item
+								a(href="#") 怎样玩转聚会？
+							
+
+
+

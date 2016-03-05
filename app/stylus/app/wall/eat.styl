@@ -1,0 +1,35 @@
+.game-title
+	/.game-eat &
+		width: 241px
+		height 57px
+		margin-left: -(@width/2)
+		background: url($wallImageRoot + "eat-title.png") no-repeat 0 0
+
+
+.game-bg-chunk
+	/.game-eat &
+		float: left
+		width 50%
+		height 50%
+		background: url($wallImageRoot + "eat.jpg") no-repeat 0 0
+		&:nth-child(1)
+			background-position: 0 0
+		&:nth-child(2)
+			background-position: 100% 0
+		&:nth-child(3)
+			background-position: 0 100%
+		&:nth-child(4)
+			background-position: 100% 100%
+
+
+.eat-bowl
+	position: absolute;
+	left 50%
+	top 50%
+	z-index: 2
+	background: url($wallImageRoot + "baozi.gif") no-repeat 0 0
+	/.game-eat &
+		width 426px
+		height: 372px
+		margin-top -(@height/2)
+		margin-left -(@width/2)

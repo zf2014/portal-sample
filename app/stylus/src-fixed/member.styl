@@ -1,0 +1,206 @@
+$caption
+	padding-left: 15px
+	margin-top: 15px
+	font-size: $hfontSize
+	font-weight: 700
+	color #313131
+.member-main
+	min-height: 200px
+	overflow: hidden
+	/.member-left
+		float: left
+		width: 265px
+	
+	/.member-right
+		float: right
+		width: 715px
+
+
+
+// 用户状态
+.member-profile-panel
+	height 372px
+	padding 26px 28px 0
+	background-color: #f1f0f0
+	color #1b1b1b
+	/.profile-avatar
+		text-align: center;
+		/.avatar-border
+			display: inline-block
+			border: 3px solid $gsiteColor
+			border-radius: 50%
+			/.avatar-img
+				width: 90px
+				height 90px
+				border-radius: 50%
+	/.profile-userinfo
+		margin-top: 20px
+		font-weight: 700
+		/.userinfo-item
+			line-height: 2.4
+	/.profile-times
+		margin-top: 20px
+		font-weight: 700
+	/.profile-date
+		margin-top: 8px
+		font-weight: 700
+	/.profile-settings
+		margin-top: 16px
+		text-align: right
+		a
+			color: $gsiteColor
+			
+
+// 邮箱
+.member-email
+	margin-top: 18px
+	a
+		img
+			height 184px
+
+
+// 游戏
+.member-game
+	/.game-list
+		overflow: hidden
+		/.game-item
+			float: left
+			width: 90px
+			margin-left: 35px
+			a
+				text-decoration: none
+			/.game-pic
+				width: 90px
+				height 90px
+			/.game-name
+				margin-top: 5px
+				text-align: center;
+				font-size: $hfontSize
+				font-weight: 700
+				color: #313131
+		/.game-item-first
+			margin-left 0
+
+// 聚会
+.member-party
+	margin-top 25px
+	overflow: hidden
+	/.party-setting
+		float: left
+		width: 202px
+		/.party-setting-title
+			position: relative
+			height 36px
+			line-height: @height
+			text-align: center;
+			background-color: $gsiteColor
+			color: #fff
+			font-size: $gfontSize*(4/3)
+			
+			/.party-setting-icon
+				position: absolute;
+				right 5px
+				top 50%
+				width: 16px
+				height 16px
+				margin-top: -(@height/2)
+				background: url(../images/member/setting.png) 0 0 no-repeat
+		
+		/.party-setting-info
+			height 194px
+			padding-top: 10px
+			border-width: 0 1px 1px
+			border-style: solid
+			border-color: $gsiteColor
+			text-align: center;
+			color $gsiteColor
+			/.party-setting-date
+				.date-day
+					font-size: 56px
+					font-weight: 700
+				.date-week
+					margin: 6px 0
+					font-size: $hfontSize
+				
+				.date-month
+					font-size: $ifontSize
+			
+			/.party-setting-address
+				margin-top: 15px
+				font-size: $gfontSize*(4/3)
+	
+	/.party-flow
+		float: right
+		width: 502px
+		height 230px
+		border: 1px solid #dedede
+		
+		/.party-flow-title
+			@extend $caption
+		
+		/.party-flow-content
+			height 164px
+			margin-top 12px
+			background: url(../images/member/flow.png) 15px 0 no-repeat
+
+
+.member-news-help
+	height 187px
+	margin-top: 18px
+	.news
+		float: left
+		width: 540px
+		height 100%
+		border: 1px solid #dedede
+		/.news-title
+			@extend $caption
+		
+		/.news-content
+			padding 0 15px
+			/.news-list
+				/.news-item
+					line-height: 2
+					overflow: hidden
+					margin: 8px 0
+					/.news-party-title
+						float: left
+						width: 58%
+						height 24px
+						padding-right: 10px
+						overflow: hidden
+					/.news-party-address
+						float: left
+						width: 20%
+					/.news-party-date
+						float: left
+						width: 22%
+						text-align: right
+						color #959595
+						
+	.help
+		float: right
+		width: 164px
+		height 100%
+		border: 1px solid #dedede
+		
+		/.help-title
+			@extend $caption
+			height 22px
+			padding-left: 38px
+			line-height: @height
+			background: url(../images/member/help-icon.png) 10px 50% no-repeat
+		/.help-content
+			padding 0 8px 0 12px
+			/.help-list
+				/.help-item
+					margin: 8px 0;
+					background: url(../images/member/dot.png) 3px 50% no-repeat
+					a
+						display: block
+						height 24px
+						padding-left: 18px
+						overflow: hidden
+						line-height: @height
+						color #1b1b1b
+						&:hover
+							color $glinkerColor

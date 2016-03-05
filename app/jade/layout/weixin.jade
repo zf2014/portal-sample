@@ -1,0 +1,28 @@
+include ../variable/global.jade
+- var rootDir = '../..'
+- var cssRoot  = rootDir + '/css'
+- var jsRoot   = rootDir + '/scripts'
+- var imgRoot  = rootDir + '/images'
+- var htmlRoot = rootDir + '/view'
+
+//- - var navIndex = 0
+
+doctype html
+html
+	head
+		meta(charset = 'utf-8')
+		meta(name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		title
+			block wx-head-title-text
+				| 微庆微信版
+		link(rel = 'shortcut icon', type = 'image/x-icon', href = '#{rootDir}/favicon.ico')
+		block wx-head-theme
+			link(rel = 'stylesheet' href = '#{cssRoot}/wx/weixin.css')
+	body
+		.wx-container
+			block wx-body
+				| 微信内容
+
+
+		block wx-foot-scripts
+			script(src="http://192.168.1.101:9100/zepto/zepto.js")

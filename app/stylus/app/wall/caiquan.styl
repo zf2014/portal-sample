@@ -1,0 +1,81 @@
+.game-title
+	/.game-caiquan &
+		width: 247px
+		height 56px
+		margin-left: -(@width/2)
+		background: url($wallImageRoot + "caiquan-title.png") no-repeat 0 0
+
+
+.game-bg-chunk
+	/.game-caiquan &
+		float: left
+		width 50%
+		height 50%
+		background: url($wallImageRoot + "caiquan.jpg") no-repeat 0 0
+		&:nth-child(1)
+			background-position: 0 0
+		&:nth-child(2)
+			background-position: 100% 0
+		&:nth-child(3)
+			background-position: 0 100%
+		&:nth-child(4)
+			background-position: 100% 100%
+
+
+.caiquan-container
+	padding 140px 60px 0
+	.caiquan-left
+		float: left
+		border-radius: 10px
+		background: rgba(247,132,39,.5) url($wallImageRoot + "caiquan-left.png") no-repeat 50% 50%
+		/.view-800 &
+			width: 396px
+			height 336px
+	
+	.caiquan-right
+		float right
+		/.caiquan-player-title
+			text-align: center;
+			background-color: #ff3000
+			color #fff
+			border-radius: 10px 10px 0 0
+			/.view-800 &
+				height: 42px
+				line-height: @height
+				font-size: 18px
+		/.caiquan-player-list
+			background-color: rgba(247,132,39,.5)
+			border-radius: 0 0 10px 10px
+			/.view-800 &
+				padding-top: 10px
+				height	336px - 42px
+			
+			/.caiquan-player-item
+				padding-left: 40px
+				margin: 10px 0
+				height: 40px
+				line-height: @height
+				.player-name
+					float left
+					width: 5em
+					color #fff
+					font-size: 22px
+				.player-rank
+					float: left
+					width: 35px
+					height 35px
+					margin-top: 2px
+					background: url($wallImageRoot + "caiquan-rank.png") no-repeat 0 0
+					&.up
+						background-position: 0 0
+					&.down
+						background-position: 0 -35px
+					&.fair
+						background-position: 0 100%
+				
+				
+		/.view-800 &
+			width: 238px
+			height 336px
+			
+		

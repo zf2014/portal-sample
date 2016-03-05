@@ -1,0 +1,53 @@
+#head
+	/.hd-setting
+		height: 26px
+		line-height: @height
+		background-color: #f0f0f0
+		/.hd-setting-lt
+			float: left
+		/.hd-setting-rt
+			float: right
+			
+			.rt-links
+				float: left
+				.sep
+				a
+					float: left
+					color #434343
+				.sep
+					margin-left: 5px
+					margin-right: 5px
+			
+			.rt-links-accout
+				margin-right: 10px
+				color $gsiteColor
+				.sep
+				a
+					color @color	
+
+
+
+	/.hd-banner
+		height 81px
+		background: url(../images/member/banner.png) 50% 0 no-repeat
+
+
+	/.hd-nav
+		height 55px
+		background-color: #ff3000
+		/.nav-list
+			overflow: hidden
+			/.nav-item
+				float: left
+				width: 98px
+				height @height
+				line-height: @height
+				text-align: center;
+				font-size: $hfontSize
+				/&-active
+					background-color: #ffa200
+				/.nav-link
+					color #fff
+					&:hover
+						color @color
+						text-decoration: none

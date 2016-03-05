@@ -1,0 +1,27 @@
+extends ../../layout/common.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/login.css')
+
+block head-setting
+
+block ft-rjs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js')
+
+
+
+block bd-content
+	.login-container(style="background-image: url(#{imgRoot}/login/pic.jpg);")
+		.login-frame
+			.login-frame-topline
+			.login-frame-border
+				.login-frame-content
+					.login-cont-title
+						span 微信扫一扫登陆
+					.login-cont-scan
+						img(src="#{imgRoot}/common/ewm.jpg" width="138" height="139" alt="二维码")
+					.login-cont-hint
+						p 提示信息：（可能有一到两行）
+
+
+

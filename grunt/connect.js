@@ -8,12 +8,12 @@ function Config(c){
     this.options = {
         port: 9000,
         livereload: 30000,
-        hostname: '127.0.0.1'
+        hostname: '192.168.1.101'
     };
 
     this.livereload = {
         options: {
-            open: 'http://127.0.0.1:9000/view/首页/index.html',
+            open: 'http://192.168.1.101:9000/view/首页/index.html',
             middleware: function(connect) {
                 return [
                     connect.static(c.app)
@@ -26,7 +26,7 @@ function Config(c){
 
     this.bower = {
         options: {
-            hostname: '127.0.0.1',
+            hostname: '192.168.1.101',
             port: 9100,
             middleware: function(connect) {
                 return [

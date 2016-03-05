@@ -1,0 +1,36 @@
+.game-title
+	/.game-gua &
+		width: 235px
+		height 54px
+		margin-left: -(@width/2)
+		background: url($wallImageRoot + "gua-title.png") no-repeat 0 0
+
+
+.game-bg-chunk
+	/.game-gua &
+		float: left
+		width 50%
+		height 50%
+		background: url($wallImageRoot + "gua.jpg") no-repeat 0 0
+		&:nth-child(1)
+			background-position: 0 0
+		&:nth-child(2)
+			background-position: 100% 0
+		&:nth-child(3)
+			background-position: 0 100%
+		&:nth-child(4)
+			background-position: 100% 100%
+
+.gua-cards
+	position: absolute;
+	top 50%
+	left 50%
+	z-index: 2
+	background-repeat: no-repeat
+	background-position: 0 0
+	/.view-800 &
+		width: 579px
+		height: 333px
+		margin-top: -(@height/2)
+		margin-left -(@width/2)
+		background-image: url($wallImageRoot + "gua-cards.png")

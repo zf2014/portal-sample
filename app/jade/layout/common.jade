@@ -20,19 +20,20 @@ html
 	body
 
 		#head
-			.hd-setting
-				.ly-mid
-					.hd-setting-lt
-						span 您好，欢迎来到微庆！
-					.hd-setting-rt
-						.rt-links.rt-links-accout
-							a(href="#") 登录
-							span.sep |
-							a(href="#") 注册
-						.rt-links
-							a(href="#") 加入收藏
-							span.sep |
-							a(href="#") 新手上路
+			block head-setting
+				.hd-setting
+					.ly-mid
+						.hd-setting-lt
+							span 您好，欢迎来到微庆！
+						.hd-setting-rt
+							.rt-links.rt-links-accout
+								a(href="#") 登录
+								span.sep |
+								a(href="#") 注册
+							.rt-links
+								a(href="#") 加入收藏
+								span.sep |
+								a(href="#") 新手上路
 
 			.hd-mainnav
 				.ly-mid
@@ -43,7 +44,7 @@ html
 						.mainnav
 							ul.mn-list
 								li.mn-item
-									a.mn-active(href="#") 首页
+									a(href="#") 首页
 								li.mn-item
 									a(href="#") 产品介绍
 								li.mn-item
@@ -52,16 +53,11 @@ html
 									a(href="#") 关于微庆
 				.hd-mainnav-bt
 
-
-
-
 		#body
 			block hp-slide
-
 			.bd-main
 				.ly-mid
 					block bd-content
-
 		#foot
 			.ft-main
 				.ly-mid
@@ -87,6 +83,7 @@ html
 							span &nbsp;&nbsp;
 							a(href="#") 代理登录
 
+		block main-fixed
 					
 	block ft-script
 		script(src = '#{jsRoot}/lib/requirejs/config.js')

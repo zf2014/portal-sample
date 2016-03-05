@@ -1,0 +1,92 @@
+include ../variable/global.jade
+- var rootDir = '../..'
+- var cssRoot  = rootDir + '/css'
+- var jsRoot   = rootDir + '/scripts'
+- var imgRoot  = rootDir + '/images'
+- var htmlRoot = rootDir + '/view'
+
+//- - var navIndex = 0
+
+doctype html
+html
+	head
+		meta(charset = 'utf-8')
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		block head-title
+			title 微庆--weiqing
+		link(rel = 'shortcut icon', type = 'image/x-icon', href = '#{rootDir}/favicon.ico')
+		block head-theme
+			link(rel = 'stylesheet' href = '#{cssRoot}/mbase.css')
+	body
+
+		#head
+			block head-setting
+				.hd-setting
+					.ly-mid
+						.hd-setting-lt
+							span 您好，欢迎来到微庆！
+						.hd-setting-rt
+							.rt-links.rt-links-accout
+								a(href="#") 登录
+								span.sep |
+								a(href="#") 注册
+							.rt-links
+								a(href="#") 加入收藏
+								span.sep |
+								a(href="#") 新手上路
+
+				.hd-banner
+
+				.hd-nav
+					.ly-mid
+						ul.nav-list
+							li.nav-item.nav-item-active
+								a.nav-link(href="#") 会员中心
+							li.nav-item
+								a.nav-link(href="#") 互动现场
+							li.nav-item
+								a.nav-link(href="#") 互动设置
+
+
+
+
+
+
+		#body
+			block hp-slide
+			.bd-main
+				.ly-mid
+					.bd-content
+						block bd-content
+		#foot
+			.ft-main
+				.ly-mid
+					.ft-wrap
+						.ft-txt
+							span 版权所有
+							span &nbsp;©
+							span &nbsp;2008-2014
+							span &nbsp;深圳市企源动力科技有限公司.
+							span &nbsp;&nbsp;版权归
+							span &nbsp;
+							a(href="#") 微管家
+							span &nbsp;所有,盗用必究
+							span &nbsp;&nbsp;&nbsp;
+							a(href="#") 网站地图
+							span &nbsp;&nbsp;&nbsp;备案号：粤ICP备13025925号
+
+						.ft-txt
+							span 公司地址：深圳市福田区深南路车公庙工业区（泰然）工贸园204栋东座7楼715室
+							span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+							span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							a(href="#") 代理申请
+							span &nbsp;&nbsp;
+							a(href="#") 代理登录
+
+		block main-fixed
+					
+	block ft-script
+		script(src = '#{jsRoot}/lib/requirejs/config.js')
+	block ft-rjs-script
+		script(src = '#{jsRoot}/lib/requirejs/require.js')
+		

@@ -1,8 +1,8 @@
 /**
  * 文件: .css 
- * 公司: 浙江电子口岸
- * 作者: qzzf1987@gmail.com
- * 时间: 2015-07-02 23:00:32
+ * 公司: IFELSE
+ * 作者: zhang150339894@qq.com
+ * 时间: 2015-11-20 00:34:38
  */
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -185,6 +185,9 @@ td,
 th {
   padding: 0;
 }
+* {
+  box-sizing: border-box;
+}
 body {
   font-size: 12px;
   font-family: arial, "Microsoft Yahei", "Hiragino Sans GB", sans-serif;
@@ -211,7 +214,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #ff6567;
+  color: #ff3000;
   text-decoration: underline;
 }
 :-ms-input-placeholder {
@@ -261,9 +264,9 @@ a:hover {
   position: absolute;
   left: 26px;
   top: 50%;
-  width: 163px;
-  height: 42px;
-  margin-top: -21px;
+  width: 115px;
+  height: 40px;
+  margin-top: -20px;
   background: url("../images/common/logo.png") 0 0 no-repeat;
 }
 .hd-logo a {
@@ -318,7 +321,31 @@ a:hover {
   color: #626262;
 }
 .ft-txt a:hover {
-  color: #ff6567;
+  color: #ff3000;
+}
+.fixed {
+  position: fixed;
+  left: 50%;
+  margin-left: 500px;
+}
+.fixed-tdcode {
+  bottom: 40px;
+  width: 160px;
+  height: 190px;
+  text-align: center;
+  background-color: #e6e6e6;
+  margin-left: 520px;
+}
+.tdcode-title {
+  font-size: 15.999999999999996px;
+  line-height: 2.4;
+}
+.inp {
+  height: 28px;
+  padding-left: 4px;
+  border: 1px solid #bcbcbc;
+  margin: 0;
+  outline: 0;
 }
 .ly-mid {
   width: 1000px;

@@ -1,0 +1,122 @@
+extends ../../layout/member.jade
+
+append head-theme
+	link(rel = 'stylesheet' href = '#{cssRoot}/settings.css')
+
+
+block ft-rjs-script
+	script(src = '#{jsRoot}/lib/requirejs/require.js')
+
+
+block bd-content
+	.settings-main
+		.settings-left
+			.settings-aside
+				ul.leftnav
+					li.leftnav-item
+						a.leftnav-link.active(href="#")
+							span 邀请函设置
+					li.leftnav-item
+						a.leftnav-link(href="#")
+							span 互动现场设置
+					li.leftnav-item
+						a.leftnav-link(href="#")
+							span 座位安排
+
+		.settings-right
+			.settings-kernel.interaction-settings
+				.settings-kernel-crumbs
+					span.crumbs-item 邀请函设置
+					span.crumbs-mark >
+					span.crumbs-item 编辑邀请函
+				.settings-kernel-content
+					.settings-tab
+						.settings-tabbar
+							a.tabbar-item.active 1 编辑邀请函
+							a.tabbar-item 2 发送邀请函
+
+						.settings-tabcont
+							.interaction-writeinfos
+								form
+									.interaction-writeinfos-block
+										label.writeinfos-label 发启人
+										input.inp.writeinfos-input(type="text")
+									.interaction-writeinfos-block
+										label.writeinfos-label 时　间
+										input.inp.writeinfos-input(type="text")
+									.interaction-writeinfos-block
+										label.writeinfos-label 地　点
+										input.inp.writeinfos-input(type="text")
+									.interaction-writeinfos-block
+										label.writeinfos-label 图片上传
+										//- input.inp.writeinfos-input(type="text")
+										span.inp.writeinfos-upload-input
+											input.upload-file(type="file")
+											span.upload-file-name
+										a.btn.writeinfos-upload-btn(href="javascript:;")
+											span.btn-txt 上　传
+										//- span.writeinfos-upload
+										//- 	input.upload-file(type="file")
+										//- 	span.upload-btn 上 传
+									//- .interaction-writeinfos-block
+									//- 	label.writeinfos-label
+									//- 	input.writeinfos-input(type="text")
+
+									.interaction-upload-images
+										ul
+											li.upload-images-item
+												.upload-images-pic
+													img(src="#{imgRoot}/temp/pic0.jpg" width="65" height="65")
+													span.target
+														label
+															| 封 面
+															input.ck(type="checkbox")
+													a.close(href="javascript:;") ×
+											li.upload-images-item
+												.upload-images-pic
+													img(src="#{imgRoot}/temp/pic0.jpg" width="65" height="65")
+													span.target
+														label
+															| 封 面
+															input.ck(type="checkbox")
+													a.close(href="javascript:;") ×
+											li.upload-images-item
+												.upload-images-pic
+													img(src="#{imgRoot}/temp/pic0.jpg" width="65" height="65")
+													span.target
+														label
+															| 封 面
+															input.ck(type="checkbox")
+													a.close(href="javascript:;") ×
+											li.upload-images-item
+												.upload-images-pic
+													img(src="#{imgRoot}/temp/pic0.jpg" width="65" height="65")
+													span.target
+														label
+															| 封 面
+															input.ck(type="checkbox")
+													a.close(href="javascript:;") ×
+											li.upload-images-item
+												.upload-images-pic
+													img(src="#{imgRoot}/temp/pic0.jpg" width="65" height="65")
+													span.target
+														label
+															| 封 面
+															input.ck(type="checkbox")
+													a.close(href="javascript:;") ×
+											li.upload-images-item
+												.upload-images-pic
+													img(src="#{imgRoot}/temp/pic0.jpg" width="65" height="65")
+													span.target
+														label
+															| 封 面
+															input.ck(type="checkbox")
+													a.close(href="javascript:;") ×
+
+									.interaction-botton
+										a.btn(href="javascript:;")
+											span.btn-txt 预　览
+										a.btn(href="javascript:;")
+											span.btn-txt 下一步
+											
+

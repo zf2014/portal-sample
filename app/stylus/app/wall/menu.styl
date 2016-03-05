@@ -7,8 +7,14 @@
 	margin-left: -(@width/2)
 	background-color: rgba(31,31,31,.8)
 	line-height: @height
-	transform(translate3d(0,200px,0))
+	transform(translate3d(0,500px,0))
 	transition(transform,.5s)
+	/.view-800 &
+		width: 402px
+		height: 45px
+		margin-left: -(@width/2)
+		line-height: @height
+
 	/.menu-list
 		text-align: center
 		/.menu-item
@@ -22,8 +28,17 @@
 			for num in 1..7
 				&:nth-child({num})
 					background-position: unit(-((num - 1)*42), 'px') 0
+					/.view-800 &
+						background-position: unit(-((num - 1)*32), 'px') 0
+						
 					&.active
 					&:hover
 						background-position: unit(-((num - 1)*42), 'px') 100%
+						/.view-800 &
+							background-position: unit(-((num - 1)*32), 'px') 100%
+						
+			/.view-800 &
+				width: 32px
+				height: 31px
 	&.active
 		transform(translate3d(0,0,0))

@@ -1,0 +1,13 @@
+extends ../../layout/weixin.jade
+append wx-foot-scripts
+	script(src="#{jsRoot}/app/weixin/runman.js")
+block wx-body
+	.game-body.runman
+		.game-title
+		.game-button
+
+		.game-cover
+			.howto.is-shake
+				.howto-txt 文字说明摇一摇，开始进入奔跑兄弟比赛，看谁跑得快文字说明摇一摇，开始进入奔跑兄弟比赛，看谁跑得快
+				.howto-num#J-howToNum(style="color:red;")
+

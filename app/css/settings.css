@@ -1,0 +1,228 @@
+/**
+ * 文件: .css 
+ * 公司: IFELSE
+ * 作者: zhang150339894@qq.com
+ * 时间: 2016-01-31 15:54:34
+ */
+.settings-main {
+  overflow: hidden;
+}
+.settings-left {
+  float: left;
+  width: 198px;
+}
+.settings-right {
+  float: right;
+  width: 786px;
+}
+.settings-aside {
+  min-height: 290px;
+  border: 1px solid #dfdfdf;
+  background-color: #f8f8f8;
+}
+.leftnav-link {
+  position: relative;
+  display: block;
+  height: 46px;
+  padding-left: 28px;
+  line-height: 46px;
+  border-bottom: 1px solid #dfdfdf;
+  color: #434343;
+}
+.leftnav-link:after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #ff3000;
+  visibility: hidden;
+}
+.leftnav-link.active,
+.leftnav-link:hover {
+  color: #ff3000;
+  text-decoration: none;
+}
+.leftnav-link.active:after,
+.leftnav-link:hover:after {
+  display: block;
+  visibility: visible;
+}
+.settings-kernel {
+  padding: 20px 18px;
+  border: 1px solid #dedede;
+}
+.settings-kernel-crumbs {
+  color: #1b1b1b;
+}
+.settings-kernel-crumbs .crumbs-mark {
+  margin: 0 5px;
+}
+.settings-tabbar {
+  position: relative;
+  padding-left: 6px;
+  overflow: hidden;
+}
+.settings-tabbar:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 1px;
+  background-color: #dfdfdf;
+}
+.settings-tabbar .tabbar-item {
+  display: inline-block;
+  height: 36px;
+  border: 1px solid #dfdfdf;
+  width: 112px;
+  margin-left: -1px;
+  line-height: 36px;
+  text-align: center;
+  background-color: #f7f7f7;
+  color: #434343;
+  text-decoration: none;
+}
+.settings-tabbar .tabbar-item:first-child {
+  margin-left: 0;
+}
+.settings-tabbar .tabbar-item.active {
+  position: relative;
+  z-index: 2;
+  border-bottom-color: #fff;
+  background-color: #fff;
+  color: #ff3000;
+}
+.settings-tabbar .tabbar-item.active:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff3000;
+}
+.settings-tabcont {
+  position: relative;
+  padding: 40px 0 20px;
+}
+.interaction-settings .settings-kernel-content {
+  padding: 20px 40px;
+}
+.interaction-writeinfos {
+  padding-right: 260px;
+  min-height: 420px;
+  background: url("../images/member/show0.jpg") 100% 0 no-repeat;
+}
+.interaction-writeinfos-block {
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.interaction-writeinfos-block .writeinfos-label {
+  float: left;
+  height: 28px;
+  width: 80px;
+  padding-right: 8px;
+  line-height: 28px;
+  text-align: right;
+}
+.interaction-writeinfos-block .writeinfos-input {
+  float: left;
+  width: 230px;
+}
+.writeinfos-upload-input {
+  position: relative;
+  float: left;
+  width: 230px;
+  height: 28px;
+}
+.writeinfos-upload-input .upload-file {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 28px;
+  opacity: 0;
+  cursor: pointer;
+}
+.writeinfos-upload-input .upload-file-name {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 28px;
+}
+.writeinfos-upload-btn {
+  float: left;
+  margin-left: 5px;
+}
+.interaction-upload-images {
+  padding-left: 80px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: -15px;
+  overflow: hidden;
+}
+.upload-images-item {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.upload-images-pic {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  cursor: pointer;
+}
+.upload-images-pic:hover .target {
+  display: block;
+}
+.upload-images-pic:hover .close {
+  display: block;
+}
+.upload-images-pic .target {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #ffa200;
+  color: #fff;
+}
+.upload-images-pic .target label {
+  cursor: pointer;
+}
+.upload-images-pic .target .ck {
+  vertical-align: middle;
+}
+.upload-images-pic .close {
+  display: none;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #ff3000;
+  color: #fff;
+  line-height: 16px;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+}
+.interaction-botton {
+  padding-left: 80px;
+  margin-left: -4px;
+}
+.interaction-botton .btn {
+  margin: 0 4px;
+}

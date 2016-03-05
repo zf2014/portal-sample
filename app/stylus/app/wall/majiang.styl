@@ -1,0 +1,38 @@
+.game-title
+	/.game-majiang &
+		width: 221px
+		height 61px
+		margin-left: -(@width/2)
+		background: url($wallImageRoot + "majiang-title.png") no-repeat 0 0
+
+
+.game-bg-chunk
+	/.game-majiang &
+		float: left
+		width 50%
+		height 50%
+		background: url($wallImageRoot + "majiang.jpg") no-repeat 0 0
+		&:nth-child(1)
+			background-position: 0 0
+		&:nth-child(2)
+			background-position: 100% 0
+		&:nth-child(3)
+			background-position: 0 100%
+		&:nth-child(4)
+			background-position: 100% 100%
+
+.majiang-sets
+	position: absolute;
+	width: 100%
+	top 50%
+	left 0
+	z-index: 2
+	background-color: rgba(247,132,39,.5)
+	background-repeat: no-repeat
+	background-position: 0 0
+	/.view-800 &
+		height: 250px
+		margin-top: -(@height/2)
+		background-image: url($wallImageRoot + "majiang-sets.png")
+		
+	

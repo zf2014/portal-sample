@@ -1,21 +1,68 @@
+.game-title
+	/.game-runman &
+		width: 338px
+		height 77px
+		margin-left: -(@width/2)
+		background: url($wallImageRoot + "runman-title.png") no-repeat 0 0
+		/.view-800 &
+			width 246px
+			height: 58px
+			margin-left: -(@width/2)
+
+
+.game-bg-chunk
+	/.game-runman &
+		float: left
+		width 50%
+		height 50%
+		background: url($wallImageRoot + "runman.jpg") no-repeat 0 0
+		&:nth-child(1)
+			background-position: 0 0
+		&:nth-child(2)
+			background-position: 100% 0
+		&:nth-child(3)
+			background-position: 0 100%
+		&:nth-child(4)
+			background-position: 100% 100%
+
 .runman-field
-	position: absolute
-	left 0
-	top 0
-	box-sizing: border-box
-	width: 100%
-	height 100%
 	padding-top: 246px
 	padding-left: 190px
 	padding-right: 160px
 	transform(skewX(-28deg))
+	/.view-800 &
+		padding-top 166px
+		padding-left: 100px
+		padding-right: 80px
+		transform(skewX(-18deg))
 .runman-member
 	position: relative
-	height 75px
+	height 56px
 	&:first-child
-		height 70px
+		height 56px
 		.runman-way	
 			line-height: @height
+	
+	&:nth-child(1)
+		.runman-doll
+			// transition-timing-function(linear)
+			transition-timing-function(cubic-bezier(.87,.72,.15,.5))
+	&:nth-child(2)
+		.runman-doll
+			transition-timing-function(ease-in-out)
+			// transition-timing-function(cubic-bezier(.23,.67,.98,-0.08))
+	&:nth-child(3)
+		.runman-doll
+			transition-timing-function(ease)
+			// transition-timing-function(cubic-bezier(.12,.84,.94,.1))
+	&:nth-child(4)
+		.runman-doll
+			transition-timing-function(ease-in)
+			// transition-timing-function(cubic-bezier(1,.35,0,.75))
+	&:nth-child(5)
+		.runman-doll
+			transition-timing-function(ease-out)
+			// transition-timing-function(cubic-bezier(.88,.75,0,.75))
 	/.runman-way
 		height @height
 		text-align: center
@@ -23,17 +70,21 @@
 		/.runman-name
 			font-size: 26px
 			color #8a2000
+			/.view-800 &
+				font-size: 20px
 	/.runman-doll
 		position: absolute
 		left 0
 		bottom 3px
-		width: 78px
-		height 112px
+		width: 60px
+		height 90px
 		transform(skewX(28deg) translateX(-100px))
 		transition(left ,10s)
-		
+		/.view-800 &
+			transform(skewX(18deg) translateX(-80px))
 		&.female
-			background: url($wallImageRoot + "runman-female.png") no-repeat 0 0
+			background: url($wallImageRoot + "girlrun.gif") no-repeat 0 0
 		&.male
-			background: url($wallImageRoot + "runman-male.png") no-repeat 0 0
+			background: url($wallImageRoot + "boyrun.gif") no-repeat 0 0
 		
+			
