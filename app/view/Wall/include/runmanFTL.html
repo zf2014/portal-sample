@@ -11,30 +11,19 @@
     <div wq-runman-member="wq-runman-member" ng-if="gameCtrl.begin &amp;&amp; !gameCtrl.end"></div>
   </div>
   <div class="game-title"></div>
-  <div ng-class="{opened: gameCtrl.rule_is_show, hidden: !gameCtrl.rule_is_show}" class="game-dialog has-player is-rule">
+  <div ng-if="gameCtrl.rule_is_show" ng-class="{opened: gameCtrl.rule_is_show, hidden: !gameCtrl.rule_is_show}" class="game-dialog has-player is-rule">
     <div class="game-dialog-title"><span>游戏规则</span></div>
     <div class="game-dialog-content">
       <p>在场7个人中5个人拿到相同的一个词语，剩下的2个拿到与之相关的另一个词语。</p>
       <p>每人每轮只能说一句话描述自己拿到的词语（不能直接说出来那个词语），与不能让卧底发现，也要给同胞以暗示。</p>
       <p>每轮描述完毕，7人投票选出怀疑是卧底的那个人，得票数最多的人出局，俩个人一样多的话，待定（就是保留）。</p>
-      <table class="rule-player">
-        <tr>
-          <th colspan="5">游戏人员名单</th>
-        </tr>
-        <tr>
-          <td>张三</td>
-          <td>李四</td>
-          <td>王五</td>
-          <td>麻子</td>
-          <td>毛二</td>
-        </tr>
-      </table>
+      <wq-runman-rule-members></wq-runman-rule-members>
     </div>
     <div class="game-dialog-button">
       <button ng-click="gameCtrl.launch()">开 始</button>
     </div>
   </div>
-  <div ng-show="gameCtrl.countdown.active" class="game-countdown"><span>{{gameCtrl.countdown.count}}</span></div>
+  <div ng-if="!gameCtrl.rule_is_show &amp;&amp; gameCtrl.countdown.active" class="game-countdown"><span>{{gameCtrl.countdown.count}}</span></div>
   <div class="game-clock"><span ng-repeat="sec in gameCtrl.secs | secondsSplit track by $index" class="clock-sec">{{sec}}</span></div>
   <div ng-if="gameCtrl.end">
     <div class="game-dialog is-prize prize-of-top3">
@@ -44,19 +33,19 @@
           <div class="top3-bar-list">
             <div class="top3-bar the-second">
               <div class="bar-container">
-                <div class="bar-hd">NO.2<img src="http://192.168.1.101:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
+                <div class="bar-hd">NO.2<img src="http://192.168.0.106:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
                 <div class="bar-bd">张三</div>
               </div>
             </div>
             <div class="top3-bar the-first">
               <div class="bar-container">
-                <div class="bar-hd">NO.1<img src="http://192.168.1.101:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
+                <div class="bar-hd">NO.1<img src="http://192.168.0.106:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
                 <div class="bar-bd">张三</div>
               </div>
             </div>
             <div class="top3-bar third">
               <div class="bar-container">
-                <div class="bar-hd">NO.3<img src="http://192.168.1.101:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
+                <div class="bar-hd">NO.3<img src="http://192.168.0.106:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
                 <div class="bar-bd">张三</div>
               </div>
             </div>

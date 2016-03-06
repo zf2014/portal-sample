@@ -28,8 +28,10 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-connect-proxy');
 
     grunt.registerTask('server', [
+        'configureProxies:server',
         'connect:livereload',
         'connect:bower',
         'watch'

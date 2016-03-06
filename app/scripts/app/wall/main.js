@@ -1,7 +1,18 @@
-var myapp = angular.module('wq-wall-app', ['ngRoute', 'ngAnimate']);
+var myapp = angular.module('wq-wall-app', ['ngRoute']);
 
 // 路由器
 myapp.config(['$routeProvider', function($routeProvider){
+	var defaultLink;
+
+	window.menuLinks.forEach(function(link){
+		if(link.active === true){
+			defaultLink = link.link;
+			return false;
+		}
+	});
+
+	defaultLink = defaultLink || window.menuLinks[0].link;
+
 	$routeProvider
 	.when('/wall/:game/:secs', {
 		controller: 'gameController',
@@ -11,13 +22,13 @@ myapp.config(['$routeProvider', function($routeProvider){
 		}
 	})
 	.otherwise({
-		redirectTo: '/wall/runman/60'
+		redirectTo:defaultLink
 	})
 
 }]);
 
 // 游戏 -- 控制器
-myapp.controller('gameController', ['$routeParams', '$interval', function($routeParams, $interval){
+myapp.controller('gameController', ['$routeParams', '$interval', 'gameService', function($routeParams, $interval, gameService){
 	var self = this;
 	var COUNT_NUM = 5;
 	this.rule_is_show = true;
@@ -30,18 +41,23 @@ myapp.controller('gameController', ['$routeParams', '$interval', function($route
 	this.end = false
 
 	this.launch = function(){
-		self.rule_is_show = false;
-		// duration();
-		doCountdown();
+
+		gameService.launch().then(function(isOk){
+			if(isOk){
+				self.rule_is_show = false;
+				doCountdown();
+			}
+		})
 	}
 
+	/*再玩一次*/
 	this.playAgain = function(){
-		console.log('再玩一次');
 		this.end = false;
 		this.begin = false;
 		this.countdown.count = COUNT_NUM;
 		this.secs = +$routeParams.secs;
-		doCountdown();
+		this.rule_is_show = true;
+		// doCountdown();
 	}
 
 	// 游戏倒计时
@@ -76,6 +92,27 @@ myapp.controller('gameController', ['$routeParams', '$interval', function($route
 
 }]);
 
+// 游戏服务
+myapp.service('gameService', ['$http','$routeParams', 'appRoot', 'inviterCode', 'gameCode', function($http, $routeParams, appRoot, inviterCode, gameCode){
+	this.launch = function(){
+		var launchParams = [
+			['inviterCode', inviterCode],
+			['gameCode', gameCode[$routeParams.game]],
+			['gameGroup', '1'],
+			['gameTime', $routeParams.secs]
+		]
+		launchParams = launchParams.map(function(p){
+			return p[0] + '=' + p[1]
+		}).join('&')
+
+
+		return $http.get(appRoot + '/portal/admin/screen/gameCenter!gameOpen.jspa' + '?' + launchParams)
+			.then(function(ajaxData){
+				return ajaxData.data.code === 0
+			})
+	}
+}])
+
 // 秒数 -- 过滤器
 myapp.filter('secondsSplit', function(){
 	return function(input, size){
@@ -90,11 +127,42 @@ myapp.filter('secondsSplit', function(){
 	}
 })
 
+
+
 // 跑男 -- 组件
-myapp.directive('wqRunmanMember', ['$timeout', function($timeout){
+myapp.directive('wqRunmanRuleMembers', ['$timeout', function($timeout){
+	var linkFn = function($scope, $element, attrs, ctrl){
+	}
+	return {
+		restrict: 'EA', 
+		scope: {},
+		controller: ['$interval', 'runmanService', function($interval, runmanService){
+			var self = this;
+			runmanService.getLastMembers().then(function(members){
+				self.members = members;
+			})
+		}],
+		controllerAs: 'memberCtrl',
+		templateUrl: 'include/runmanRuleMemberFTL.html',
+		link: linkFn
+	}
+}])
+
+
+// 跑男 -- 组件
+myapp.directive('wqRunmanMember', ['$timeout', '$routeParams', 'runmanService', function($timeout, $routeParams, runmanService){
 	var linkFn = function($scope, $element, attrs, ctrl){
 
 		// ctrl.fulllength = $element[0].offsetWidth;
+		
+		var totalSec = $routeParams.secs;
+		var durationSec = 5;
+		var totalTimes = totalSec/durationSec;
+		var percent = 100/totalTimes;
+		var runData = []
+		var runPercent = []
+		var runTimes = 1;
+		var isEnd = false;
 		$scope.$watch(
 			function(){
 				return ctrl.members;
@@ -102,9 +170,33 @@ myapp.directive('wqRunmanMember', ['$timeout', function($timeout){
 			function(){
 				var dolls = document.querySelectorAll('.runman-doll');
 				angular.forEach(dolls, function(node,idx){
-					$timeout(function(){
-						node.style.left = '100%';
-					}, 100)
+					var tl = new TimelineMax({onCompleteParams:[node, idx], onComplete: function(node, idx){
+						var max;
+						var prev;
+						var next;
+						if( totalTimes >= runTimes ){
+							if(idx === 0){
+								runTimes += 1;
+								if(runTimes > totalTimes){
+									console.log('[%s]总共跑了 %s', idx, runPercent[idx]);
+									tl.kill();
+									return;
+								}
+								runData = runmanService.getRunMessage();
+							}
+							console.log('[%s]总共跑了 %s', idx, runPercent[idx]);
+							max = Math.max.apply(Math, runData)
+							prev = runPercent[idx];
+							next = (runTimes*percent - prev)*(runData[idx]/max);
+							tl.add(TweenLite.to(node, durationSec, {left: '+='+(next)+'%', ease: Power0.easeNone}))
+							runPercent[idx] = prev + next;
+						}else{
+							console.log('[%s]总共跑了 %s', idx, runPercent[idx]);
+							tl.kill();
+						}
+					}});
+					tl.add(TweenLite.to(node, durationSec, {left: '+='+percent+'%', ease: Power0.easeNone}));
+					runPercent.push(percent);
 				})
 			}
 		);
@@ -119,15 +211,66 @@ myapp.directive('wqRunmanMember', ['$timeout', function($timeout){
 				i = 0,
 				intervalId
 			;
-			self.members = runmanService.getMembers();
 			self.totaltimes = 5;
 			self.curtimes = 0;
+
+
+			runmanService.members.then(function(members){
+				self.members = members;
+			})
+
 		}],
 		controllerAs: 'memberCtrl',
 		templateUrl: 'include/runmanMemberFTL.html',
 		link: linkFn
 	}
 }])
+
+
+// 跑男 -- 服务器
+myapp.service('runmanService', ['$http', '$routeParams', 'appRoot', function($http, $routeParams, appRoot){
+	var duration = $routeParams.secs;
+	var self = this;
+
+	// 之前的跑男信息
+	this.members = [];
+
+	// 最新的跑男信息
+	this.getLastMembers = function(){
+		var members = getMembers();
+		self.members = members;
+		return members;
+	}
+
+	this.getRunMessage = function(){
+		return [
+			Math.random()*100,
+			Math.random()*100,
+			Math.random()*100,
+			Math.random()*100,
+			Math.random()*100
+		]
+	}
+
+	// 从服务器上读取信息
+	function getMembers(){
+		return $http.get(appRoot + '/portal/admin/screen/runningman!getGameUser.jspa')
+			   .then(function(ajaxData){
+					var result, data = ajaxData.data;
+					if(data.code === 0){
+						result =  data.rst.gameUsers.map(function(user){
+							return {
+								name: user.nickname,
+								gender: user.sex == '0' ? 'male':'female',
+								duration:duration
+							}
+						})
+					}
+					return result
+				})
+	}
+
+}]);
 
 
 // 猜拳 -- 组件
@@ -147,20 +290,6 @@ myapp.directive('wqCaiquanPlayer', ['$timeout', function($timeout){
 		templateUrl: 'include/caiquanPlayFTL.html'
 	}
 }])
-
-// 跑男 -- 服务器
-myapp.service('runmanService', ['$http','$routeParams', function($http, $routeParams){
-	var duration = $routeParams.secs;
-	this.getMembers = function(){
-		return [
-			{name: 'zhangF1', gender: 'male', duration: duration},
-			{name: 'zhangF2', gender: 'female', duration: duration},
-			{name: 'zhangF3', gender: 'male', duration: duration},
-			{name: 'zhangF4', gender: 'female', duration: duration},
-			{name: 'zhangF_', gender: 'female', duration: duration}
-		];
-	}
-}]);
 
 // 猜拳 -- 服务器
 myapp.service('caiquanService', ['$http', function($http){
@@ -193,7 +322,7 @@ myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $docum
 	}
 	return {
 		restrict: 'A', 
-		controller: ['$scope', '$location', function($scope, $location){
+		controller: ['$scope', '$location', 'menuLinks', function($scope, $location, menuLinks){
 			var self = this
 			;
 			this.active = false;
@@ -204,15 +333,7 @@ myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $docum
 			this.hide = function(){
 				this.active = false;
 			}
-			this.list = [
-				{link: '#/wall/runman/100', active: false},
-				{link: '#/wall/runman/4', active: false},
-				{link: '#/wall/eat/30', active: false},
-				{link: '#/wall/majiang/60', active: false},
-				{link: '#/wall/gua/60', active: false},
-				{link: '#/wall/caiquan/50', active: false},
-				{link: '#/wall/runman/220', active: false}
-			]
+			this.list = menuLinks;
 
 			this.menuClick = function(url){
 				activeTargetMenuLinkByUrl(url);
@@ -236,13 +357,6 @@ myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $docum
 		link: linkFn
 	}
 }])
-
-
-
-
-
-
-
 
 
 

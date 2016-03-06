@@ -2,9 +2,10 @@
   "name": "package",
   "version": "0.0.0",
   "dependencies": {
-  	"nib": "~1.1.0",
-  	"angular": "~1.4.3",
-  	"angular-route": "~1.4.3"
+    "nib": "~1.1.0",
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "zepto": "^1.1.6",
+    "gsap": "^1.18.2"
   }
 }
-

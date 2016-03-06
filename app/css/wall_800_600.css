@@ -2,7 +2,7 @@
  * 文件: .css 
  * 公司: IFELSE
  * 作者: zhang150339894@qq.com
- * 时间: 2016-01-31 19:30:28
+ * 时间: 2016-03-06 18:17:35
  */
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -872,12 +872,12 @@ table.top5-table td > span {
   width: 60px;
   height: 90px;
   -webkit-transform: skewX(28deg) translateX(-100px);
-  -webkit-transition: left 10s;
 }
 .view-800 .runman-doll {
   -webkit-transform: skewX(18deg) translateX(-80px);
 }
 .runman-doll.female {
+  width: 70px;
   background: url("../images/wall/800_600/girlrun.gif") no-repeat 0 0;
 }
 .runman-doll.male {

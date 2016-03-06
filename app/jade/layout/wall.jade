@@ -19,12 +19,30 @@ html(ng-app="wq-wall-app")
 		//- script(src="http://127.0.0.1:9100/angular-route/angular-route.js")
 		//- script(src="http://127.0.0.1:9100/angular-animate/angular-animate.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js")
+		//- script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js")
 		link(rel = 'stylesheet' href = '#{cssRoot}/wall_800_600.css')
 	body.view-800
 		ng-view
 		.menu(wq-menu ng-class="{active: menuCtrl.active}")
 		block main-script
+			script(src="http://192.168.0.106:9100/gsap/src/uncompressed/TweenMax.js")
 			script(src="#{jsRoot}/app/wall/main.js")
-		
+			script.
+				myapp.value('appRoot', '');
+				myapp.value('inviterCode', '2');
+				myapp.value('gameCode', {
+					runman: "4",
+					eat: "1",
+					majiang: "2",
+					caiquan: "3"
+				})
+				myapp.value('menuLinks', (window.menuLinks = [
+					{link: '#/wall/runman/100'},
+					{link: '#/wall/runman/40', active: true},
+					{link: '#/wall/eat/30'},
+					{link: '#/wall/majiang/60'},
+					{link: '#/wall/gua/60'},
+					{link: '#/wall/caiquan/50'},
+					{link: '#/wall/runman/220'}
+				]));
