@@ -1,18 +1,20 @@
 var myapp = angular.module('wq-wall-app', ['ngRoute']);
 
-// 路由器
-myapp.config(['$routeProvider', function($routeProvider){
-	var defaultLink;
+// myapp.config(['$locationProvider', function($locationProvider){
+// 	$locationProvider.hashPrefix('!');
+// }])
 
-	window.menuLinks.forEach(function(link){
+// 路由器
+myapp.config(['$routeProvider', 'menuLinks', function($routeProvider, menuLinks){
+	var defaultLink;
+	menuLinks.forEach(function(link){
 		if(link.active === true){
 			defaultLink = link.link;
 			return false;
 		}
 	});
 
-	defaultLink = defaultLink || window.menuLinks[0].link;
-
+	defaultLink = defaultLink || menuLinks[0].link;
 	$routeProvider
 	.when('/wall/:game/:secs', {
 		controller: 'gameController',
@@ -20,15 +22,11 @@ myapp.config(['$routeProvider', function($routeProvider){
 		templateUrl: function(params){
 			return 'include/' + params['game'] + 'FTL.html'
 		}
-	})
-	.otherwise({
-		redirectTo:defaultLink
-	})
-
+	}).otherwise(defaultLink.trim())
 }]);
 
 // 游戏 -- 控制器
-myapp.controller('gameController', ['$routeParams', '$interval', 'gameService', function($routeParams, $interval, gameService){
+myapp.controller('gameController', ['$routeParams', '$interval', '$timeout', 'gameService', function($routeParams, $interval, $timeout, gameService){
 	var self = this;
 	var COUNT_NUM = 5;
 	this.rule_is_show = true;
@@ -67,8 +65,9 @@ myapp.controller('gameController', ['$routeParams', '$interval', 'gameService', 
 			self.secs -= 1;
 			if(self.secs === 0){
 				$interval.cancel(intervalChanelId);
-				// TODO 获得前三数据
-				self.end = true;
+				$timeout(function(){
+					self.end = true;
+				}, 2000)
 			}
 		}, 1000);
 	}
@@ -96,11 +95,11 @@ myapp.controller('gameController', ['$routeParams', '$interval', 'gameService', 
 myapp.service('gameService', ['$http','$routeParams', 'appRoot', 'inviterCode', 'gameCode', function($http, $routeParams, appRoot, inviterCode, gameCode){
 	this.launch = function(){
 		var launchParams = [
-			['inviterCode', inviterCode],
-			['gameCode', gameCode[$routeParams.game]],
-			['gameGroup', '1'],
-			['gameTime', $routeParams.secs]
-		]
+				['inviterCode', inviterCode],
+				['gameCode', gameCode[$routeParams.game]],
+				// ['gameGroup', '1'],
+				['gameTime', $routeParams.secs]
+			]
 		launchParams = launchParams.map(function(p){
 			return p[0] + '=' + p[1]
 		}).join('&')
@@ -108,10 +107,14 @@ myapp.service('gameService', ['$http','$routeParams', 'appRoot', 'inviterCode', 
 
 		return $http.get(appRoot + '/portal/admin/screen/gameCenter!gameOpen.jspa' + '?' + launchParams)
 			.then(function(ajaxData){
-				return ajaxData.data.code === 0
+				if(ajaxData.data.code === 0){
+					return true;
+				}else{
+					return false;
+				}
 			})
 	}
-}])
+}]);
 
 // 秒数 -- 过滤器
 myapp.filter('secondsSplit', function(){
@@ -125,12 +128,10 @@ myapp.filter('secondsSplit', function(){
 		}
 		return output;
 	}
-})
-
-
+});
 
 // 跑男 -- 组件
-myapp.directive('wqRunmanRuleMembers', ['$timeout', function($timeout){
+myapp.directive('wqRunmanRuleMembers', [function(){
 	var linkFn = function($scope, $element, attrs, ctrl){
 	}
 	return {
@@ -146,75 +147,15 @@ myapp.directive('wqRunmanRuleMembers', ['$timeout', function($timeout){
 		templateUrl: 'include/runmanRuleMemberFTL.html',
 		link: linkFn
 	}
-}])
-
+}]);
 
 // 跑男 -- 组件
-myapp.directive('wqRunmanMember', ['$timeout', '$routeParams', 'runmanService', function($timeout, $routeParams, runmanService){
-	var linkFn = function($scope, $element, attrs, ctrl){
-
-		// ctrl.fulllength = $element[0].offsetWidth;
-		
-		var totalSec = $routeParams.secs;
-		var durationSec = 5;
-		var totalTimes = totalSec/durationSec;
-		var percent = 100/totalTimes;
-		var runData = []
-		var runPercent = []
-		var runTimes = 1;
-		var isEnd = false;
-		$scope.$watch(
-			function(){
-				return ctrl.members;
-			}, 
-			function(){
-				var dolls = document.querySelectorAll('.runman-doll');
-				angular.forEach(dolls, function(node,idx){
-					var tl = new TimelineMax({onCompleteParams:[node, idx], onComplete: function(node, idx){
-						var max;
-						var prev;
-						var next;
-						if( totalTimes >= runTimes ){
-							if(idx === 0){
-								runTimes += 1;
-								if(runTimes > totalTimes){
-									console.log('[%s]总共跑了 %s', idx, runPercent[idx]);
-									tl.kill();
-									return;
-								}
-								runData = runmanService.getRunMessage();
-							}
-							console.log('[%s]总共跑了 %s', idx, runPercent[idx]);
-							max = Math.max.apply(Math, runData)
-							prev = runPercent[idx];
-							next = (runTimes*percent - prev)*(runData[idx]/max);
-							tl.add(TweenLite.to(node, durationSec, {left: '+='+(next)+'%', ease: Power0.easeNone}))
-							runPercent[idx] = prev + next;
-						}else{
-							console.log('[%s]总共跑了 %s', idx, runPercent[idx]);
-							tl.kill();
-						}
-					}});
-					tl.add(TweenLite.to(node, durationSec, {left: '+='+percent+'%', ease: Power0.easeNone}));
-					runPercent.push(percent);
-				})
-			}
-		);
-	}
+myapp.directive('wqRunmanMember', ['$routeParams', 'runmanService', function($routeParams, runmanService){
 	return {
 		restrict: 'A', 
 		scope: {},
 		controller: ['$interval', 'runmanService', function($interval, runmanService){
-			var self = this,
-				delay = 10000,
-				times = 6,
-				i = 0,
-				intervalId
-			;
-			self.totaltimes = 5;
-			self.curtimes = 0;
-
-
+			var self = this;
 			runmanService.members.then(function(members){
 				self.members = members;
 			})
@@ -222,14 +163,86 @@ myapp.directive('wqRunmanMember', ['$timeout', '$routeParams', 'runmanService', 
 		}],
 		controllerAs: 'memberCtrl',
 		templateUrl: 'include/runmanMemberFTL.html',
+		link: function(){}
+	}
+}]);
+// 跑男 -- 组件
+myapp.directive('wqRunmanDoll', ['runmanService', '$routeParams', function(runmanService, $routeParams){
+	var linkFn = function($scope, $element, attrs, ctrl){
+		var tl = new TimelineMax({onComplete: onComplete});
+		
+		var totalSec = $routeParams.secs;
+		var durationSec = 10;
+		var totalTimes = totalSec/durationSec;
+		var percent = 100/totalTimes;
+		var runData = []
+		var runPercent = 0 ;
+		var runTimes = 1;
+
+		var index = attrs.index;
+
+		tl.add(TweenLite.to($element[0], durationSec, {left: '+='+percent+'%', ease: Power0.easeNone, onComplete: function(){
+			runPercent = percent;
+		}}));
+
+
+		function onComplete(){
+			var max;
+			var prev;
+			var next;
+			if( totalTimes !== runTimes ){
+				runTimes += 1;
+				runmanService.getRunMessage().then(function(runData){
+					console.log('[%s]总共跑了 %s', index, runPercent);
+					max = Math.max.apply(Math, runData)
+					prev = runPercent;
+					next = (runTimes*percent - prev)*(runData[index]/max);
+					tl.add(TweenLite.to($element[0], durationSec, {left: '+='+(next)+'%', ease: Power0.easeNone, onComplete: function(){
+						runPercent = prev + next;
+					}}))
+				});
+			}else{
+				console.log('>[%s]总共跑了 %s', index, runPercent);
+
+				tl.add(TweenLite.to($element[0], 2, {left: '+=100%', ease: Power0.easeNone, onComplete: function(){
+					tl.kill();
+				}}));
+				
+			}
+		}
+	};
+		return {
+		restrict: 'A',
+		scope: {},
+		controller: ['$interval', 'runmanService', function($interval, runmanService){
+		}],
+		controllerAs: 'dollCtrl',
 		link: linkFn
 	}
 }])
-
+// 跑男 -- 组件
+myapp.directive('wqRunmanRank', ['$routeParams', 'runmanService', function($routeParams, runmanService){
+	return {
+		restrict: 'A',
+		scope: {},
+		controller: ['runmanService', function(runmanService){
+			var self = this;
+			runmanService.getRank().then(function(data){
+				self.ranks = data;
+			})
+		}],
+		controllerAs: 'rankCtrl',
+		templateUrl: 'include/runmanRankFTL.html',
+		link: function($scope, $element, attrs, ctrl){
+			console.log(ctrl)
+		}
+	}
+}]);
 
 // 跑男 -- 服务器
-myapp.service('runmanService', ['$http', '$routeParams', 'appRoot', function($http, $routeParams, appRoot){
+myapp.service('runmanService', ['$http', '$routeParams', 'appRoot', 'inviterCode', 'gameCode', function($http, $routeParams, appRoot, inviterCode, gameCode){
 	var duration = $routeParams.secs;
+	var maxRuningNumber = 0;
 	var self = this;
 
 	// 之前的跑男信息
@@ -242,14 +255,50 @@ myapp.service('runmanService', ['$http', '$routeParams', 'appRoot', function($ht
 		return members;
 	}
 
-	this.getRunMessage = function(){
-		return [
-			Math.random()*100,
-			Math.random()*100,
-			Math.random()*100,
-			Math.random()*100,
-			Math.random()*100
-		]
+	this.getRunMessage = (function(){
+
+		var nextRuningTime = 1;
+		var pomise; 
+
+		return function(){
+			if(nextRuningTime === 1){
+				pomise =  $http.get(appRoot + '/portal/admin/screen/runningman!runningResult.jspa?inviterCode=' + inviterCode + '&gameCode=' + gameCode[$routeParams.game])
+				.then(function(ajaxData){
+					var result, data = ajaxData.data;
+					if(data.code === 0){
+						result =  data.rst.gameResult.map(function(user){
+							return user.gameResult;
+						})
+					}
+					return result
+				})
+	   		}
+	   		nextRuningTime += 1;
+	   		if(nextRuningTime > maxRuningNumber){
+	   			nextRuningTime = 1;
+	   		}
+
+		   	return pomise;
+		}
+
+	})();
+
+	this.getRank = function(){
+		var pomise =  $http.get(appRoot + '/portal/admin/screen/runningman!runningRank.jspa?inviterCode=' + inviterCode + '&gameCode=' + gameCode[$routeParams.game])
+			.then(function(ajaxData){
+				var result, data = ajaxData.data;
+				if(data.code === 0){
+					result =  data.rst.gameResult.map(function(rank){
+						return {
+							name: rank.nickname,
+							avatar: rank.headimgurl,
+							no: rank.gameRank
+						}
+					})
+				}
+				return result
+			})
+		return pomise
 	}
 
 	// 从服务器上读取信息
@@ -264,7 +313,8 @@ myapp.service('runmanService', ['$http', '$routeParams', 'appRoot', function($ht
 								gender: user.sex == '0' ? 'male':'female',
 								duration:duration
 							}
-						})
+						});
+						maxRuningNumber = result.length;
 					}
 					return result
 				})
@@ -274,7 +324,7 @@ myapp.service('runmanService', ['$http', '$routeParams', 'appRoot', function($ht
 
 
 // 猜拳 -- 组件
-myapp.directive('wqCaiquanPlayer', ['$timeout', function($timeout){
+myapp.directive('wqCaiquanPlayer', [function(){
 	return {
 		restrict: 'A', 
 		scope: true,
@@ -289,7 +339,7 @@ myapp.directive('wqCaiquanPlayer', ['$timeout', function($timeout){
 		controllerAs: 'palyCtrl',
 		templateUrl: 'include/caiquanPlayFTL.html'
 	}
-}])
+}]);
 
 // 猜拳 -- 服务器
 myapp.service('caiquanService', ['$http', function($http){
@@ -304,6 +354,8 @@ myapp.service('caiquanService', ['$http', function($http){
 		return randomSort(thePlayers);
 	}
 }]);
+
+
 
 // 菜单 -- 组件
 myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $document){
@@ -337,6 +389,7 @@ myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $docum
 
 			this.menuClick = function(url){
 				activeTargetMenuLinkByUrl(url);
+				$location.url(url);
 			}
 			function activeTargetMenuLinkByUrl(url){
 				angular.forEach(self.list, function(menuItem){
@@ -348,7 +401,7 @@ myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $docum
 				})
 			}
 			function init(){
-				activeTargetMenuLinkByUrl('#' + $location.url())
+				activeTargetMenuLinkByUrl($location.url())
 			}
 			init();
 		}],
@@ -356,7 +409,7 @@ myapp.directive('wqMenu', ['$rootScope', '$document',function($rootScope, $docum
 		templateUrl: 'include/menuFTL.html',
 		link: linkFn
 	}
-}])
+}]);
 
 
 
@@ -367,6 +420,7 @@ function randomArray(arrLen) {
     }
     return rArr;
 }
+
 function randomIndex(arrLen) {
     var iArr = new Array(arrLen);
     var rArr = randomArray(arrLen);  //建立随机数组,以备使用
@@ -384,6 +438,7 @@ function randomIndex(arrLen) {
     }
     return iArr;
 }
+
 function randomSort(arr) {
     arrLen = arr.length;
     var tArr = new Array(arrLen);  //建立临时数组,存放随机打乱的数组

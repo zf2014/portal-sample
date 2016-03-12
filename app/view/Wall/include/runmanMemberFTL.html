@@ -1,6 +1,6 @@
 
-<div ng-repeat="mebmer in memberCtrl.members" class="runman-member J-runman-member">
+<div ng-repeat="mebmer in memberCtrl.members track by $index" class="runman-member J-runman-member">
   <div class="runman-way"><span class="runman-name">{{mebmer.name}}</span>
   </div>
-  <div wq-runman-doll="wq-runman-doll" class="runman-doll {{mebmer.gender}}"></div>
+  <div wq-runman-doll="wq-runman-doll" index="{{$index}}" class="runman-doll {{mebmer.gender}}"></div>
 </div>

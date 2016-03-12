@@ -2,7 +2,7 @@
  * 文件: .css 
  * 公司: IFELSE
  * 作者: zhang150339894@qq.com
- * 时间: 2016-03-06 18:17:35
+ * 时间: 2016-03-12 17:04:34
  */
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -483,7 +483,7 @@ body {
   width: 120px;
   height: 170px;
 }
-.top3-bar.the-first {
+.top3-bar:nth-child(2) {
   margin: 0 3px;
 }
 .bar-container {
@@ -516,15 +516,15 @@ body {
   text-align: center;
   color: #313131;
 }
-.the-second .bar-bd {
+.top3-bar:nth-child(1) .bar-bd {
   height: 54px;
   line-height: 54px;
 }
-.the-first .bar-bd {
+.top3-bar:nth-child(2) .bar-bd {
   height: 81px;
   line-height: 81px;
 }
-.the-third .bar-bd {
+.top3-bar:nth-child(3) .bar-bd {
   height: 27px;
   line-height: 27px;
 }

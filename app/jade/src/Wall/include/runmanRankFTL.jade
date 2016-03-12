@@ -1,0 +1,6 @@
+.top3-bar-list
+	.top3-bar(ng-repeat="rank in rankCtrl.ranks")
+		.bar-container
+			.bar-hd NO.{{rank.no}}
+				img.bar-hd-avatar(src="{{rank.avatar}}")
+			.bar-bd {{rank.name}}

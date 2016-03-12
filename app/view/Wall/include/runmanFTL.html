@@ -8,7 +8,7 @@
   </div>
   <div class="game-logo"></div>
   <div class="game-kernel runman-field">
-    <div wq-runman-member="wq-runman-member" ng-if="gameCtrl.begin &amp;&amp; !gameCtrl.end"></div>
+    <div wq-runman-member="wq-runman-member" ng-if="gameCtrl.begin"></div>
   </div>
   <div class="game-title"></div>
   <div ng-if="gameCtrl.rule_is_show" ng-class="{opened: gameCtrl.rule_is_show, hidden: !gameCtrl.rule_is_show}" class="game-dialog has-player is-rule">
@@ -29,28 +29,7 @@
     <div class="game-dialog is-prize prize-of-top3">
       <div class="game-dialog-title"><span>获奖啦</span></div>
       <div class="game-dialog-content">
-        <div class="top3">
-          <div class="top3-bar-list">
-            <div class="top3-bar the-second">
-              <div class="bar-container">
-                <div class="bar-hd">NO.2<img src="http://192.168.0.106:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
-                <div class="bar-bd">张三</div>
-              </div>
-            </div>
-            <div class="top3-bar the-first">
-              <div class="bar-container">
-                <div class="bar-hd">NO.1<img src="http://192.168.0.106:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
-                <div class="bar-bd">张三</div>
-              </div>
-            </div>
-            <div class="top3-bar third">
-              <div class="bar-container">
-                <div class="bar-hd">NO.3<img src="http://192.168.0.106:9000/images/wall/800_600/avatar.jpg" class="bar-hd-avatar"/></div>
-                <div class="bar-bd">张三</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div wq-runman-rank="wq-runman-rank" class="top3"></div>
       </div>
       <div class="game-dialog-button">
         <button ng-click="gameCtrl.playAgain()">再玩一次</button>

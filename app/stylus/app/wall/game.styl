@@ -102,7 +102,7 @@
 								position: relative;
 								width $barWidth
 								height 170px
-								&.the-first
+								&:nth-child(2)
 									margin: 0 3px;
 								/.bar-container
 									position: absolute;
@@ -131,13 +131,13 @@
 										background: #fab000
 										text-align: center
 										color #313131
-										/.the-second &
+										/.top3-bar:nth-child(1) &
 											height 54px
 											line-height: @height
-										/.the-first &
+										/.top3-bar:nth-child(2) &
 											height 81px
 											line-height: @height
-										/.the-third &
+										/.top3-bar:nth-child(3) &
 											height 27px
 											line-height: @height
 				/&.prize-of-top5

@@ -1,0 +1,7 @@
+table.rule-player
+	tr
+		th(colspan="5") 游戏人员名单
+	tr
+
+		td(ng-repeat="mebmer in memberCtrl.members")
+			| {{mebmer.name}}

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>微庆--weiqing</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
+    <script src="http://192.168.0.106:9100/angular/angular.js"></script>
+    <script src="http://192.168.0.106:9100/angular-route/angular-route.js"></script>
     <link rel="stylesheet" href="../../css/wall_800_600.css">
   </head>
   <body class="view-800">
@@ -22,16 +22,17 @@
       	eat: "1",
       	majiang: "2",
       	caiquan: "3"
-      })
-      myapp.value('menuLinks', (window.menuLinks = [
-      	{link: '#/wall/runman/100'},
-      	{link: '#/wall/runman/40', active: true},
-      	{link: '#/wall/eat/30'},
-      	{link: '#/wall/majiang/60'},
-      	{link: '#/wall/gua/60'},
-      	{link: '#/wall/caiquan/50'},
-      	{link: '#/wall/runman/220'}
-      ]));
+      });
+      myapp.value('gameGroup', 0);
+      myapp.constant('menuLinks', [
+      	{link: '/wall/runman/100'},
+      	{link: '/wall/runman/40', active: true},
+      	{link: '/wall/eat/30'},
+      	{link: '/wall/majiang/60'},
+      	{link: '/wall/gua/60'},
+      	{link: '/wall/caiquan/50'},
+      	{link: '/wall/runman/220'}
+      ]);
     </script>
   </body>
 </html>

@@ -15,7 +15,7 @@ function Config(c){
         proxies: [
             {
                 context: '/portal',
-                host: '192.168.0.104',
+                host: '192.168.0.107',
                 port: 8080,
                 https: false
             }
