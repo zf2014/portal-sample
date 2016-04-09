@@ -5,3 +5,5 @@ bower_components/
 dist/
 
 grunt/connect.js
+
+app/view/

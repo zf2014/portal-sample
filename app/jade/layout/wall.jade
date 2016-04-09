@@ -27,7 +27,7 @@ html(ng-app="wq-wall-app")
 		ng-view
 		.menu(wq-menu ng-class="{active: menuCtrl.active}")
 		block main-script
-			script(src="http://192.168.0.106:9100/gsap/src/uncompressed/TweenMax.js")
+			script(src="#{bowerLibDomain}/gsap/src/uncompressed/TweenMax.js")
 			
 			script(src="#{jsRoot}/app/wall/main.js")
 			script.
