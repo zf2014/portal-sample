@@ -3,3 +3,5 @@ bower_components/
 .svn/
 .tmp/
 dist/
+
+grunt/connect.js
