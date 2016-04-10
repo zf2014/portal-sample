@@ -8,14 +8,14 @@ function Config(c){
     this.options = {
         port: 9000,
         livereload: 30000,
-        hostname: '192.168.0.106'
+        hostname: '192.168.0.110'
     };
 
     this.server =  {
         proxies: [
             {
                 context: '/portal',
-                host: '192.168.0.107',
+                host: '192.168.0.104',
                 port: 8080,
                 https: false
             }
@@ -24,7 +24,7 @@ function Config(c){
 
     this.livereload = {
         options: {
-            open: 'http://192.168.0.106:9000/view/首页/index.html',
+            open: 'http://192.168.0.110:9000/view/首页/index.html',
             middleware: function(connect) {
 
 
@@ -39,7 +39,7 @@ function Config(c){
 
     this.bower = {
         options: {
-            hostname: '192.168.0.106',
+            hostname: '192.168.0.110',
             port: 9100,
             middleware: function(connect) {
                 return [
